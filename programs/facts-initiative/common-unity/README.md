@@ -22,6 +22,9 @@ The Common Unity Initiative is a collective of like-minded individuals and famil
 | File | Contents |
 |---|---|
 | `Barnarium-Follower-Guide.pdf` (8 pp) | **Barnarium — Follower Guide.** The family compound vision: 50–100 people on one piece of land, six pillars of self-sustaining compound design, and the savings case (housing 62% less, electric 85% less, water 90% less, groceries 45% less, childcare 80% less, elder care 70% less). |
+| `common-unity-phase-2-launch-plan.pdf` (9 pp) | **Phase Two Launch Plan** (Planning edition, September 2026). A coordinated launch for three connected experiences: learn through the C.U.I. game, join through the Common Unity network, build toward Barnarium. "Learn it. Join it. Build it." — the recommended journey (Watch → Play → Join → Assess → Activate → Explore) and the eight working groups. |
+| `CUI_3D_Investor_Brief.pdf` (13 pp) | **C.U.I. 3D — Investor Brief.** Know The Ledger / Red Pillar presents the C.U.I. 3D world: what it is, what's built, where it goes. |
+| `Common-Unity-Network-Phase-Two.pptx` | **Common Unity Network — Phase Two** slide deck. |
 
 ## Assets
 
@@ -32,3 +35,6 @@ The Common Unity Initiative is a collective of like-minded individuals and famil
 | `assets/common-unity-banner-crop.jpg` | **Common Unity banner crop** — the homestead scene with drone, solar, and the F.A.C.T.S. sponsorship lockup. |
 | `assets/common-unity-phase-one-red-pillar.jpg` | **Phase One has begun — hosted by Red Pillar.** Prepare. Collaborate. Protect. Food security, water systems, energy independence, community defense, education, health, emergency preparedness, legacy for generations. |
 | `assets/common-unity-phase-two-red-pillar.jpg` | **Phase Two has begun — hosted by Red Pillar.** Same pillar lineup, Phase Two call to action. |
+| `assets/common-unity-phase-two-launch-plan-cover.jpg` | **Phase Two Launch Plan cover** — "Learn. Join. Build." Planning edition, September 2026, powered by F.A.C.T.S. |
+| `assets/common-unity-learn-join-build.jpg` | **Learn it. Join it. Build it.** — the Phase Two page: the C.U.I. game (Learn), the network (Join), Barnarium (Build); the recommended journey; the eight working groups (food security, finance & fundraising, tech & innovation, art & culture, shelter & infrastructure, textiles & apparel, disaster preparedness, membership & operations). |
+| `assets/common-unity-barnarium-pillars.jpg` | **Barnarium — "Fifty to a hundred people. One piece of land."** The six pillars: off-grid living, private & shared spaces, security & technology, renewable energy, food/water/energy, sustainability & legacy. 50–100 founding residents, 105 on the Phase One roster. |
