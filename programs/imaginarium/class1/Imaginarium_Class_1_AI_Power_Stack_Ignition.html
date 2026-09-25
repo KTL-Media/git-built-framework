@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Missions: Your First Operational Cycle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-dark: #0a0a0f;
+        --bg-purple: #1a0633;
+        --gold: #ffd700;
+        --neon-purple: #b624ff;
+        --electric-blue: #00d4ff;
+        --text-main: #e0e0e0;
+        --text-dim: #a0a0a0;
+      }
+
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+        background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-purple) 100%);
+        background-attachment: fixed;
+        color: var(--text-main);
+        margin: 0;
+        padding: 40px 20px;
+        line-height: 1.6;
+        min-height: 100vh;
+        /* Subtle grid overlay */
+        background-image:
+          linear-gradient(rgba(182, 36, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(182, 36, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-purple) 100%);
+        background-size:
+          40px 40px,
+          40px 40px,
+          100% 100%;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: 'Orbitron', sans-serif;
+        text-transform: uppercase;
+        margin-top: 0;
+      }
+
+      .text-gold {
+        color: var(--gold);
+      }
+      .text-purple {
+        color: var(--neon-purple);
+      }
+      .text-blue {
+        color: var(--electric-blue);
+      }
+
+      /* Header Section */
+      header {
+        text-align: center;
+        margin-bottom: 60px;
+        border-bottom: 2px solid var(--gold);
+        padding-bottom: 30px;
+        position: relative;
+      }
+
+      .logo {
+        font-size: 3.5rem;
+        font-weight: 900;
+        letter-spacing: 4px;
+        color: var(--gold);
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+        color: var(--neon-purple);
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px rgba(182, 36, 255, 0.4);
+        margin-bottom: 30px;
+        font-weight: 700;
+      }
+
+      .cosmic-banner {
+        background: rgba(26, 6, 51, 0.8);
+        border: 1px solid var(--electric-blue);
+        padding: 20px;
+        margin: 30px 0;
+        border-radius: 4px;
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+        text-align: center;
+      }
+
+      .cosmic-banner h2 {
+        font-size: 1.1rem;
+        color: var(--electric-blue);
+        letter-spacing: 1px;
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      .overview-box {
+        background: rgba(255, 215, 0, 0.05);
+        border-left: 4px solid var(--gold);
+        padding: 15px 25px;
+        margin: 20px auto;
+        max-width: 800px;
+        font-style: italic;
+        color: var(--text-main);
+      }
+
+      /* Progress Tracker */
+      .progress-tracker {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 40px 0 10px;
+      }
+
+      .progress-box {
+        width: 30px;
+        height: 30px;
+        border: 2px solid var(--text-dim);
+        background: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+      }
+
+      .progress-label {
+        text-align: center;
+        font-size: 0.8rem;
+        color: var(--text-dim);
+        letter-spacing: 1px;
+        font-family: 'Orbitron', sans-serif;
+      }
+
+      /* Mission Cards */
+      .timeline-container {
+        border-left: 2px solid rgba(182, 36, 255, 0.3);
+        margin-left: 20px;
+        padding-left: 30px;
+      }
+
+      .mission-card {
+        background: rgba(26, 6, 51, 0.9);
+        border: 1px solid var(--gold);
+        border-radius: 8px;
+        padding: 25px;
+        margin-bottom: 40px;
+        position: relative;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        transition: transform 0.2s ease;
+      }
+
+      .mission-card::before {
+        content: '';
+        position: absolute;
+        left: -41px; /* Adjust based on timeline padding */
+        top: 25px;
+        width: 20px;
+        height: 20px;
+        background: var(--bg-dark);
+        border: 2px solid var(--gold);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--gold);
+      }
+
+      .mission-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .mission-title {
+        font-size: 1.5rem;
+        color: var(--gold);
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+        margin: 0;
+      }
+
+      .mission-meta {
+        display: flex;
+        gap: 15px;
+        font-size: 0.9rem;
+        color: var(--electric-blue);
+        font-family: 'Orbitron', sans-serif;
+        align-items: center;
+      }
+
+      .difficulty {
+        color: var(--gold);
+      }
+
+      .section-title {
+        font-family: 'Orbitron', sans-serif;
+        color: var(--neon-purple);
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+
+      .actions-list {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .actions-list li {
+        margin-bottom: 8px;
+      }
+
+      .deliverable-box {
+        background: rgba(0, 212, 255, 0.05);
+        border: 1px dashed var(--electric-blue);
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 4px;
+      }
+
+      .success-indicator {
+        color: #4ade80;
+        margin-top: 10px;
+        font-weight: 500;
+      }
+
+      .bonus-challenge {
+        margin-top: 15px;
+        color: var(--gold);
+        font-style: italic;
+        font-size: 0.95rem;
+      }
+
+      .card-footer {
+        margin-top: 25px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .xp-badge {
+        background: rgba(0, 212, 255, 0.1);
+        color: var(--electric-blue);
+        padding: 5px 12px;
+        border-radius: 4px;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 700;
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+      }
+
+      .completion-check {
+        width: 30px;
+        height: 30px;
+        border: 2px solid var(--gold);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Orbitron', sans-serif;
+        color: var(--bg-dark);
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .completion-check:hover {
+        background: rgba(255, 215, 0, 0.1);
+      }
+
+      /* Completion Section */
+      .completion-section {
+        margin-top: 80px;
+        border-top: 2px solid var(--gold);
+        padding-top: 40px;
+      }
+
+      .completion-banner {
+        background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 40px;
+      }
+
+      .completion-banner h2 {
+        font-size: 1.8rem;
+        color: var(--gold);
+        text-shadow: 0 0 15px var(--gold);
+        margin: 0;
+      }
+
+      .achievement-box {
+        background: rgba(182, 36, 255, 0.05);
+        border: 1px solid var(--neon-purple);
+        padding: 30px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      .xp-total {
+        text-align: center;
+        font-size: 1.5rem;
+        color: var(--electric-blue);
+        font-family: 'Orbitron', sans-serif;
+        margin-top: 20px;
+        text-shadow: 0 0 10px var(--electric-blue);
+      }
+
+      .grid-footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .footer-box {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px;
+      }
+
+      .input-line {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.2);
+        margin: 30px 0 10px;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 80px;
+        color: var(--text-dim);
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        font-family: 'Orbitron', sans-serif;
+      }
+
+      @media (max-width: 768px) {
+        .grid-footer {
+          grid-template-columns: 1fr;
+        }
+        .mission-header {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body style="">
+    <div class="container">
+      <header>
+        <div class="logo">IMAGINARIUM</div>
+        <div class="subtitle">KTL UNIVERSITY | IMAGINARIUM CLASS 1</div>
+        <h1>Week 1 Missions: Your First Operational Cycle</h1>
+        <div class="text-gold" style="letter-spacing: 1px; font-weight: 300">7 DAYS TO MASTER YOUR AI POWER STACK</div>
+
+        <div class="cosmic-banner">
+          <h2>
+            YOU ARE NOW ONLINE. YOUR AI POWER STACK IS ACTIVE.<br>THIS WEEK, YOU BUILD OPERATIONAL MUSCLE MEMORY.
+          </h2>
+        </div>
+
+        <div class="overview-box">
+          7 MISSIONS. 7 DAYS. EACH ONE UNLOCKS NEW CAPABILITIES. COMPLETE ALL 7 AND YOU'LL BE READY FOR BUILD PHASE.
+        </div>
+
+        <div class="progress-tracker">
+          <div class="progress-box"></div>
+          <div class="progress-box"></div>
+          <div class="progress-box"></div>
+          <div class="progress-box"></div>
+          <div class="progress-box"></div>
+          <div class="progress-box"></div>
+          <div class="progress-box"></div>
+        </div>
+        <div class="progress-label">MISSION PROGRESS INITIALIZED</div>
+      </header>
+
+      <div class="timeline-container">
+        <!-- MISSION 1 -->
+        <div class="mission-card">
+          <div class="mission-header">
+            <div>
+              <h3 class="mission-title">Mission 1: The First Transmission</h3>
+            </div>
+            <div class="mission-meta">
+              <span>MONDAY</span> | <span>🤖 SOLO MEMUBOT</span> |
+              <span class="difficulty">⭐</span>
+            </div>
+          </div>
+
+          <div class="section-title">OBJECTIVE</div>
+          <p>Establish your daily automation rhythm</p>
+
+          <div class="section-title">TOOLS: <span style="color: white; font-weight: 400">MemuBot only</span></div>
+
+          <div class="section-title" style="margin-top: 15px">ACTIONS</div>
+          <ol class="actions-list">
+            <li>Open MemuBot dashboard</li>
+            <li>
+              Create a "Daily Creator Pulse" automation:
+              <ul style="margin-top: 5px; margin-bottom: 5px; color: var(--text-dim)">
+                <li>Morning check-in message (9am)</li>
+                <li>Midday progress prompt (2pm)</li>
+                <li>Evening reflection (9pm)</li>
+              </ul>
+            </li>
+            <li>Customize the messages with your personal goals</li>
+            <li>Activate and test the automation</li>
+          </ol>
+
+          <div class="deliverable-box">
+            <div class="section-title text-blue">DELIVERABLE</div>
+            Screenshot of your automation running + first check-in response
+            <div class="success-indicator">✓ Success Indicator: You receive all 3 automated messages on Day 1</div>
+          </div>
+
+          <div class="bonus-challenge">Bonus Challenge: Add a 4th automation for content idea generation</div>
+
+          <div class="card-footer">
+            <div class="xp-badge">TIME: 20 MIN | XP: +100</div>
+            <div class="completion-check"></div>
+          </div>
+        </div>
+
+        <!-- MISSION 2 -->
+        <div class="mission-card">
+          <div class="mission-header">
+            <div>
+              <h3 class="mission-title">Mission 2: The Intelligence Test</h3>
+            </div>
+            <div class="mission-meta">
+              <span>TUESDAY</span> | <span>🧠 CLAUDE SKILLS</span> |
+              <span class="difficulty">⭐</span>
+            </div>
+          </div>
+
+          <div class="section-title">OBJECTIVE</div>
+          <p>Learn how to structure high-quality prompts with Claude</p>
+
+          <div class="section-title">
+            TOOLS: <span style="color: white; font-weight: 400">Claude 101 or Claude Skills</span>
+          </div>
+
+          <div class="section-title" style="margin-top: 15px">ACTIONS</div>
+          <ol class="actions-list">
+            <li>Open Claude Skills</li>
+            <li>
+              Run this prompt:
+              <em>"I'm building [describe your business idea or project]. Help me break this down into 5 actionable steps
+                I can complete this week."</em>
+            </li>
+            <li>Analyze the response quality</li>
+            <li>Refine your prompt and run it again with more context</li>
+            <li>Save the best version to a document titled "My First Claude Pattern"</li>
+          </ol>
+
+          <div class="deliverable-box">
+            <div class="section-title text-blue">DELIVERABLE</div>
+            Your refined prompt + Claude's response saved as a Pattern
+            <div class="success-indicator">
+              ✓ Success Indicator: You can clearly see the difference between your first and refined prompt
+            </div>
+          </div>
+
+          <div class="bonus-challenge">Bonus Challenge: Create 3 different prompt variations for the same goal</div>
+
+          <div class="card-footer">
+            <div class="xp-badge">TIME: 25 MIN | XP: +100</div>
+            <div class="completion-check"></div>
+          </div>
+        </div>
+
+        <!-- MISSION 3 -->
+        <div class="mission-card">
+          <div class="mission-header">
+            <div>
+              <h3 class="mission-title">Mission 3: The Synthesis</h3>
+            </div>
+            <div class="mission-meta">
+              <span>WEDNESDAY</span> | <span>🔗 INTEGRATION</span> |
+              <span class="difficulty">⭐⭐</span>
+            </div>
+          </div>
+
+          <div class="section-title">OBJECTIVE</div>
+          <p>Make your tools work together</p>
+
+          <div class="section-title">
+            TOOLS: <span style="color: white; font-weight: 400">MemuBot + Claude Skills</span>
+          </div>
+
+          <div class="section-title" style="margin-top: 15px">ACTIONS</div>
+          <ol class="actions-list">
+            <li>Ask Claude Skills to write you 3 daily automation message templates for MemuBot</li>
+            <li>Copy Claude's output</li>
+            <li>Go to MemuBot and create new automations using Claude's templates</li>
+            <li>Customize the tone to match your voice</li>
+            <li>Activate all 3 automations</li>
+          </ol>
+
+          <div class="deliverable-box">
+            <div class="section-title text-blue">DELIVERABLE</div>
+            Screenshot showing MemuBot running Claude-generated messages
+            <div class="success-indicator">
+              ✓ Success Indicator: You receive a MemuBot message that was originally written by Claude
+            </div>
+          </div>
+
+          <div class="bonus-challenge">
+            Bonus Challenge: Ask Claude to improve one of your existing MemuBot messages
+          </div>
+
+          <div class="card-footer">
+            <div class="xp-badge">TIME: 30 MIN | XP: +150</div>
+            <div class="completion-check"></div>
+          </div>
+        </div>
+
+        <!-- MISSION 4 -->
+        <div class="mission-card">
+          <div class="mission-header">
+            <div>
+              <h3 class="mission-title">Mission 4: The Pattern Forge</h3>
+            </div>
+            <div class="mission-meta">
+              <span>THURSDAY</span> | <span>📚 PATTERN LIBRARY</span> |
+              <span class="difficulty">⭐⭐</span>
+            </div>
+          </div>
+
+          <div class="section-title">OBJECTIVE</div>
+          <p>Create and share your first reusable pattern</p>
+
+          <div class="section-title">
+            TOOLS: <span style="color: white; font-weight: 400">MemuBot, Claude, Pattern Library</span>
+          </div>
+
+          <div class="section-title" style="margin-top: 15px">ACTIONS</div>
+          <ol class="actions-list">
+            <li>Review what you've built so far (automations, prompts)</li>
+            <li>Choose your best prompt or automation workflow</li>
+            <li>
+              Document it in this format: Pattern Name, What It Does, Tools Needed, Step-by-Step Setup, Example Output
+            </li>
+            <li>Upload to Pattern Library (or share in Discord #pattern-library channel)</li>
+            <li>Tag it with relevant keywords</li>
+          </ol>
+
+          <div class="deliverable-box">
+            <div class="section-title text-blue">DELIVERABLE</div>
+            Your first Pattern Library contribution (public or submitted)
+            <div class="success-indicator">
+              ✓ Success Indicator: Another student can replicate your pattern from your instructions
+            </div>
+          </div>
+
+          <div class="bonus-challenge">Bonus Challenge: Try someone else's pattern and give them feedback</div>
+
+          <div class="card-footer">
+            <div class="xp-badge">TIME: 35 MIN | XP: +200</div>
+            <div class="completion-check"></div>
+          </div>
+        </div>
+
+        <!-- MISSION 5 -->
+        <div class="mission-card">
+          <div class="mission-header">
+            <div>
+              <h3 class="mission-title">Mission 5: The Cowork Protocol</h3>
+            </div>
+            <div class="mission-meta">
+              <span>FRIDAY</span> | <span>👥 COLLABORATION</span> |
+              <span class="difficulty">⭐⭐</span>
+            </div>
+          </div>
+
+          <div class="section-title">OBJECTIVE</div>
+          <p>Use Claude Cowork for team-based thinking</p>
+
+          <div class="section-title">TOOLS: <span style="color: white; font-weight: 400">Claude Cowork</span></div>
+
+          <div class="section-title" style="margin-top: 15px">ACTIONS</div>
+          <ol class="actions-list">
+            <li>Open Claude Cowork and start a new project workspace</li>
+            <li>
+              Use prompt:
+              <em>"I'm working on [your project]. Let's brainstorm 10 different angles or approaches I haven't considered
+                yet..."</em>
+            </li>
+            <li>Have a back-and-forth conversation (at least 5 exchanges)</li>
+            <li>Document the best 3 ideas that emerged</li>
+          </ol>
+
+          <div class="deliverable-box">
+            <div class="section-title text-blue">DELIVERABLE</div>
+            Conversation transcript or summary of your top 3 insights
+            <div class="success-indicator">
+              ✓ Success Indicator: You discovered an approach you wouldn't have thought of alone
+            </div>
+          </div>
+
+          <div class="bonus-challenge">
+            Bonus Challenge: Invite another student to co-work with you in Discord while both using Claude Cowork
+          </div>
+
+          <div class="card-footer">
+            <div class="xp-badge">TIME: 40 MIN | XP: +150</div>
+            <div class="completion-check"></div>
+          </div>
+        </div>
+
+        <!-- MISSION 6 -->
+        <div class="mission-card">
+          <div class="mission-header">
+            <div>
+              <h3 class="mission-title">Mission 6: The Code Forge</h3>
+            </div>
+            <div class="mission-meta">
+              <span>SATURDAY</span> | <span>💻 SHIP FUNCTIONAL</span> |
+              <span class="difficulty">⭐⭐⭐</span>
+            </div>
+          </div>
+
+          <div class="section-title">OBJECTIVE</div>
+          <p>Use Claude Code to build a simple tool or script</p>
+
+          <div class="section-title">TOOLS: <span style="color: white; font-weight: 400">Claude Code</span></div>
+
+          <div class="section-title" style="margin-top: 15px">ACTIONS</div>
+          <ol class="actions-list">
+            <li>Open Claude Code</li>
+            <li>
+              Choose a micro-project (e.g., Simple Python automation script, HTML landing page, Social caption
+              generator)
+            </li>
+            <li>Describe what you want to build to Claude Code</li>
+            <li>Let it generate the code. Test and refine until it works.</li>
+            <li>Save the code + document how to use it</li>
+          </ol>
+
+          <div class="deliverable-box">
+            <div class="section-title text-blue">DELIVERABLE</div>
+            Working code + brief usage instructions
+            <div class="success-indicator">
+              ✓ Success Indicator: The code runs without errors and solves your problem
+            </div>
+          </div>
+
+          <div class="bonus-challenge">Bonus Challenge: Share your code in #builder-showcase channel</div>
+
+          <div class="card-footer">
+            <div class="xp-badge">TIME: 60 MIN | XP: +250</div>
+            <div class="completion-check"></div>
+          </div>
+        </div>
+
+        <!-- MISSION 7 -->
+        <div class="mission-card">
+          <div class="mission-header">
+            <div>
+              <h3 class="mission-title">Mission 7: The Compound Build</h3>
+            </div>
+            <div class="mission-meta">
+              <span>SUNDAY</span> | <span>🏗️ FULL STACK</span> |
+              <span class="difficulty">⭐⭐⭐</span>
+            </div>
+          </div>
+
+          <div class="section-title">OBJECTIVE</div>
+          <p>Combine all tools in one workflow to create something real</p>
+
+          <div class="section-title">
+            TOOLS:
+            <span style="color: white; font-weight: 400">Full Stack (MemuBot + Claude Ecosystem + Pattern Library)</span>
+          </div>
+
+          <div class="section-title" style="margin-top: 15px">ACTIONS</div>
+          <ol class="actions-list">
+            <li>Define a mini-project: "I will create [specific deliverable] by end of day"</li>
+            <li>
+              Plan your workflow:
+              <ul style="margin-top: 5px; color: var(--text-dim)">
+                <li>Use Claude Cowork to brainstorm</li>
+                <li>Use Claude Skills for content</li>
+                <li>Use Claude Code for tech components</li>
+                <li>Use MemuBot for automation</li>
+              </ul>
+            </li>
+            <li>Execute the build and save the process as a Pattern</li>
+            <li>Ship it (share in Discord or save to workspace)</li>
+          </ol>
+
+          <div class="deliverable-box">
+            <div class="section-title text-blue">DELIVERABLE</div>
+            Your completed mini-project + process documentation
+            <div class="success-indicator">
+              ✓ Success Indicator: You used at least 3 different tools in your workflow and shipped a real asset
+            </div>
+          </div>
+
+          <div class="bonus-challenge">Bonus Challenge: Record a 2-minute video walkthrough of your project</div>
+
+          <div class="card-footer">
+            <div class="xp-badge">TIME: 90+ MIN | XP: +500</div>
+            <div class="completion-check"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="completion-section">
+        <div class="completion-banner">
+          <h2>🔥 WEEK 1 COMPLETE - YOU ARE NOW OPERATIONAL 🔥</h2>
+        </div>
+
+        <div class="achievement-box">
+          <h3 class="text-purple">MISSION DEBRIEF</h3>
+          <p>If you completed all 7 missions, you have:</p>
+          <ul style="list-style: none; padding: 0; line-height: 2">
+            <li>✅ Mastered MemuBot automation (Mission 1)</li>
+            <li>✅ Learned high-quality prompting with Claude (Mission 2)</li>
+            <li>✅ Integrated multiple AI tools (Mission 3)</li>
+            <li>✅ Contributed to the Pattern Library (Mission 4)</li>
+            <li>✅ Practiced collaborative intelligence (Mission 5)</li>
+            <li>✅ Shipped functional code (Mission 6)</li>
+            <li>✅ Built a compound project using your full stack (Mission 7)</li>
+          </ul>
+          <div class="xp-total">TOTAL XP EARNED: 1,450 🌟</div>
+        </div>
+
+        <div class="grid-footer">
+          <div class="footer-box">
+            <h3 class="text-gold">COMMANDER'S LOG</h3>
+            <p style="font-size: 0.9rem; color: var(--text-dim)">Reflect on your first operational cycle:</p>
+            <div style="margin-top: 20px">
+              <div style="font-size: 0.8rem; color: var(--electric-blue)">BIGGEST WIN THIS WEEK</div>
+              <div class="input-line"></div>
+              <div style="font-size: 0.8rem; color: var(--electric-blue); margin-top: 20px">
+                TOOL YOU FEEL MOST COMFORTABLE WITH
+              </div>
+              <div class="input-line"></div>
+              <div style="font-size: 0.8rem; color: var(--electric-blue); margin-top: 20px">
+                WHAT WILL YOU BUILD IN WEEK 2?
+              </div>
+              <div class="input-line"></div>
+            </div>
+          </div>
+
+          <div class="footer-box">
+            <h3 class="text-blue">NEXT STEPS</h3>
+            <ul style="padding-left: 20px">
+              <li>Review your Commander's Log</li>
+              <li>Attend Class 2: Build Phase kickoff</li>
+              <li>Join POD formation for team projects</li>
+              <li>Continue daily MemuBot automations</li>
+            </ul>
+
+            <h3 class="text-gold" style="margin-top: 30px">NEED HELP?</h3>
+            <ul style="padding-left: 20px">
+              <li>Discord: #tech-support and #accountability</li>
+              <li>Office Hours: [Times TBD]</li>
+              <li>Pattern Library: Search existing solutions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        IGNITION PHASE | META AGENT PROTOCOL TRAINING | FEB 7-14, 2026<br>
+        <span style="color: var(--gold)">KNOW THE LEDGER</span>
+      </footer>
+    </div>
+  
+
+</body></html>
