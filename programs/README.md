@@ -9,3 +9,7 @@ Program-level curriculum and marketing documents for the GIT ecosystem.
 ## GIT MONEY
 
 `git-money/Get-Money-5-Angles-on-the-Proof-Machine.pdf` (11 pp) — **Get Money: 5 Angles on the Proof Machine.** Five genuinely different marketing lenses on one thesis: the moat isn't the curriculum, it's the ability to generate irrefutable proof of impact faster than anyone can copy. Covers the arbitrage logic, contrarian narrative, curiosity framework, competitive thesis, and the story of Git Built, the NY Event, and the path to Investfest.
+
+## 72 KLAWS
+
+[`72-klaws/`](72-klaws/) — **The Sovereign Builder Operating System.** Five pillars (Kinetic Knowledge, Land & Legacy, Autonomy & AGI, Wealth & Wisdom, Sovereignty), the 72 framework (72 hours, 72 tools in four tiers, 72 nobles, 72 tokens), the 72-hour activation program, and six revenue streams. First chapter activation: Nobles Landing, Polkton NC, April 18–20, 2026. Includes the Royal Decree, the workbook, and two editions of the OS document.
