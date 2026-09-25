@@ -1,0 +1,2036 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIT INVEST — MVP Launch</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--
+      Signal style uses four font families:
+        1. Source Serif 4     — editorial serif for headlines, mixed roman + italic
+        2. DM Sans            — clean grotesque for body, stats numbers
+        3. IBM Plex Mono      — condensed mono labels, chrome, kickers
+        4. Noto Serif SC / Noto Sans SC — Chinese fallbacks for every role
+    -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,600;1,8..60,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=IBM+Plex+Mono:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  ZONE A · TOKENS  —  SIGNAL STYLE                                    ║
+   ║                                                                      ║
+   ║  Replace this block to change the visual style entirely.             ║
+   ║  Every color, font, and size in this file reads from these vars.     ║
+   ║  Never write raw hex values, font names, or px sizes outside here.   ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+      :root {
+        /* ── Palette ──────────────────────────────────────────────────────── */
+        /* Dark navy: intelligence, authority, depth — the editorial tone */
+        --c-bg: #1c2644;
+        /* Slightly lighter navy for secondary dark surfaces */
+        --c-bg-alt: #232f55;
+        /* Warm cream: the light slide background, like aged paper */
+        --c-bg-light: #f0ece3;
+        /* Slightly cooler cream for secondary light surfaces */
+        --c-bg-light-alt: #e6e0d4;
+
+        /* Primary text on dark: warm off-white, never pure white */
+        --c-fg: #e2dcd0;
+        /* Secondary text on dark: muted blue-grey */
+        --c-fg-2: #8a96a8;
+        /* Tertiary / hint text on dark */
+        --c-fg-3: #4e5a6e;
+        /* Primary text on light: very dark navy near-black */
+        --c-fg-light: #1a2030;
+        /* Secondary text on light */
+        --c-fg-light-2: #5a6270;
+        /* Tertiary text on light */
+        --c-fg-light-3: #9aa0a8;
+
+        /* Accent: warm antique gold — the single hot colour; used for italic serif em */
+        --c-accent: #c8a870;
+        /* Dividers on dark: dark navy border */
+        --c-border: #2e3d5c;
+        /* Dividers on light: warm greige border */
+        --c-border-light: #cac4b4;
+
+        /* ── Typography ──────────────────────────────────────────────────── */
+        /* Display + Heading: Source Serif 4 — editorial, authoritative.
+           Mix roman and italic mid-sentence for the Signal look. */
+        --f-display: "Source Serif 4", "Noto Serif SC", Georgia, serif;
+        --f-heading: "Source Serif 4", "Noto Serif SC", Georgia, serif;
+        /* Body: DM Sans — clean grotesque, steps back so the serif leads */
+        --f-body: "DM Sans", "Noto Sans SC", system-ui, sans-serif;
+        /* Mono: IBM Plex Mono — the condensed editorial timestamp */
+        --f-mono: "IBM Plex Mono", "JetBrains Mono", monospace;
+
+        /* ── Type Scale ───────────────────────────────────────────────────── */
+        /* vw units keep all sizes proportional regardless of window width */
+        --sz-display: 9.5vw; /* hero cover title — very large, commanding */
+        --sz-h1: 5.2vw; /* chapter titles */
+        --sz-h2: 3vw; /* slide headlines */
+        --sz-h3: 1.9vw; /* sub-headlines, compare panel titles */
+        --sz-lead: 1.4vw; /* lead paragraph */
+        --sz-body: 1.05vw; /* body text, bullets */
+        --sz-caption: 0.82vw; /* captions, footnotes */
+        --sz-label: 0.7vw; /* chrome, kickers, tags, mono metadata */
+
+        /* ── Spacing ─────────────────────────────────────────────────────── */
+        --pad-x: 7.5vw; /* horizontal slide padding */
+        --pad-y: 5.5vh; /* vertical slide padding */
+        --gap-lg: 4vh; /* between major content sections */
+        --gap-md: 2.5vh; /* between related elements */
+        --gap-sm: 1.2vh; /* between tightly coupled elements */
+
+        /* ── Motion ──────────────────────────────────────────────────────── */
+        /* Slide pan: sharp in, sharp out — deliberate, not springy */
+        --ease-slide: cubic-bezier(0.77, 0, 0.175, 1);
+        --dur-slide: 0.85s;
+        /* Element entrance: spring-y ease-out for content reveals */
+        --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+        --dur-enter: 0.65s;
+      }
+
+      /* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  ZONE B · ENGINE — DO NOT MODIFY                                     ║
+   ║                                                                      ║
+   ║  Layout engine, transitions, animation system, navigation.           ║
+   ║  Touching this breaks the mechanics.                                 ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--c-bg);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Deck container — all slides sit side by side in one horizontal strip */
+      #deck {
+        display: flex;
+        height: 100vh;
+        transition: transform var(--dur-slide) var(--ease-slide);
+        will-change: transform;
+      }
+
+      /* Slide base — each slide occupies exactly one full viewport */
+      .slide {
+        flex: 0 0 100vw;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        padding: var(--pad-y) var(--pad-x);
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        overflow: hidden;
+      }
+      .slide-body {
+        min-height: 0;
+      }
+
+      /* Slide themes */
+      .slide.dark {
+        background: var(--c-bg);
+        color: var(--c-fg);
+      }
+      .slide.light {
+        background: var(--c-bg-light);
+        color: var(--c-fg-light);
+      }
+
+      /* ── Animation system ─────────────────────────────────────────────── */
+      /* Elements start invisible; become visible only when slide is active */
+      [data-anim] {
+        opacity: 0;
+      }
+      .slide.is-active [data-anim] {
+        animation-duration: var(--dur-enter);
+        animation-timing-function: var(--ease-enter);
+        animation-fill-mode: forwards;
+      }
+      .slide.is-active [data-anim="fade-up"] {
+        animation-name: kFadeUp;
+      }
+      .slide.is-active [data-anim="fade-in"] {
+        animation-name: kFadeIn;
+      }
+      .slide.is-active [data-anim="reveal-right"] {
+        animation-name: kRevealRight;
+      }
+      .slide.is-active [data-anim="reveal-left"] {
+        animation-name: kRevealLeft;
+      }
+      .slide.is-active [data-anim="scale-in"] {
+        animation-name: kScaleIn;
+      }
+
+      /* Staggered delays via data-delay attribute (0–6) */
+      [data-delay="0"] {
+        animation-delay: 0s;
+      }
+      [data-delay="1"] {
+        animation-delay: 0.08s;
+      }
+      [data-delay="2"] {
+        animation-delay: 0.18s;
+      }
+      [data-delay="3"] {
+        animation-delay: 0.3s;
+      }
+      [data-delay="4"] {
+        animation-delay: 0.44s;
+      }
+      [data-delay="5"] {
+        animation-delay: 0.6s;
+      }
+      [data-delay="6"] {
+        animation-delay: 0.78s;
+      }
+
+      @keyframes kFadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes kFadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes kRevealRight {
+        from {
+          clip-path: inset(0 100% 0 0);
+          opacity: 1;
+        }
+        to {
+          clip-path: inset(0 0% 0 0);
+          opacity: 1;
+        }
+      }
+      @keyframes kRevealLeft {
+        from {
+          clip-path: inset(0 0 0 100%);
+          opacity: 1;
+        }
+        to {
+          clip-path: inset(0 0 0 0%);
+          opacity: 1;
+        }
+      }
+      @keyframes kScaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.94);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      /* ── Navigation UI ───────────────────────────────────────────────── */
+      #nav-dots {
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 7px;
+        z-index: 100;
+      }
+      .nav-dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.22);
+        cursor: pointer;
+        transition:
+          background 0.3s,
+          transform 0.3s;
+        padding: 0;
+      }
+      .nav-dot.is-active {
+        background: rgba(255, 255, 255, 0.8);
+        transform: scale(1.4);
+      }
+
+      #slide-counter {
+        position: fixed;
+        bottom: 20px;
+        right: 28px;
+        font-family: var(--f-mono);
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: rgba(255, 255, 255, 0.25);
+        z-index: 100;
+        user-select: none;
+      }
+
+      /* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  ZONE C · TYPOGRAPHY                                                 ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+      .display {
+        font-family: var(--f-display);
+        font-size: var(--sz-display);
+        font-weight: 700;
+        line-height: 0.96;
+        letter-spacing: -0.02em;
+      }
+      .h1 {
+        font-family: var(--f-heading);
+        font-size: var(--sz-h1);
+        font-weight: 600;
+        line-height: 1.08;
+        letter-spacing: -0.01em;
+      }
+      .h2 {
+        font-family: var(--f-heading);
+        font-size: var(--sz-h2);
+        font-weight: 600;
+        line-height: 1.18;
+      }
+      .h3 {
+        font-family: var(--f-heading);
+        font-size: var(--sz-h3);
+        font-weight: 500;
+        line-height: 1.3;
+      }
+      .lead {
+        font-family: var(--f-body);
+        font-size: var(--sz-lead);
+        font-weight: 400;
+        line-height: 1.58;
+      }
+      .body {
+        font-family: var(--f-body);
+        font-size: var(--sz-body);
+        font-weight: 400;
+        line-height: 1.65;
+      }
+      .caption {
+        font-family: var(--f-body);
+        font-size: var(--sz-caption);
+        font-weight: 400;
+        line-height: 1.5;
+      }
+      .label {
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      /* Signal signature: italic serif in accent gold for em tags inside headings */
+      .display em,
+      .h1 em,
+      .h2 em,
+      .h3 em {
+        
+        color: var(--c-accent);
+      }
+      .lead em {
+        
+        color: var(--c-accent);
+        font-family: var(--f-heading);
+      }
+
+      .dark .muted {
+        color: var(--c-fg-2);
+      }
+      .light .muted {
+        color: var(--c-fg-light-2);
+      }
+      .accent {
+        color: var(--c-accent);
+      }
+
+      /* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  ZONE D · CHROME + GRID TEXTURE                                      ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+      /* Subtle grid overlay — the Signal visual fingerprint */
+      .slide.dark::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 80px 80px;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .slide.dark > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Chrome (top bar) and footer */
+      .slide-chrome,
+      .slide-foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .slide-chrome {
+        padding-bottom: var(--gap-sm);
+        border-bottom: 1px solid var(--c-border);
+        margin-bottom: var(--gap-md);
+      }
+      .slide-foot {
+        padding-top: var(--gap-sm);
+        border-top: 1px solid var(--c-border);
+        margin-top: var(--gap-md);
+      }
+      .light .slide-chrome,
+      .light .slide-foot {
+        border-color: var(--c-border-light);
+      }
+
+      /* Special layouts that don't use chrome/foot */
+      .slide--cover .slide-chrome,
+      .slide--cover .slide-foot,
+      .slide--chapter .slide-chrome,
+      .slide--chapter .slide-foot,
+      .slide--quote .slide-chrome,
+      .slide--quote .slide-foot,
+      .slide--end .slide-chrome,
+      .slide--end .slide-foot {
+        display: none;
+      }
+
+      /* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  ZONE E · LAYOUT PATTERNS                                            ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+      /* 1. COVER ─────────────────────────────────────────────────────────── */
+      .slide--cover {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .cover-body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: flex-end;
+        gap: var(--gap-md);
+      }
+      .cover-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: var(--gap-lg);
+        padding-top: var(--gap-sm);
+        border-top: 1px solid var(--c-border);
+      }
+      .light .cover-meta {
+        border-color: var(--c-border-light);
+      }
+
+      /* 2. CHAPTER ────────────────────────────────────────────────────────── */
+      .slide--chapter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .chapter-num {
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--c-accent);
+        margin-bottom: var(--gap-md);
+      }
+      .chapter-rule {
+        width: 36px;
+        height: 1px;
+        background: var(--c-accent);
+        margin-bottom: var(--gap-md);
+      }
+
+      /* 3. STATEMENT ──────────────────────────────────────────────────────── */
+      .slide--statement .statement-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--gap-md);
+      }
+
+      /* 4. SPLIT ──────────────────────────────────────────────────────────── */
+      .slide--split .slide-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: calc(var(--pad-x) * 0.7);
+        align-items: center;
+      }
+      .split-text {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+      }
+      .split-image {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-sm);
+      }
+      .split-image img {
+        width: 100%;
+        height: 55vh;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* 5. STATS ───────────────────────────────────────────────────────────── */
+      .slide--stats .slide-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--gap-lg);
+      }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+      }
+      .stats-grid.cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .stat-card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-sm);
+        padding: var(--gap-md) var(--gap-md) var(--gap-md) 0;
+        border-top: 1px solid var(--c-border);
+      }
+      .light .stat-card {
+        border-color: var(--c-border-light);
+      }
+      .stat-value {
+        font-family: var(--f-display);
+        font-size: 5.5vw;
+        font-weight: 600;
+        line-height: 1;
+        color: var(--c-accent);
+        letter-spacing: -0.02em;
+      }
+      .stat-label {
+        font-family: var(--f-body);
+        font-size: var(--sz-body);
+        line-height: 1.5;
+      }
+      .stat-note {
+        font-family: var(--f-mono);
+        font-size: var(--sz-caption);
+        letter-spacing: 0.05em;
+        color: var(--c-fg-3);
+      }
+      .light .stat-note {
+        color: var(--c-fg-light-3);
+      }
+
+      /* 6. QUOTE ───────────────────────────────────────────────────────────── */
+      .slide--quote {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: calc(var(--pad-y) * 1.2) calc(var(--pad-x) * 1.1);
+      }
+      .quote-mark {
+        font-family: var(--f-display);
+        font-size: 8vw;
+        line-height: 0.6;
+        color: var(--c-accent);
+        margin-bottom: var(--gap-md);
+        font-weight: 300;
+      }
+      .quote-text {
+        font-family: var(--f-display);
+        font-size: 3.6vw;
+        font-weight: 400;
+        line-height: 1.28;
+        letter-spacing: -0.01em;
+        max-width: 78%;
+        margin-bottom: var(--gap-lg);
+        
+      }
+      .quote-attr {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4vh;
+      }
+
+      /* 7. LIST ────────────────────────────────────────────────────────────── */
+      .slide--list .slide-body {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        gap: calc(var(--pad-x) * 0.8);
+        align-items: center;
+      }
+      .list-head {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+        padding-top: var(--gap-sm);
+      }
+      .bullet-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+      }
+      .bullet-list li {
+        display: grid;
+        grid-template-columns: 1.2em 1fr;
+        gap: 0.5em;
+        font-family: var(--f-body);
+        font-size: var(--sz-lead);
+        line-height: 1.5;
+      }
+      .bullet-list li::before {
+        content: "—";
+        color: var(--c-accent);
+        font-family: var(--f-mono);
+      }
+      .dark .bullet-list li {
+        color: var(--c-fg);
+      }
+      .light .bullet-list li {
+        color: var(--c-fg-light);
+      }
+
+      /* 8. COMPARE ─────────────────────────────────────────────────────────── */
+      .slide--compare .slide-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
+      }
+      .compare-panel {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+        padding: var(--gap-md) 0;
+      }
+      .compare-panel.left {
+        padding-right: calc(var(--pad-x) * 0.55);
+        border-right: 1px solid var(--c-border);
+      }
+      .compare-panel.right {
+        padding-left: calc(var(--pad-x) * 0.55);
+      }
+      .light .compare-panel.left {
+        border-color: var(--c-border-light);
+      }
+      .compare-label {
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        padding-bottom: var(--gap-sm);
+        border-bottom: 1px solid var(--c-border);
+      }
+      .compare-label.after {
+        color: var(--c-accent);
+      }
+      .light .compare-label {
+        border-color: var(--c-border-light);
+      }
+
+      /* 9. END ─────────────────────────────────────────────────────────────── */
+      .slide--end {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--gap-md);
+      }
+
+      /* 10. EDITORIAL — Editorial newsletter style ─────────────────── */
+      .slide--editorial {
+        grid-template-rows: auto auto auto 1fr auto;
+      }
+      .editorial-stamp {
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        letter-spacing: 0.22em;
+        color: var(--c-fg-3);
+      }
+      .editorial-stamp .accent {
+        color: var(--c-accent);
+      }
+      .editorial-hl {
+        font-family: var(--f-heading);
+        font-size: 2.75vw;
+        font-weight: 600;
+        line-height: 1.2;
+        padding-bottom: var(--gap-md);
+        border-bottom: 1px solid var(--c-border);
+      }
+      .editorial-hl em {
+        
+        color: var(--c-accent);
+      }
+      .light .editorial-hl {
+        border-color: var(--c-border-light);
+      }
+
+      /* Two-column layout */
+      .editorial-cols {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 0;
+        min-height: 0;
+      }
+      .editorial-col-left {
+        padding-right: calc(var(--pad-x) * 0.38);
+        border-right: 1px solid var(--c-border);
+        display: flex;
+        flex-direction: column;
+      }
+      .editorial-col-right {
+        padding-left: calc(var(--pad-x) * 0.38);
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+      }
+      .light .editorial-col-left {
+        border-color: var(--c-border-light);
+      }
+      .editorial-col-head {
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        letter-spacing: 0.18em;
+        color: var(--c-fg-3);
+        padding-bottom: var(--gap-sm);
+        border-bottom: 1px solid var(--c-border);
+        margin-bottom: var(--gap-sm);
+      }
+      .light .editorial-col-head {
+        border-color: var(--c-border-light);
+        color: var(--c-fg-light-3);
+      }
+
+      /* Date log in left column */
+      .log-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4vh;
+        flex: 1;
+      }
+      .log-row {
+        display: grid;
+        grid-template-columns: 5em 1fr;
+        gap: 1em;
+        align-items: baseline;
+      }
+      .log-dt {
+        font-family: var(--f-mono);
+        font-size: var(--sz-caption);
+        letter-spacing: 0.1em;
+        color: var(--c-fg-3);
+        white-space: nowrap;
+      }
+      .log-dd {
+        font-family: var(--f-body);
+        font-size: var(--sz-body);
+        line-height: 1.52;
+      }
+      .log-dd em {
+        
+        color: var(--c-accent);
+        font-family: var(--f-heading);
+      }
+
+      /* 2x2 mixed-font stat grid in right column */
+      .stat-4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+      .stat-4-cell {
+        border-top: 1px solid var(--c-border);
+        padding: 1.2vh 0 1.5vh 0;
+      }
+      .stat-4-cell:nth-child(even) {
+        border-left: 1px solid var(--c-border);
+        padding-left: 1.8vh;
+      }
+      .light .stat-4-cell {
+        border-color: var(--c-border-light);
+      }
+      /* Value: roman grotesque number (DM Sans 700) + italic serif suffix (Source Serif 4 italic) */
+      .stat-4-val {
+        font-family: var(--f-body);
+        font-size: 2.5vw;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--c-fg);
+        margin-bottom: 0.5vh;
+        letter-spacing: -0.02em;
+      }
+      .stat-4-val em {
+        font-family: var(--f-display);
+        
+        color: var(--c-accent);
+        font-weight: 600;
+      }
+      .stat-4-label {
+        font-family: var(--f-mono);
+        font-size: 0.62vw;
+        letter-spacing: 0.07em;
+        color: var(--c-fg-3);
+        line-height: 1.4;
+        text-transform: uppercase;
+      }
+      .light .stat-4-label {
+        color: var(--c-fg-light-3);
+      }
+
+      /* Analysis line below columns */
+      .editorial-analysis {
+        font-family: var(--f-body);
+        font-size: 0.88vw;
+        line-height: 1.72;
+        color: var(--c-fg-2);
+        border-top: 1px solid var(--c-border);
+        padding-top: var(--gap-sm);
+      }
+      .light .editorial-analysis {
+        border-color: var(--c-border-light);
+        color: var(--c-fg-light-2);
+      }
+
+      /* 11. DENSE — Two-column editorial text ─────────────────────────────── */
+      .slide--dense {
+        grid-template-rows: auto auto 1fr auto;
+      }
+      .dense-hl {
+        font-family: var(--f-heading);
+        font-size: 2.4vw;
+        font-weight: 600;
+        line-height: 1.2;
+        padding-bottom: var(--gap-md);
+        border-bottom: 1px solid var(--c-border);
+        max-width: 88%;
+      }
+      .dense-hl em {
+        
+        color: var(--c-accent);
+      }
+      .light .dense-hl {
+        border-color: var(--c-border-light);
+      }
+      .dense-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: calc(var(--pad-x) * 0.45);
+        padding-top: var(--gap-md);
+        min-height: 0;
+      }
+      .dense-col h4 {
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        letter-spacing: 0.16em;
+        color: var(--c-fg-3);
+        margin-bottom: var(--gap-sm);
+        padding-bottom: var(--gap-sm);
+        border-bottom: 1px solid var(--c-border);
+      }
+      .light .dense-col h4 {
+        border-color: var(--c-border-light);
+        color: var(--c-fg-light-3);
+      }
+      .dense-col p {
+        font-family: var(--f-body);
+        font-size: var(--sz-body);
+        line-height: 1.72;
+        color: var(--c-fg-2);
+        margin-bottom: 1.4vh;
+      }
+      .light .dense-col p {
+        color: var(--c-fg-light-2);
+      }
+      .dense-col p:last-child {
+        margin-bottom: 0;
+      }
+      .dense-col p em {
+        
+        color: var(--c-accent);
+        font-family: var(--f-heading);
+      }
+
+      /* 12. FULLBLEED ──────────────────────────────────────────────────────── */
+      .slide--fullbleed {
+        padding: 0;
+        display: block;
+        position: relative;
+      }
+      .slide--fullbleed::before {
+        display: none !important;
+      }
+      .fb-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .fb-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: var(--pad-y) var(--pad-x);
+        background: linear-gradient(
+          to bottom,
+          transparent 0%,
+          rgba(15, 20, 36, 0.9) 35%
+        );
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-sm);
+      }
+
+      /* ╔══════════════════════════════════════════════════════════════════════╗
+   ║  ZONE F · COMPONENTS                                                 ║
+   ╚══════════════════════════════════════════════════════════════════════╝ */
+
+      /* Decorative rule lines */
+      .rule {
+        width: 36px;
+        height: 1px;
+        background: var(--c-accent);
+      }
+      .rule.full {
+        width: 100%;
+        background: var(--c-border);
+      }
+      .light .rule.full {
+        background: var(--c-border-light);
+      }
+
+      /* Kicker label (above headlines) */
+      .kicker {
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--c-accent);
+      }
+
+      /* Outlined tag */
+      .tag {
+        display: inline-block;
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--c-accent);
+        border: 1px solid var(--c-accent);
+        padding: 0.3em 0.8em;
+        line-height: 1;
+      }
+
+      /* Image caption */
+      .img-caption {
+        font-family: var(--f-mono);
+        font-size: var(--sz-caption);
+        letter-spacing: 0.04em;
+        opacity: 0.5;
+        margin-top: 0.8vh;
+      }
+      /* ── CHART ─────────────────────────────────────────────────────────── */
+      .slide--chart .slide-body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+        min-height: 0;
+      }
+      .chart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-shrink: 0;
+      }
+      .chart-wrapper {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: 0;
+      }
+      .bar-track {
+        height: 30vh;
+        display: flex;
+        align-items: flex-end;
+        gap: 4vw;
+        border-left: 1px solid var(--c-border);
+        padding-left: 0.5vw;
+      }
+      .light .bar-track {
+        border-color: var(--c-border-light);
+      }
+      .bar-col {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 1vh;
+        height: 100%;
+      }
+      .bar-fill {
+        width: 100%;
+        background: var(--c-fg-3);
+      }
+      .bar-fill.accent {
+        background: var(--c-accent);
+      }
+      .light .bar-fill {
+        background: var(--c-fg-light-3);
+      }
+      .light .bar-fill.accent {
+        background: var(--c-accent);
+      }
+      .bar-x-label {
+        font-family: var(--f-mono);
+        font-size: var(--sz-caption);
+        letter-spacing: 0.1em;
+        color: var(--c-fg-3);
+        white-space: nowrap;
+        text-transform: uppercase;
+      }
+      .light .bar-x-label {
+        color: var(--c-fg-light-3);
+      }
+      .bar-val {
+        font-family: var(--f-body);
+        font-size: var(--sz-body);
+        font-weight: 500;
+        color: var(--c-fg-2);
+      }
+      .bar-val.hi {
+        color: var(--c-accent);
+        font-weight: 600;
+      }
+      .light .bar-val {
+        color: var(--c-fg-light-2);
+      }
+      .chart-baseline {
+        height: 1px;
+        background: var(--c-border);
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .light .chart-baseline {
+        background: var(--c-border-light);
+      }
+      .chart-source {
+        flex-shrink: 0;
+        font-family: var(--f-mono);
+        font-size: var(--sz-caption);
+        color: var(--c-fg-3);
+        letter-spacing: 0.06em;
+        margin-top: var(--gap-sm);
+      }
+      .light .chart-source {
+        color: var(--c-fg-light-3);
+      }
+
+      /* ── DIAGRAM ────────────────────────────────────────────────────────── */
+      .slide--diagram .slide-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--gap-lg);
+        min-height: 0;
+      }
+      .flow {
+        display: flex;
+        align-items: stretch;
+        gap: 0;
+      }
+      .flow-step {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-sm);
+        padding-right: calc(var(--pad-x) * 0.35);
+      }
+      .flow-num {
+        font-family: var(--f-display);
+        font-size: 4.5vw;
+        font-weight: 700;
+        line-height: 1;
+        color: var(--c-accent);
+        letter-spacing: -0.02em;
+        
+      }
+      .flow-title {
+        font-family: var(--f-heading);
+        font-size: var(--sz-h3);
+        font-weight: 600;
+        line-height: 1.15;
+        color: var(--c-fg);
+      }
+      .light .flow-title {
+        color: var(--c-fg-light);
+      }
+      .flow-desc {
+        font-family: var(--f-body);
+        font-size: var(--sz-body);
+        color: var(--c-fg-2);
+        line-height: 1.62;
+      }
+      .light .flow-desc {
+        color: var(--c-fg-light-2);
+      }
+      .flow-arrow {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 1em;
+        padding-right: calc(var(--pad-x) * 0.35);
+        font-size: 2vw;
+        color: var(--c-border);
+        flex-shrink: 0;
+      }
+      .light .flow-arrow {
+        color: var(--c-border-light);
+      }
+
+      /* ── PIE / DONUT CHART ──────────────────────────────────────────────── */
+      .slide--pie .slide-body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+        min-height: 0;
+      }
+      .pie-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: calc(var(--pad-x) * 0.7);
+        align-items: center;
+        flex: 1;
+        min-height: 0;
+      }
+      .pie-donut {
+        width: min(26vw, 42vh);
+        height: min(26vw, 42vh);
+        border-radius: 50%;
+        position: relative;
+        flex-shrink: 0;
+        justify-self: center;
+      }
+      .pie-donut::after {
+        content: "";
+        position: absolute;
+        inset: 22%;
+        border-radius: 50%;
+        background: var(--c-bg);
+      }
+      .pie-legend {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+      }
+      .pie-item {
+        display: grid;
+        grid-template-columns: 0.8em 1fr auto;
+        gap: 1em;
+        align-items: center;
+      }
+      .pie-swatch {
+        width: 0.8em;
+        height: 0.8em;
+        border-radius: 2px;
+        flex-shrink: 0;
+      }
+      .pie-item-label {
+        font-family: var(--f-body);
+        font-size: var(--sz-lead);
+        line-height: 1.4;
+      }
+      .pie-item-val {
+        font-family: var(--f-mono);
+        font-size: var(--sz-body);
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        color: var(--c-accent);
+      }
+      .pie-total {
+        margin-top: var(--gap-sm);
+        padding-top: var(--gap-sm);
+        border-top: 1px solid var(--c-border);
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        letter-spacing: 0.1em;
+        color: var(--c-fg-3);
+      }
+      .light .pie-donut::after {
+        background: var(--c-bg-light);
+      }
+      .light .pie-total {
+        border-color: var(--c-border-light);
+        color: var(--c-fg-light-3);
+      }
+
+      /* ── PYRAMID ─────────────────────────────────────────────────────────── */
+      .slide--pyramid .slide-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: var(--gap-md);
+        min-height: 0;
+      }
+      .pyramid {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: center;
+      }
+      .pyr-level {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.3vh 2.5vw;
+        border-left: 3px solid var(--c-accent);
+        transition: width 0.3s;
+      }
+      .pyr-level:nth-child(1) {
+        background: color-mix(in srgb, var(--c-accent) 70%, var(--c-bg));
+        width: 38%;
+      }
+      .pyr-level:nth-child(2) {
+        background: color-mix(in srgb, var(--c-accent) 45%, var(--c-bg));
+        width: 54%;
+      }
+      .pyr-level:nth-child(3) {
+        background: color-mix(in srgb, var(--c-accent) 27%, var(--c-bg));
+        width: 70%;
+      }
+      .pyr-level:nth-child(4) {
+        background: color-mix(in srgb, var(--c-accent) 15%, var(--c-bg));
+        width: 86%;
+      }
+      .pyr-level:nth-child(5) {
+        background: color-mix(in srgb, var(--c-accent) 8%, var(--c-bg));
+        width: 100%;
+      }
+      .pyr-name {
+        font-family: var(--f-heading);
+        font-size: var(--sz-h3);
+        font-weight: 500;
+        line-height: 1.2;
+      }
+      .pyr-desc {
+        font-family: var(--f-body);
+        font-size: var(--sz-body);
+        color: var(--c-fg-2);
+        text-align: right;
+        max-width: 55%;
+        line-height: 1.4;
+      }
+
+      /* ── VERTICAL TIMELINE ───────────────────────────────────────────────── */
+      .slide--vtimeline {
+        grid-template-rows: auto auto 1fr auto;
+      }
+      .vt-hl {
+        font-family: var(--f-heading);
+        font-size: var(--sz-h2);
+        font-weight: 600;
+        padding-bottom: var(--gap-md);
+        border-bottom: 1px solid var(--c-border);
+      }
+      .light .vt-hl {
+        border-color: var(--c-border-light);
+      }
+      .vtimeline {
+        display: grid;
+        grid-template-columns: 8em 1px 1fr;
+        gap: 0;
+        min-height: 0;
+        padding-top: var(--gap-md);
+      }
+      .vt-date {
+        font-family: var(--f-mono);
+        font-size: var(--sz-caption);
+        letter-spacing: 0.08em;
+        color: var(--c-fg-3);
+        text-align: right;
+        padding: 0 1.5vw 3.5vh 0;
+        line-height: 1.4;
+      }
+      .light .vt-date {
+        color: var(--c-fg-light-3);
+      }
+      .vt-spine {
+        background: var(--c-border);
+        position: relative;
+      }
+      .light .vt-spine {
+        background: var(--c-border-light);
+      }
+      .vt-spine::before {
+        content: "";
+        position: absolute;
+        top: 0.25em;
+        left: -4px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: var(--c-accent);
+      }
+      .vt-content {
+        padding: 0 0 3.5vh 1.5vw;
+      }
+      .vt-title {
+        font-family: var(--f-heading);
+        font-size: var(--sz-h3);
+        font-weight: 500;
+        margin-bottom: 0.6vh;
+        line-height: 1.25;
+      }
+      .vt-body {
+        font-family: var(--f-body);
+        font-size: var(--sz-body);
+        color: var(--c-fg-2);
+        line-height: 1.65;
+      }
+      .light .vt-body {
+        color: var(--c-fg-light-2);
+      }
+      .vt-body em {
+        
+        color: var(--c-accent);
+        font-family: var(--f-heading);
+      }
+
+      /* ── CYCLE PROCESS ───────────────────────────────────────────────────── */
+      .slide--cycle .slide-body {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+        min-height: 0;
+      }
+      .cycle-grid {
+        display: grid;
+        grid-template-columns: 1fr 3em 1fr;
+        grid-template-rows: 1fr 3em 1fr;
+        gap: var(--gap-sm);
+        flex: 1;
+        min-height: 0;
+        align-items: center;
+      }
+      .cycle-step {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-sm);
+        padding: var(--gap-md);
+        border-top: 2px solid var(--c-accent);
+      }
+      .cycle-num {
+        font-family: var(--f-display);
+        font-size: 3.2vw;
+        font-weight: 700;
+        color: var(--c-accent);
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+      .cycle-title {
+        font-family: var(--f-heading);
+        font-size: var(--sz-h3);
+        font-weight: 500;
+        line-height: 1.2;
+      }
+      .cycle-desc {
+        font-family: var(--f-body);
+        font-size: var(--sz-body);
+        color: var(--c-fg-2);
+        line-height: 1.6;
+      }
+      .light .cycle-desc {
+        color: var(--c-fg-light-2);
+      }
+      .cycle-arrow {
+        color: var(--c-fg-3);
+        font-size: 1.8vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .light .cycle-arrow {
+        color: var(--c-fg-light-3);
+      }
+      .cycle-corner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--c-fg-3);
+        font-size: 1.3vw;
+      }
+
+      /* ╔══ GIT INVEST EXTENSIONS — built only from Signal tokens ══╗ */
+      /* Fundability readout: product visual on the split slide */
+      .readout {
+        flex: 1;
+        background: var(--c-bg);
+        color: var(--c-fg);
+        border: 1px solid var(--c-border);
+        border-top: 2px solid var(--c-accent);
+        padding: 3.4vh 2.2vw;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-md);
+        min-height: 28vh;
+      }
+      .readout-head, .readout-foot {
+        display: flex;
+        justify-content: space-between;
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--c-fg-2);
+      }
+      .readout-foot { border-top: 1px solid var(--c-border); padding-top: var(--gap-sm); gap: 1vw; }
+      .readout-foot span:last-child { color: var(--c-fg); text-align: right; }
+      .readout-score { display: flex; align-items: baseline; gap: 0.6vw; flex-wrap: wrap; }
+      .readout-num {
+        font-family: var(--f-display);
+        font-size: 5.2vw;
+        line-height: 0.9;
+        font-weight: 600;
+        color: var(--c-accent);
+      }
+      .readout-den { font-family: var(--f-mono); font-size: var(--sz-caption); color: var(--c-fg-2); }
+      .readout-verdict {
+        flex-basis: 100%;
+        font-family: var(--f-heading);
+        font-size: var(--sz-lead);
+        color: var(--c-fg);
+      }
+      .readout-verdict em { color: var(--c-accent); }
+      .readout-rows { display: flex; flex-direction: column; gap: 1.4vh; }
+      .readout-row {
+        display: grid;
+        grid-template-columns: 6vw 1fr 10vw;
+        align-items: center;
+        gap: 1vw;
+        font-family: var(--f-body);
+        font-size: var(--sz-caption);
+        color: var(--c-fg-2);
+      }
+      .readout-row i {
+        display: block;
+        height: 3px;
+        background: linear-gradient(to right, var(--c-fg-2) var(--w), var(--c-border) var(--w));
+      }
+      .readout-row b { white-space: nowrap; font-family: var(--f-mono); font-weight: 400; text-align: right; color: var(--c-fg); }
+      .readout-row.gap i { background: linear-gradient(to right, var(--c-accent) var(--w), var(--c-border) var(--w)); }
+      .readout-row.gap b, .readout-row.gap span { color: var(--c-accent); }
+
+      /* Bold lead-ins inside benefit bullets */
+      .bullet-list strong { font-weight: 600; }
+      .light .bullet-list strong { color: var(--c-fg-light); }
+
+      /* Speaker notes — hidden until N is pressed */
+      .slide > aside.notes { display: none; }
+      #notes-panel {
+        position: fixed;
+        left: var(--pad-x);
+        bottom: 7vh;
+        max-width: 46vw;
+        z-index: 50;
+        background: var(--c-bg-alt);
+        color: var(--c-fg);
+        border: 1px solid var(--c-border);
+        border-left: 2px solid var(--c-accent);
+        padding: 1.6vh 1.2vw;
+        font-family: var(--f-body);
+        font-size: var(--sz-body);
+        line-height: 1.5;
+        display: none;
+      }
+      #notes-panel.is-open { display: block; }
+      #notes-panel::before {
+        content: "Speaker notes · N to hide";
+        display: block;
+        font-family: var(--f-mono);
+        font-size: var(--sz-label);
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--c-accent);
+        margin-bottom: 0.8vh;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAV DOTS: generated by JS -->
+    <nav id="nav-dots"></nav>
+    <!-- SLIDE COUNTER: generated by JS -->
+    <div id="slide-counter"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         DECK — all slides live here, side by side
+         ═══════════════════════════════════════════════════════════════════════ -->
+    <div id="deck">
+      <!-- ═══════ 01 · COVER ═══════ -->
+      <section class="slide dark slide--cover">
+        <div class="cover-body">
+          <div class="label muted" data-anim="fade-in" data-delay="0">
+            MVP Launch Brief · Builders &amp; Founders · Fall 2026
+          </div>
+          <div class="rule" data-anim="reveal-right" data-delay="1"></div>
+          <h1 class="display" data-anim="fade-up" data-delay="2">
+            GIT <em>Invest</em>
+          </h1>
+          <p class="lead" style="font-family: var(--f-heading); max-width: 52%; color: var(--c-fg-2);" data-anim="fade-up" data-delay="3">
+            An AI capital-readiness engine that turns what builders ship into
+            something funders can say yes to.
+          </p>
+          <div class="cover-meta" data-anim="fade-in" data-delay="4">
+            <span class="label muted">Phillip T. Moreland · Red Pillar</span>
+            <span class="label muted">v1.0 · MVP · September 2026</span>
+          </div>
+        </div>
+        <aside class="notes">~0:30 — Name it and move. "Tonight I'm showing you GIT INVEST — the tool that sits between what you've built and the money that should back it."</aside>
+      </section>
+
+      <!-- ═══════ 02 · OPENING STATEMENT ═══════ -->
+      <section class="slide dark slide--statement">
+        <div class="slide-chrome">
+          <span class="label muted" data-anim="fade-in" data-delay="0">Opening</span>
+          <span class="label muted" data-anim="fade-in" data-delay="0">02</span>
+        </div>
+        <div class="slide-body">
+          <div class="statement-body">
+            <div class="kicker" data-anim="fade-in" data-delay="1">The thesis</div>
+            <div class="rule" data-anim="reveal-right" data-delay="2"></div>
+            <h1 class="h1" style="max-width: 72%" data-anim="fade-up" data-delay="3">
+              Builders don't have an idea problem. They have a
+              <em>capital-readiness</em> problem.
+            </h1>
+          </div>
+        </div>
+        <div class="slide-foot">
+          <span class="label muted">GIT INVEST · MVP Launch</span>
+          <span class="label muted">02 / 10</span>
+        </div>
+        <aside class="notes">~1:00 — Let the line land. Pause. "Most of you in this room can build. AI made building cheap. What it didn't fix is getting funded. That's a different skill — and nobody teaches it at the speed you now ship."</aside>
+      </section>
+
+      <!-- ═══════ 03 · THE PAIN ═══════ -->
+      <section class="slide dark slide--stats">
+        <div class="slide-chrome">
+          <span class="label muted" data-anim="fade-in" data-delay="0">The Pain · By the numbers</span>
+          <span class="label muted" data-anim="fade-in" data-delay="0">03</span>
+        </div>
+        <div class="slide-body">
+          <h2 class="h2" data-anim="fade-up" data-delay="1">
+            The money exists. The path to it is <em>broken</em>.
+          </h2>
+          <div class="stats-grid" data-anim="fade-up" data-delay="2">
+            <div class="stat-card">
+              <div class="stat-value">58%</div>
+              <div class="stat-label">of small-business financing applicants came up short — partial funding, or none at all.</div>
+              <div class="stat-note">Fed Small Business Credit Survey · 2025 data</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">70%</div>
+              <div class="stat-label">of failed venture-backed startups cited running out of capital.</div>
+              <div class="stat-note">CB Insights · shutdowns since 2023</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">0.32%</div>
+              <div class="stat-label">of U.S. venture dollars reached Black-founded startups in 2025.</div>
+              <div class="stat-note">Crunchbase · 2025</div>
+            </div>
+          </div>
+          <p class="lead" style="max-width: 70%; color: var(--c-fg-2); margin-top: var(--gap-lg);" data-anim="fade-up" data-delay="3">
+            Founders lose weeks to scattered grant portals, generic pitch advice
+            and cold outreach — then apply for the wrong money at the wrong time.
+          </p>
+        </div>
+        <div class="slide-foot">
+          <span class="label muted">Sources: Federal Reserve SBCS 2026 Report · CB Insights · Crunchbase News</span>
+          <span class="label muted">03 / 10</span>
+        </div>
+        <aside class="notes">~1:15 — Three numbers, three failures. Denial: most applicants don't get what they ask for. Death: capital is the last thing that kills a startup. Distribution: access isn't evenly spread. The pattern underneath: founders aren't prepared for the specific money they chase.</aside>
+      </section>
+
+      <!-- ═══════ 04 · THE PRODUCT (split light) ═══════ -->
+      <section class="slide light slide--split">
+        <div class="slide-chrome">
+          <span class="label" style="color: var(--c-fg-light-2)" data-anim="fade-in" data-delay="0">The Product · What it is</span>
+          <span class="label" style="color: var(--c-fg-light-2)" data-anim="fade-in" data-delay="0">04</span>
+        </div>
+        <div class="slide-body">
+          <div class="split-text" data-anim="fade-up" data-delay="1">
+            <div class="kicker">The idea</div>
+            <h2 class="h2">An AI engine for <em>capital readiness</em></h2>
+            <p class="lead" style="color: var(--c-fg-light-2)">
+              Bring what you've built. GIT INVEST scores how fundable it is,
+              maps the capital that fits, and drafts what you need to go get it.
+            </p>
+            <ul class="bullet-list" style="font-size: var(--sz-body)">
+              <li>Reads your repo, deck, numbers and traction in one pass</li>
+              <li>Matches grants, loans, crowdfunding and angels — not just VC</li>
+              <li>Keeps a human instructor in the loop before anything goes out</li>
+            </ul>
+          </div>
+
+          <div class="split-image" data-anim="fade-in" data-delay="3" style="display: flex; flex-direction: column; gap: var(--gap-sm)">
+            <div class="readout">
+              <div class="readout-head">
+                <span>Fundability Readout</span>
+                <span>Sample builder · MVP</span>
+              </div>
+              <div class="readout-score">
+                <span class="readout-num">72</span><span class="readout-den">/ 100</span>
+                <span class="readout-verdict"><em>Grant-ready.</em> Not yet equity-ready.</span>
+              </div>
+              <div class="readout-rows">
+                <div class="readout-row"><span>Traction</span><i style="--w: 72%"></i><b>18 / 25</b></div>
+                <div class="readout-row"><span>Team</span><i style="--w: 80%"></i><b>16 / 20</b></div>
+                <div class="readout-row"><span>Market</span><i style="--w: 70%"></i><b>14 / 20</b></div>
+                <div class="readout-row gap"><span>Materials</span><i style="--w: 45%"></i><b>9 / 20 · fix first</b></div>
+                <div class="readout-row"><span>Financials</span><i style="--w: 100%"></i><b>15 / 15</b></div>
+              </div>
+              <div class="readout-foot">
+                <span>Best-fit capital</span>
+                <span>Tech grant · Community lender · Reward crowdfunding</span>
+              </div>
+            </div>
+            <p class="img-caption" style="color: var(--c-fg-light-3)">Illustrative readout — MVP interface concept</p>
+          </div>
+        </div>
+        <div class="slide-foot">
+          <span class="label" style="color: var(--c-fg-light-2)">GIT INVEST · MVP Launch</span>
+          <span class="label" style="color: var(--c-fg-light-2)">04 / 10</span>
+        </div>
+        <aside class="notes">~1:30 — Point at the readout. "This is the first thing a builder sees. Not 'you're great' — a score, a verdict, and the one gap to fix first. This builder is grant-ready today and shouldn't be pitching VCs yet. That single sentence saves them three months."</aside>
+      </section>
+
+      <!-- ═══════ 05 · HOW IT WORKS (cycle) ═══════ -->
+      <section class="slide dark slide--cycle">
+        <div class="slide-chrome">
+          <span class="label muted" data-anim="fade-in" data-delay="0">How it works</span>
+          <span class="label muted" data-anim="fade-in" data-delay="0">05</span>
+        </div>
+        <div class="slide-body">
+          <h2 class="h2" data-anim="fade-up" data-delay="1">Four moves, <em>one loop</em></h2>
+          <div class="cycle-grid" data-anim="fade-up" data-delay="2">
+            <div class="cycle-step">
+              <div class="cycle-num">01</div>
+              <div class="cycle-title">Diagnose</div>
+              <div class="cycle-desc">Connect your repo, deck and numbers. The AI returns a Fundability Score and names the three gaps holding you back.</div>
+            </div>
+            <div class="cycle-arrow">→</div>
+            <div class="cycle-step">
+              <div class="cycle-num">02</div>
+              <div class="cycle-title">Map</div>
+              <div class="cycle-desc">Capital Map ranks grants, loans, crowdfunding and angels by fit, deadline and odds — every match linked to its source.</div>
+            </div>
+            <div class="cycle-arrow">↓</div>
+            <div></div>
+            <div class="cycle-arrow">↓</div>
+            <div class="cycle-step">
+              <div class="cycle-num">04</div>
+              <div class="cycle-title">Close &amp; Learn</div>
+              <div class="cycle-desc">Track every application. Outcomes feed back into the score, so the next ask is sharper than the last.</div>
+            </div>
+            <div class="cycle-arrow">←</div>
+            <div class="cycle-step">
+              <div class="cycle-num">03</div>
+              <div class="cycle-title">Forge</div>
+              <div class="cycle-desc">Pitch Forge drafts the deck, one-pager and grant narrative from your real data. Investor Sim runs the hard questions.</div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-foot">
+          <span class="label muted">GIT INVEST · MVP Launch</span>
+          <span class="label muted">05 / 10</span>
+        </div>
+        <aside class="notes">~1:45 — Walk the loop clockwise. Emphasize step 04: the product gets smarter per founder. "It's not a one-time audit. It's a loop — and the loop is the moat."</aside>
+      </section>
+
+      <!-- ═══════ 06 · KEY BENEFITS (list light) ═══════ -->
+      <section class="slide light slide--list">
+        <div class="slide-chrome">
+          <span class="label" style="color: var(--c-fg-light-2)" data-anim="fade-in" data-delay="0">Key Benefits</span>
+          <span class="label" style="color: var(--c-fg-light-2)" data-anim="fade-in" data-delay="0">06</span>
+        </div>
+        <div class="slide-body">
+          <div class="list-head" data-anim="fade-up" data-delay="1">
+            <div class="kicker">For the builder</div>
+            <h2 class="h2">What a founder <em>walks away with</em></h2>
+            <p class="body" style="color: var(--c-fg-light-2)">Five outcomes, written as promises we can measure.</p>
+          </div>
+          <ul class="bullet-list" data-anim="fade-up" data-delay="2">
+            <li><span><strong>Clarity in 48 hours.</strong> Know how fundable you are and what to fix first.</span></li>
+            <li><span><strong>The right money, not just more money.</strong> Non-dilutive options surface before equity.</span></li>
+            <li><span><strong>Materials in days, not months.</strong> Deck, one-pager and grant narrative drafted from your data.</span></li>
+            <li><span><strong>Rehearsed, not rattled.</strong> Investor Sim pressure-tests your answers before the room does.</span></li>
+            <li><span><strong>A record that compounds.</strong> Every application makes the next one stronger.</span></li>
+          </ul>
+        </div>
+        <div class="slide-foot">
+          <span class="label" style="color: var(--c-fg-light-2)">GIT INVEST · MVP Launch</span>
+          <span class="label" style="color: var(--c-fg-light-2)">06 / 10</span>
+        </div>
+        <aside class="notes">~1:15 — Read the bolded lines only; let the audience read the rest. Land on "the right money, not just more money" — that's the positioning.</aside>
+      </section>
+
+      <!-- ═══════ 07 · ROLLOUT (vertical timeline) ═══════ -->
+      <section class="slide dark slide--vtimeline">
+        <div class="slide-chrome">
+          <span class="label muted" data-anim="fade-in" data-delay="0">Rollout Plan</span>
+          <span class="label muted" data-anim="fade-in" data-delay="0">07</span>
+        </div>
+        <h2 class="vt-hl" data-anim="fade-up" data-delay="1">Prove it small, <em>then open the doors</em></h2>
+        <div class="vtimeline" data-anim="fade-up" data-delay="2">
+          <div class="vt-date">Oct 2026</div>
+          <div class="vt-spine"></div>
+          <div class="vt-content">
+            <div class="vt-title">Private alpha</div>
+            <p class="vt-body">Built alongside the live GIT INVEST cohort. Instructors review every AI output — <em>we log what they fix.</em></p>
+          </div>
+          <div class="vt-date">Nov–Dec</div>
+          <div class="vt-spine"></div>
+          <div class="vt-content">
+            <div class="vt-title">Closed beta · 100 builders</div>
+            <p class="vt-body">Opened to top-tier Imaginarium and Patreon members. Capital Map expands to verified grant and lender listings.</p>
+          </div>
+          <div class="vt-date">Q1 2027</div>
+          <div class="vt-spine"></div>
+          <div class="vt-content">
+            <div class="vt-title">Public launch</div>
+            <p class="vt-body">Self-serve tiers open. Human review becomes the <em>premium layer</em>, not the default.</p>
+          </div>
+          <div class="vt-date">Q2 2027</div>
+          <div class="vt-spine"></div>
+          <div class="vt-content">
+            <div class="vt-title">Capital network</div>
+            <p class="vt-body">Partner lenders, grant makers and angel groups receive pre-scored, consent-shared founder profiles.</p>
+          </div>
+        </div>
+        <div class="slide-foot">
+          <span class="label muted">GIT INVEST · MVP Launch</span>
+          <span class="label muted">07 / 10</span>
+        </div>
+        <aside class="notes">~1:15 — The logic: each phase earns the next. We don't open to the public until instructors stop rewriting the AI's work. The capital network comes last because funders only show up once the profiles are trustworthy.</aside>
+      </section>
+
+      <!-- ═══════ 08 · RISKS (compare) ═══════ -->
+      <section class="slide dark slide--compare">
+        <div class="slide-chrome">
+          <span class="label muted" data-anim="fade-in" data-delay="0">Risks · Mitigations</span>
+          <span class="label muted" data-anim="fade-in" data-delay="0">08</span>
+        </div>
+        <div class="slide-body">
+          <div class="compare-panel left" data-anim="fade-up" data-delay="1">
+            <div class="compare-label">What could break</div>
+            <h3 class="h3">Four risks, named up front</h3>
+            <p class="lead" style="color: var(--c-fg-2)">An AI that touches money has to earn trust faster than it earns attention.</p>
+            <ul class="bullet-list" style="font-size: var(--sz-body)">
+              <li>The AI invents a grant, a deadline or a figure</li>
+              <li>We drift into investment advice or securities solicitation</li>
+              <li>Founders' financial data leaks or gets misused</li>
+              <li>Human review becomes the bottleneck as we grow</li>
+            </ul>
+          </div>
+          <div class="compare-panel right" data-anim="fade-up" data-delay="2">
+            <div class="compare-label after">How we hedge</div>
+            <h3 class="h3">Guardrails built into the MVP</h3>
+            <p class="lead" style="color: var(--c-fg-2)">Every risk has an owner and a control before a single founder logs in.</p>
+            <ul class="bullet-list" style="font-size: var(--sz-body)">
+              <li>Verified listings only; every match links to its source</li>
+              <li>We prepare founders — we don't broker deals; counsel reviews claims</li>
+              <li>Consent-first data: encrypted, founder-owned, shared only on opt-in</li>
+              <li>A rotating reviewer bench, with AI triage flagging what needs a human</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide-foot">
+          <span class="label muted">GIT INVEST · MVP Launch</span>
+          <span class="label muted">08 / 10</span>
+        </div>
+        <aside class="notes">~1:30 — Read across, row by row: risk → hedge. Say plainly: "We are a preparation tool, not a broker or an adviser." The last row is the one people forget — if every output needs a human, the humans burn out. Triage fixes that.</aside>
+      </section>
+
+      <!-- ═══════ 09 · SUCCESS METRICS (editorial) ═══════ -->
+      <section class="slide dark slide--editorial">
+        <div class="slide-chrome">
+          <span class="label muted" data-anim="fade-in" data-delay="0">— § Success Metrics</span>
+          <span class="label muted" data-anim="fade-in" data-delay="0">GIT INVEST · 90-Day Pilot · <span class="accent">2026</span></span>
+        </div>
+        <div class="editorial-stamp" data-anim="fade-in" data-delay="1">
+          Pilot <span class="accent">90</span> · Scorecard
+        </div>
+        <h2 class="editorial-hl" data-anim="fade-up" data-delay="2">
+          Success means builders get <em>funded</em> — not just busier.
+        </h2>
+        <div class="editorial-cols" data-anim="fade-up" data-delay="3">
+          <div class="editorial-col-left">
+            <div class="editorial-col-head">Checkpoints</div>
+            <div class="log-list">
+              <div class="log-row"><span class="log-dt">Day 0</span><span class="log-dd">Cohort onboarded. Baseline Fundability Scores recorded.</span></div>
+              <div class="log-row"><span class="log-dt">Day 14</span><span class="log-dd">First applications out. <em>Time-to-first-ask</em> is the leading signal.</span></div>
+              <div class="log-row"><span class="log-dt">Day 30</span><span class="log-dd">Measure the edit rate — how often instructors rewrite AI output.</span></div>
+              <div class="log-row"><span class="log-dt">Day 60</span><span class="log-dd">Decisions start landing. Track win rate by capital type.</span></div>
+              <div class="log-row"><span class="log-dt">Day 90</span><span class="log-dd">Go / no-go on public launch against the four targets.</span></div>
+            </div>
+          </div>
+          <div class="editorial-col-right">
+            <div class="editorial-col-head">Pilot Targets</div>
+            <div class="stat-4">
+              <div class="stat-4-cell"><div class="stat-4-val">70<em>%</em></div><div class="stat-4-label">finish a Fundability Score within 48 hours</div></div>
+              <div class="stat-4-cell"><div class="stat-4-val">&lt;7<em> days</em></div><div class="stat-4-label">median time from signup to first application</div></div>
+              <div class="stat-4-cell"><div class="stat-4-val">3<em>×</em></div><div class="stat-4-label">applications per founder vs. their prior 90 days</div></div>
+              <div class="stat-4-cell"><div class="stat-4-val">$250<em>K</em></div><div class="stat-4-label">capital secured across the pilot cohort</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="editorial-analysis" data-anim="fade-in" data-delay="4">
+          One number leads: time-to-first-ask. One number decides: capital secured. Everything else tells us why.
+        </div>
+        <div class="slide-foot">
+          <span class="label muted">Targets set before launch · reviewed at Day 30 and Day 90</span>
+          <span class="label muted">09 / 10</span>
+        </div>
+        <aside class="notes">~1:15 — Be honest that these are targets, not results. Point at the analysis line: activity metrics are easy to game; capital secured is not.</aside>
+      </section>
+
+      <!-- ═══════ 10 · CLOSE ═══════ -->
+      <section class="slide dark slide--end">
+        <div class="kicker" data-anim="fade-in" data-delay="0">GIT INVEST · Private alpha · October 2026</div>
+        <div class="rule" data-anim="reveal-right" data-delay="1"></div>
+        <h1 class="h1" style="max-width: 62%" data-anim="fade-up" data-delay="2">
+          Ship it. Score it. <em>Get it funded.</em>
+        </h1>
+        <p class="lead muted" style="max-width: 46%" data-anim="fade-up" data-delay="3">
+          The alpha opens with the GIT INVEST cohort. Bring what you've built —
+          we'll show you what it's worth to a funder.
+        </p>
+        <p class="label muted" style="margin-top: var(--gap-lg)" data-anim="fade-in" data-delay="4">
+          Red Pillar · Know The Ledge · KTL / 363
+        </p>
+        <aside class="notes">~0:45 — Slow down. Say the three beats out loud. One ask only: join the alpha. Then stop talking and take questions.</aside>
+      </section>
+    </div>
+    <!-- /deck -->
+
+    <script>
+      /* ══════════════════════════════════════════════════════════════════════
+         SIGNAL PRESENTATION ENGINE
+         Self-contained navigation: keyboard, touch, mouse-wheel, nav-dots.
+         No external dependencies.
+         ══════════════════════════════════════════════════════════════════════ */
+      (function () {
+        "use strict";
+
+        /* ── State ─────────────────────────────────────────────────────────── */
+        const deck = document.getElementById("deck");
+        const slides = Array.from(document.querySelectorAll(".slide"));
+        const dotsEl = document.getElementById("nav-dots");
+        const counter = document.getElementById("slide-counter");
+        const total = slides.length;
+        let current = 0;
+        let animating = false;
+
+        /* ── Bootstrap: set deck width, build nav dots ─────────────────────── */
+        function init() {
+          // The deck is one wide strip — width equals N full viewports
+          deck.style.width = total + "00vw";
+
+          // Build one dot per slide
+          slides.forEach(function (_, i) {
+            const btn = document.createElement("button");
+            btn.className = "nav-dot";
+            btn.setAttribute("aria-label", "Go to slide " + (i + 1));
+            btn.addEventListener("click", function () {
+              goTo(i);
+            });
+            dotsEl.appendChild(btn);
+          });
+
+          // Activate the first slide immediately
+          goTo(0, true); // true = skip transition on load
+        }
+
+        /* ── goTo: the single source of truth for navigation ───────────────── */
+        function goTo(index, instant) {
+          // Clamp to valid range
+          index = Math.max(0, Math.min(total - 1, index));
+          if (index === current && !instant) return;
+
+          // Mark animating to block rapid key/swipe spam
+          animating = true;
+
+          // Deactivate current slide: reset animations by toggling is-active
+          const prev = slides[current];
+          prev.classList.remove("is-active");
+          // Force a reflow so removing then re-adding is-active (on same slide)
+          // actually re-triggers the keyframe animations
+          void prev.offsetWidth; // eslint-disable-line no-void
+
+          // Translate the deck
+          if (instant) {
+            // Remove transition temporarily for the initial load snap
+            deck.style.transition = "none";
+            deck.style.transform = "translateX(-" + index + "00vw)";
+            void deck.offsetWidth; // force reflow
+            deck.style.transition = "";
+          } else {
+            deck.style.transform = "translateX(-" + index + "00vw)";
+          }
+
+          // Activate new slide
+          current = index;
+          const next = slides[current];
+          next.classList.add("is-active");
+
+          // Update nav dots
+          Array.from(dotsEl.children).forEach(function (dot, i) {
+            dot.classList.toggle("is-active", i === current);
+          });
+
+          // Update counter: "3 / 12"
+          counter.textContent = current + 1 + " / " + total;
+
+          // Unlock after transition completes
+          const delay = instant
+            ? 0
+            : parseFloat(getComputedStyle(deck).transitionDuration) * 1000;
+          setTimeout(function () {
+            animating = false;
+          }, delay);
+        }
+
+        /* ── Keyboard navigation ──────────────────────────────────────────── */
+        document.addEventListener("keydown", function (e) {
+          if (animating) return;
+          if (
+            e.key === "ArrowRight" ||
+            e.key === "ArrowDown" ||
+            e.key === " "
+          ) {
+            e.preventDefault();
+            goTo(current + 1);
+          } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+            e.preventDefault();
+            goTo(current - 1);
+          } else if (e.key === "Home") {
+            e.preventDefault();
+            goTo(0);
+          } else if (e.key === "End") {
+            e.preventDefault();
+            goTo(total - 1);
+          }
+        });
+
+        /* ── Mouse-wheel navigation ───────────────────────────────────────── */
+        let wheelCooldown = false;
+        document.addEventListener(
+          "wheel",
+          function (e) {
+            e.preventDefault();
+            if (animating || wheelCooldown) return;
+            wheelCooldown = true;
+            setTimeout(function () {
+              wheelCooldown = false;
+            }, 900);
+            if (e.deltaY > 0 || e.deltaX > 0) {
+              goTo(current + 1);
+            } else {
+              goTo(current - 1);
+            }
+          },
+          { passive: false },
+        );
+
+        /* ── Touch swipe navigation ───────────────────────────────────────── */
+        let touchStartX = null;
+        let touchStartY = null;
+
+        document.addEventListener(
+          "touchstart",
+          function (e) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+          },
+          { passive: true },
+        );
+
+        document.addEventListener(
+          "touchend",
+          function (e) {
+            if (touchStartX === null) return;
+            const dx = touchStartX - e.changedTouches[0].clientX;
+            const dy = touchStartY - e.changedTouches[0].clientY;
+            // Only respond if horizontal swipe is dominant
+            if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+              if (animating) return;
+              if (dx > 0) {
+                goTo(current + 1); // swipe left: next
+              } else {
+                goTo(current - 1); // swipe right: prev
+              }
+            }
+            touchStartX = null;
+            touchStartY = null;
+          },
+          { passive: true },
+        );
+
+        /* ── Boot ─────────────────────────────────────────────────────────── */
+        init();
+      })();
+    </script>
+    <div id="notes-panel" aria-live="polite"></div>
+    <script>
+      /* Speaker notes: press N to toggle; follows the active slide. */
+      (function () {
+        var panel = document.getElementById("notes-panel");
+        var slides = Array.from(document.querySelectorAll(".slide"));
+        function sync() {
+          var active = document.querySelector(".slide.is-active aside.notes");
+          panel.textContent = active ? active.textContent.trim() : "";
+        }
+        slides.forEach(function (s) {
+          new MutationObserver(sync).observe(s, { attributes: true, attributeFilter: ["class"] });
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "n" || e.key === "N") { sync(); panel.classList.toggle("is-open"); }
+        });
+        sync();
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,875 @@
+Git Money - Class 2
+Wed, Jun 10, 2026
+
+2:34 - Red Pillar
+Greetings, greetings, good evening.
+
+2:42 - Unidentified Speaker
+Hello. Hola.
+
+2:48 - Red Pillar
+How is everybody doing?
+
+2:55 - Mys Lekeisha
+Been a crazy busy one for me. Yeah.
+
+3:00 - Red Pillar
+Is that a good thing?
+
+3:04 - Mys Lekeisha
+yeah, so it's track season, so we have all the meets happening now. So it's like practice three days a week and then track meet Saturday, Sunday.
+
+3:19 - Unidentified Speaker
+Are you doing the track meet or you got?
+
+3:21 - Mys Lekeisha
+No, so my son, yeah, he runs for AAU.
+
+3:26 - Red Pillar
+So keeps me busy. Yes, yes, that is. I got you lying pulling up, huh? On track day.
+
+3:36 - Mys Lekeisha
+On track day, yep.
+
+3:39 - Red Pillar
+Well, congrats on that, you know. Congrats on that. I know it must be nice.
+
+3:50 - Mys Lekeisha
+No, it's not when it's like 90 degrees outside.
+
+3:54 - Red Pillar
+Oh, yeah, you got to factor in. Yeah, that whole summertime. And you're there.
+
+3:58 - Unidentified Speaker
+all day.
+
+3:59 - Mys Lekeisha
+All day on your feet.
+
+4:01 - Red Pillar
+I remember when my son was doing baseball back in the days, and like, Do I like we really got to do this? And like, We were we had to sit on crates. You know what I mean? Some of the parks that we went to, they wasn't accommodating us because we were like a visiting team. So, yeah, I already know. Oh, yeah, we don't have those issues.
+
+4:24 - Unidentified Speaker
+So, they have the bleacher.
+
+4:25 - Mys Lekeisha
+So, I got bleacher seats, but most of the places they have what they call Tent City. So, you can bring your tents and set up your tents all around in the grass area until your kids have to run. So, it gives you a little bit of rest and kind of chill out time.
+
+4:42 - Red Pillar
+Well, at least they accommodate y'all with that. That's good, you know. But, yeah, man, kudos to. To your little man's and whatnot. I hope they get the what is it, like the statewide chip, or is it something personal? Is it like a running team? Or is it a team?
+
+5:04 - Unidentified Speaker
+Yeah, it's a team. Yep, it's a team. So they statewide.
+
+5:07 - Mys Lekeisha
+This will be, this is the first round qualifiers this weekend.
+
+5:11 - Red Pillar
+So, okay, so they're doing like pass the baton and everything.
+
+5:15 - Mys Lekeisha
+he's doing the 200-meter, 400-meter, 800-meter, and long jump.
+
+5:22 - Red Pillar
+Dope, dope, indeed, no doubt. Good luck with all of that.
+
+5:29 - Red Pillar
+Get one of those little fans that they got in China, the little handhelds.
+
+5:35 - Mys Lekeisha
+Yeah, that'll help it. That'll hopefully hold it down.
+
+5:39 - Unidentified Speaker
+Oh, I got the fan that, um.
+
+5:42 - Mys Lekeisha
+I brought on 72 cloths that you can put water in it and it gives you the mist.
+
+5:50 - Red Pillar
+That was working too.
+
+5:51 - Mys Lekeisha
+I got two of them.
+
+5:55 - Mys Lekeisha
+Remember that temperature shift out there?
+
+5:58 - Red Pillar
+Man, that was crazy.
+
+5:59 - Mys Lekeisha
+It was 90 degrees on Saturday and 50 and 50 the next day. Yeah, huh? I'm glad I brought the blanket.
+
+6:11 - Red Pillar
+Man, I still remember that morning where it was wild cold. Just laying there, like, what is this? But yeah, all good. But shout out to everybody in the building. Salute.
+
+6:30 - Unidentified Speaker
+It's been a minute since last Wednesday, but we are back. We are here. We in the building.
+
+6:36 - Red Pillar
+Is there anybody's first time in class? Anybody that's here right now, is it your first time?
+
+6:50 - Unidentified Speaker
+All right. So mostly everybody that's coming back has been here. Another question.
+
+6:57 - Red Pillar
+Does everybody have their invite to the Discord? Does it has everybody signed up to the Discord?
+
+7:11 - Red Pillar
+I'm going to drop the link just in case. No, you know, I'll drop the link in there right now.
+
+7:18 - Unidentified Speaker
+It's a seven-day expiration on this link.
+
+7:22 - Red Pillar
+So if you don't sign up today, don't worry about it. You have seven days to do that. But please pull up to the Discord because. The discord has a lot of information already inside of it uh i've been filling it up um there's there's action activities taking place people are in there building networking let me take you real quick into the github repo into our discord so uh this is the general page right here where everybody comes and signs up and drops in and whatnot Shout out to everybody pulling up. This right here is the repo. Is uh, we call this channel the repo man. So, inside of here is going to be repositories, the GitHub repos. And a translation of a repo basically is an open source tool.
+
+8:22 - Unidentified Speaker
+And the repo is basically the uh, it's it's the repository.
+
+8:29 - Red Pillar
+of this open source tool that's stored inside of GitHub. So we give you a plethora of tools that you can utilize and whatnot.
+
+8:41 - Unidentified Speaker
+Okay.
+
+8:43 - Red Pillar
+And the great part about it is when you click on the link, it'll either take you to the X, the Twitter page, it'll take you right to the depot, I mean the repo, or it'll take you to like a YouTube video. Where you'll get a greater understanding, overstanding as to what it is that you're receiving and whatnot. But as you can see inside of this repo, it is filled up with all types of tools, all types of open source tools that you can utilize for your business, for your brand, or just for hobby, you know, hobby purposes. All right.
+
+9:18 - Unidentified Speaker
+So definitely check that out.
+
+9:20 - Red Pillar
+out then in the channel called GitHub or Get Money Workshop. This is where we drop links that are in alignment with the workshop. Okay, they're alignment with the workshop. The first video that you will be welcomed with is the own is Master GitHub. Okay, so that's a no-brainer. You'll be able to watch this YouTube video, it's going to give you a greater understanding as to what this is. You'll begin it, you'll start as a beginner, and after the 46 minutes, especially if you're doing the things that he's saying in the video to do, by the time you get out of that 46 minutes and whatnot, you're going to have confidence, you're going to feel built up, and you're a greater understanding. As to what the levels of GitHub is, because it's not just one level, there's multiple levels to it. Then we have Obsidian right here, where he's teaching you Obsidian. So we all learn how to utilize Obsidian. Obsidian is to the Get Money course what Anthropic Claude and what Clawbot was to Imaginarium.
+
+10:34 - Unidentified Speaker
+It's to what Nano Banana was.
+
+10:38 - Red Pillar
+You know what I mean? It works hand in hand. Okay. I would highly suggest that everyone is familiar with Obsidian. Why? I mean, it has everything to do with Git money on GitHub, but it also has everything to do with everything that you've been doing prior to that, leading up to that. It is an aggregator of your notes. Considered to be the second brain. So, when you put it on your computer and then you start putting your notes, you start putting your files, you start feeding your emails and whatnot, you connect it to your Google, your Google Drive, you connect it to your notion, your databases, and whatnot, then it begins to bring everything together, compartmentalize your ideas. Your concepts, your projects. One of the I suffer from is scattered brain activities. Things are all over the place, and they're not always come together. They don't always form like a Voltron. But when that does happen, clarity takes over, and I'm able to have clear thoughts and whatnot, and I'm able to complete the mission even faster. So, Obsidian is your friend. All right, it's free. It's not difficult, it's very user-friendly and whatnot. And when you finish watching the step-by-step video, you'll definitely get a better understanding as to what it is. But this is what the top dogs are using right now. This is what the, you know, some of the biggest people in the AI game, this is their go-to. The same way Notebook LM is their go-to. Obsidian is on the stacks, the tech stacks of many of the AI entrepreneurs out there right now.
+
+12:28 - Unidentified Speaker
+All right. More information.
+
+12:33 - Red Pillar
+of course, we have Claude Opus, a clip on Claude. I put that the new Claude came out. And then we have something right here called GitHub Store, an open source app store for GitHub releases. This also, I would suggest that everybody that is a part of this workshop, you go and make sure you have the GitHub store. This is be one of those requirements and whatnot because it's literally similar like the Apple store and whatnot. Somebody open source, they put this together and it's basically an open source app store, right? So you could browse, you could discover, and you could install in one click. Matter of fact, let's go visit the store. Can you see where it says github store did it did it did it share yeah we can see it yep all right so this is the page all right it's giving you you could download it to your android you could download it to your mac and whatnot But as you can see, it's basically a better place to have these repos in an aggregated space versus where it was before Where it's like you just got to browse GitHub and get lucky this right here is gonna give you a way better way of discovering these tools and whatnot. So definitely check this out. I'm gonna drop the the um I'll drop this into the chat Boom.
+
+14:18 - architect.hitsuyoaku.io
+But yeah, boom.
+
+14:21 - Red Pillar
+Then we have something called a tool shed. And inside of the tool shed, ladies and gentlemen, we will be dropping. These are not necessarily repos. These are more like tools and whatnot. Even though the repos are tools, these would be more of the what they call not open source, but frontier, you know. These are like models that come from the companies and whatnot. Okay, close, not open source, closed source. But this is our tool shed. And inside of the tool shed, of course, we're dropping tools that everybody could utilize for their builds, for their quote-unquote projects and whatnot. And yeah, come and check it out. Okay, come and check it out. All right.
+
+15:14 - Red Pillar
+Then we have the YouTube cyber library. This is basically our repo of YouTube videos. Make sure you go and check out the Claude Fable and Mythos that just dropped yesterday. That's the most powerful AI LLM on the planet right now. That is the most powerful LLM large language model or basically the most powerful AI release on the planet as we speak. More powerful than anything China has dropped. More powerful than anything any american company has dropped mythos and fable are the um they're leading the pack right now people are literally making video games and all type of stuff right off of their clawed you know um yeah so these are all videos and all of them are meant to help you then we have stream chasers 100 income streams right? So I'll be dropping links and videos in here for all of my stream chasers. The brothers and sisters that are out here stacking up income streams, you know, like their souvenirs and whatnot. So we are encouraging, we've been encouraging over the years, but really now we're encouraging my serial entrepreneurs out there to challenge themselves and start stacking up multiple income streams. You know the goal is 100 okay and with with tools like mythos that has now become ever more doable than a few than 48 hours before it's become more of a reality than a dream for sure for shit show for shit show yes, sir. So, shout out to my good brother Hit Sayu in a building.
+
+17:09 - architect.hitsuyoaku.io
+Peace to the God, peace to the family, live and direct from the mothership. You already know what it is. I'm on some other shit. Um, happy to be here, happy to just see everybody ready to get back into that get money spirit. Um, we're gonna be talking about a few things because there's just a lot going on, uh, fable. Mythos. It wasn't no fable. It wasn't no mythos. They really outside with it. This shit actually good.
+
+17:44 - Red Pillar
+All right, fam.
+
+17:46 - architect.hitsuyoaku.io
+I need y'all to understand. I'm going to tell y'all direct first experience, right? As soon as I saw, because I got the email from Anthropic. So as soon as I saw that Fable had dropped, I instantly knew what I was going to test it on. So I was like, all right, I'm going export all of the data from my sub stack, right? This I fuck with Substack. Substack allows you to keep all of your data, all of the contact list, all of your posts, all of the information, the metrics, and everything. They let you just export it whenever you want, right? And you can take it and set up shop somewhere else if you want to, right? So fair. They give you a little bit of control over your metrics and data and shape. All right. Good deal. So I was like, boom. Let me go see what I can do to figure out the gaps, holes, wherever that's kind of like stopping this newsletter from being more of a revenue-generating asset and more of a conversion engine. You see what I'm saying? More of a billboard for my high-ticket services. Like the data is here. There's a lot going on. What can I do with it? Right? Instant first thought. So I do my little systems architecture vibe, I get my prompt ready, you what I'm saying? Boom, I run all the data through family. Can I say, just based on the data analysis that I got back? Now, mind you, I'm running a very hyper-augmented instance of Claude, right? I have it's in a specific project that has all of these source documents. I have my claw is very customized to do hit Soyoaku shit. You see what I'm saying? So I'm really testing my blade on myself, right? Just to see how sharp this shit is. All right, words of the samurai.
+
+19:36 - architect.hitsuyoaku.io
+Family, it only took me two hours to do everything that it said to do and get everything set up. And automated, you know what I'm saying? I turned all of the findings into skills and all that shit. So now it's automated. I can just run it whenever I want. Boom, boom, boom. I got a paid subscriber that night just off the strength. Family, I made money that night.
+
+20:05 - architect.hitsuyoaku.io
+Strictly based on what Fable said and what I found based on the data analysis, it said, Do this. I did those things. It identified a key section of my subscribers that was actually custom business domain. So it was like, these are actual operators. Fuck talking to the rest of them. Talk to these 34 people right now. You've never said hi to them directly, but they're probably your highest engaged. Prospects, potential clients. Did all that just off the strength of just what I did and what it told me to do? I made money that night. Was it a fucking million, gajillion dollars? No. But just the instant return of like, hey, boom, someone just handed you a hundred something dollars for a long-term subscription to for a year subscription to your newsletter. Strictly based on you analyzing that fable ain't no fable. That's all I'm trying to say. I'm just giving you a real world example. I really took my own data from my own newsletter, ran it through that shit, asked it, hey, how can this shit a little more money? How can this convert a little better? How can it drive more high-ticket set? And the shit landed me a year subscriber right then and there that night. It was literally less than two, three hours.
+
+21:26 - architect.hitsuyoaku.io
+Fable ain't no fable. So, family, get creative.
+
+21:35 - Unidentified Speaker
+Get interesting. Super facts.
+
+21:37 - Red Pillar
+Start thinking outside the box.
+
+21:40 - architect.hitsuyoaku.io
+It's here. It's here now. For the next two weeks, this shit is cheap. Go run it up. Because once they turn this shit on to API pricing, it's not going to be nice.
+
+21:51 - Unidentified Speaker
+Okay.
+
+21:54 - Red Pillar
+They're going create a new level or a new layer of they're going to create a moat. You know what I And they're basically going to say, well, you guys had years to get right.
+
+22:10 - Unidentified Speaker
+This is an enterprise. This is a game where it's turn into a tokenized rich man's game in a minute.
+
+22:17 - Red Pillar
+Can you share with us how we could the token rate limit? Because even though they said that they lifted certain limits, I got on to mythos. I might have used it twice and they hit my limit. All right.
+
+22:34 - architect.hitsuyoaku.io
+It first dropped yesterday.
+
+22:38 - Unidentified Speaker
+All right, boom.
+
+22:39 - architect.hitsuyoaku.io
+I hit the limit, maybe within. A couple requests, but then again, I also came in really kind of like super knowing what I was going to target it with. You see what I'm saying?
+
+22:54 - architect.hitsuyoaku.io
+Right, right. You're probably one task done, you see what I'm saying, but you're that limit pretty quick. But it is also generous, like it's getting a fair amount of work done.
+
+23:08 - Red Pillar
+Like, once you get into that building out, video housing.
+
+23:11 - architect.hitsuyoaku.io
+kind of rank, but again, it also depends on your um what plan you're on. I'm not highest-tier plan, I'm just on the $20 a month plan, just kind of doing what I do. But I'm also paying for other services as well, so I'm distributing my cost amongst a couple different services giving me compute. You see what I'm saying? So keep that in mind. If you're on the Claude 1 million thing, you're probably good. You're going to be good for a little minute running Fable. But again, think like a systems architect. You see what I'm saying?
+
+23:43 - Unidentified Speaker
+Right.
+
+23:44 - architect.hitsuyoaku.io
+Don't be running Fable just to do regular, degular, like planning shit. Like, like, let Fable do the real work, but like, use some of the lower tier models at like a higher effort, right? So, use your 4.7 or your 4.8 at high to do a little bit of the planning stage of the shit. And then you want to execute. Now, you can go in with. You know Fable on Max and really just get that shit knocked out in one clean sweep.
+
+24:12 - Red Pillar
+So, there's a little more strategy that's now involved now that there is access to this model.
+
+24:16 - architect.hitsuyoaku.io
+But hey, look, family, like I said, it's only a limited window before they turn this shit on API pricing. And once they do that, it's over. Once they do that, AI is now a fully luxury item because that shit is going to be a ticket. I promise you. They said $10 in, $50 out per million tokens. $10 in $50 out per million tokens. This is not nice.
+
+24:47 - architect.hitsuyoaku.io
+Hey, but again, it's getting the work done, it's doing the thing. That's also the next part. It's not like you're spending that money on nothing. The shit's actually good. So keep that in mind, family. Just understand. Maybe you only want to do it for a month. Who knows? You know what I'm saying? Maybe you want to go pro. Niggas are saying they're probably going to drop paid tier, probably like a thousand dollar a month tier.
+
+25:14 - architect.hitsuyoaku.io
+Hey, hey, hey, you know what I'm saying? Inshallah. Inshallah. If them boys got it like that, they got it like that. But for the next two weeks, run it up, use it. Family, I've already shown me a little bit of result. Is it the craziest thing? No, but this shit literally just dropped 24 hours ago and it already made me money. And I'm not even being like, oh, it made me a billionaire. No, it, it, someone subscribed to my newsletter for a year. Cool. Right after I optimized it using the oh, okay, right.
+
+25:59 - architect.hitsuyoaku.io
+Now I have a whole new strategy, a whole new look on how I'm gonna really engage that. Bro, even the newsletter I dropped right after it talking about this exact process here, how I use Claude Fable to audit my newsletter. And then I just released it publicly and said, here, glasshouse transparency. As much as I be kicking y'all's teeth in about branding, I kick teeth in about branding. That's why I kick y'all teeth in about branding because I be doing this shit to myself. A sick, twisted pleasure of just scraping this obsidian blade across my own body just to see if I'm really that sovereign identity.
+
+26:36 - Red Pillar
+So when I be coming at y'all with the rah-rah, it's because I really do this and I really understand what's going on here.
+
+26:44 - architect.hitsuyoaku.io
+as Fable dropped, I knew what do with it.
+
+26:51 - Unidentified Speaker
+This shit clicked in my mind like it was damn near destiny.
+
+26:55 - architect.hitsuyoaku.io
+On a Techno Tuesday, too, it was like Anthropic was throwing KTL to Allie Yoop: God damn, just teach him something about the story tradition. Put him on, show them a new way. Super fat. But anywho, that's. Crazy lob, crazy lob. But anywho, Obsidian MD is the goal for today. Obsidian.md. If you are not on the website Obsidian MD, I would love for you to tap in over there. I'm going share my local screen.
+
+27:37 - architect.hitsuyoaku.io
+Chrome Town.
+
+27:47 - architect.hitsuyoaku.io
+Boom. We got Obsidian. You can download it for Mac or Windows, just depending on what your machine is.
+
+27:58 - architect.hitsuyoaku.io
+So we're just going to literally just download it. It's free. It's an amazing platform.
+
+28:05 - architect.hitsuyoaku.io
+As you can see, for your private thoughts. This is the CEO private notebook, the private journal, the second brain. This is where the CEO brain dumps. In the industry, right, it's called cognitive offloading, right? You're a CEO now. You to know these terminology so that we can't no one trick you with the corporate Eish. You see what I'm saying?
+
+28:33 - architect.hitsuyoaku.io
+Cognitive offloading. What does that mean, brain dumping? I just vomit all thoughts onto a page somewhere for later. I'm going to come back to this. There's a good idea in here. I just needed to get it off my mind right now. And then with the nature of these technologies and the way that Obsidian builds graphs, which could then become knowledge graphs in this agentic era. Again, you're building out these second brains that operate through the same principles and thoughts that actually make your brain a functional organ. Okay, your thoughts are yours.
+
+29:21 - Unidentified Speaker
+Obsidian is all about that private, local first experience, right?
+
+29:28 - architect.hitsuyoaku.io
+So, even when you're offline, even when ain't no internet. You still have access to that private vault. So that means that this private vault needs to be structured in a way where it's usable to you without the internet, without the agents in it. Hold on, because I know we get into the money, but the vault itself, Obsidian, that's what they call it when you actually download the thing and then you start using the app, it creates a folder and it links the UI to that folder, and that is what's known as a vault.
+
+30:11 - architect.hitsuyoaku.io
+That vault needs to be structured in a way that makes it usable and profitable to you, even when you're offline, even when you don't have access to the agents. Being online and having access to the agents, whether they be local or cloud, should actually be a cherry on top to the structure that you build into the vault.
+
+30:40 - Unidentified Speaker
+So this is where you're find as you research a little bit more into Obsidian, you're going find different vault organizational methods.
+
+30:48 - architect.hitsuyoaku.io
+One of them is like Para, you zoom in. There's all different ways to kind of structure and organize a vault. Right. I see they say thousands of plugins.
+
+30:59 - Red Pillar
+I'm like, I'm tell you that.
+
+31:02 - Unidentified Speaker
+Yeah. Oh, yeah. Oh, bro. You know, you can make custom plugins for the shit.
+
+31:06 - Red Pillar
+Yeah, you can. I've made custom plugins.
+
+31:09 - architect.hitsuyoaku.io
+wow hold on inside or through core code or something I used when I did it originally I was using anti-gravity one when I did it originally anti-gravity one for sure hold on I'm gonna show y'all something real quick just so y'all can get a feel for how wild this shit is y'all see my screen right now yes sir watch this let me see if it'll open up for real See, see if it's gonna fuck with me. Loading them pluggings up.
+
+31:50 - Unidentified Speaker
+Let's see if it hold Let me see if it actually go. It's been a long minute since I opened this one up.
+
+32:10 - architect.hitsuyoaku.io
+Okay, there we go.
+
+32:17 - architect.hitsuyoaku.io
+Trust me, Obsidian not usually the slowest because I put a bunch of cool shit on it, so it takes a little while. You got to get a little boot-up sequence now that you're doing all the types of fancy shit inside the ball.
+
+32:43 - architect.hitsuyoaku.io
+But make sure you are downloading Obsidian while we are lollygagging around, waiting for the machine to do its job. There we go.
+
+32:57 - architect.hitsuyoaku.io
+Y'all see that?
+
+32:59 - Unidentified Speaker
+Yep.
+
+33:01 - Red Pillar
+Yeah.
+
+33:02 - architect.hitsuyoaku.io
+Oh, you downloaded.
+
+33:06 - architect.hitsuyoaku.io
+Yeah, this is my custom plugin that I built. For the, yeah, yeah, yeah.
+
+33:13 - Red Pillar
+Given like, um, you said that was anti-gravity. That looked very clawish.
+
+33:22 - architect.hitsuyoaku.io
+This is actually Obsidian itself. I just built the plugin that I built added a bunch of stuff using different software programs like React pieces and Svelte and stuff. So it's like more UI than anything. Yeah. So you get all of the actual like, benefit of being able to use the brand system as a local command dashboard.
+
+33:48 - Unidentified Speaker
+Okay. So, boom, I can input stuff in here. Dog, it shit crazy.
+
+33:52 - architect.hitsuyoaku.io
+Anywho, this is just one small taste of what is possible with Obsidian. Like, I just wanted to show y'all that just off the strength.
+
+34:02 - architect.hitsuyoaku.io
+But truly understand that when you actually get in there, you get comfortable, you start really making it your own, you have so much freedom in terms of how you structure this around what you want to do.
+
+34:18 - architect.hitsuyoaku.io
+All right. So they have links. These links are what's actually doing this connection because these are what's known as wiki links. Okay. Wiki links. We're going get familiar with that concept. That's what creates the links between our notes, right?
+
+34:35 - Red Pillar
+Like your own Wikipedia. So, meditation, like your own Wikipedia.
+
+34:40 - architect.hitsuyoaku.io
+And that's exactly one of the ways that you should think about structuring this. So, this link right here is a note with the title Rene Descartes. If you click it, it literally just takes you to that note.
+
+34:54 - architect.hitsuyoaku.io
+So now, as I'm talking about Rene Descartes, I might be doing some research on simulation and simulacra. I got to do a little Descartian philosophy. You know what I'm saying? When I mention him in the work, I can link to that note where I have real hardcore information or research just on him.
+
+35:16 - architect.hitsuyoaku.io
+So now, as I'm reading this, I'm coming back to it, I'm building on it. I'm like, oh, yeah, what? Was that thing Renee Descartes was talking about that one time? Oh, yeah, what? Let me just click into it, grab that piece of information, bring it back. Linking your thoughts, it's like make it building a brain graph. You can visualize the relationships between your notes as you're building out these links.
+
+35:39 - Unidentified Speaker
+So, links create graphs.
+
+35:42 - architect.hitsuyoaku.io
+These nodes are the notes. The nodes are the notes. The links. Are literally the links between notes. Obsidian is not the hardest thing to understand, I promise you. Then you have canvas, right? So, you can literally create these like free-form canvas spaces where you make a box, you can fill it with different text, you can link it with notes, you can add pictures and images. That's a screenshot off of a wiki page. Family, when I say they have plugins to where you can integrate the agents directly into Obsidian through your API key: Claude API key, Gemini API key, OpenAI API key, boom, you put it in, you got it. They have web viewer. So as I'm in my vault fucking around, I can just open up an internet tab. And do some research right there in the vault. Copy and paste what I need, make my little notes, bing, that's a whole new note.
+
+36:50 - architect.hitsuyoaku.io
+And then, with the way you kind of integrate the AI into it, you can highlight, let's say, I highlight this right here, I'll highlight that, and then I'll have the agent actually iterate over that highlighted section. So maybe that was me doing a raw brain dump, and I'll I'll highlight that one section. I'll hey. Clean this up a little bit, organize it. Let's put it in this format. You know what So that way it's ready for this and this will work in about a couple of days. Bing, and it'll redo it right there in place in full markdown. The native language that it can read and comprehend perfectly. Perfectly structured, organized with these WikiLinks. The WikiLinks create this higher-level order. The overall system. It creates these different ways for the agent to actually move and traverse. Then you start adding in the knowledge graph aspect of it, and you're out of there. Build your ideal thinking space with thousands of plugins and our open API. It's easy to tailor Obsidian to fit your personal workflow. You just see me do just that. That's exactly what I showed y'all.
+
+38:05 - Unidentified Speaker
+So bingo.
+
+38:07 - Red Pillar
+So some of the things that one can take from Obsidian once they put together their second brain and develop these quote-unquote wikis and whatnot. Let's just say that I was building out a website that was highlighting a brand of mine and whatnot. What would be the advantage of the Obsidian, my Obsidian? Being filled up with all of the information pertaining to the site that I'm building out. Like, if I were to incorporate all of my notes, you know, all of my ideas, the visions that I have for the site, some websites that may be in alignment with the site, is that, do you suggest that as a good thing to do for what I do every day?
+
+38:57 - Unidentified Speaker
+Okay.
+
+38:58 - architect.hitsuyoaku.io
+That's what I do every day. That's how I manage all of my projects for all of my clients. They all exist as a folder full of markdown documents. Or sometimes it's not even just markdown documents. Sometimes it's Word documents, PDFs, audios, transcripts, all type of shit. All type of shit. Literally, it's just a file or a folder full of a bunch of different kinds of files, and it lives in my obsidian. And then I just point my agent harness like Perplexity Computer or Clawed Code or Codex or Anti-Gravity 2 or Kimi or whatever desktop app you're using to access these agents, whether it be local or cloud, doesn't matter. It could be OpenClaw, Hermes, Hermes, whatever. We get into all of them, right? I point the agent to that folder that exists inside of my vault. Now, mind you, Obsidian, when it's making the graph view, it doesn't care about any of your folders. Obsidian is not folder first, it's file first. Just keep that in mind. The folders are for you as the human, the folders are for your agents in a certain way. But the linking and the graph structure also works for your agent too. It knows how to traverse that just the same way it knows how to traverse the folders. All right. So, again, you put all of your work for the project, all of the inspiration, the screenshots, the all of it, you put all of it inside of the one folder.
+
+40:40 - Unidentified Speaker
+That folder becomes the local repository for the GitHub.
+
+40:47 - architect.hitsuyoaku.io
+Now, your Obsidian Vault is literally housing the local assets that build out the official record.
+
+40:58 - architect.hitsuyoaku.io
+Boom. Now you have a space to where I can ideate, brainstorm, add things that I need to add outside of the code space that ultimately influence what does become the code base that then gets pushed up to GitHub. I do it every single day. So imagine now you have a skill like analyze project or like one of my, matter of fact, fact, even taking my primal ontological loop prompt pack and turning that into a skill. And then you take all of your data and information, all your brain dumps, you tell me everything, you write it all down, all the things you want your brain to be. You put it all in that folder and you run that skill against that folder. It takes all the data, aggregates it, organizes it, gives you the final thing. And then you take that and you turn that into a website build, an MVP build. You take that to Lovable, bingo. Now you have the website right there in literally just like literally a day.
+
+42:09 - architect.hitsuyoaku.io
+Or you know what? I'll be nice. Let's say a week. Let's say a week. You get some real high-level specs. You get some real clean, prompt architecture going. You make sure you really cover all your bases in terms of cybersecurity. You know what I'm saying? User authentication. You start really getting in there and making sure I do day. It's not the hardest thing in the world. It's actually very easy. That's what we're teaching you right now. I'm teaching you the system I use every single day.
+
+42:41 - Unidentified Speaker
+Whenever y'all wants to see my lovable, I'll send it to you. I'll send you. Go to my website. You'll see all of the products I've built so far.
+
+42:49 - architect.hitsuyoaku.io
+This is how I do it. You put all of the inspiration, all of the things that are going to be the final product, the raw materials inside that folder. You link that folder to GitHub. You make it the local repository for the code.
+
+43:07 - architect.hitsuyoaku.io
+You point your agent to the folder and you get busy.
+
+43:16 - architect.hitsuyoaku.io
+You go find this. Oh, yeah, the website builder skills.
+
+43:24 - architect.hitsuyoaku.io
+You bring them in. You load spit. You do what you need to do. Very easy. Very, very easy.
+
+43:38 - architect.hitsuyoaku.io
+I mean, you can publish your things, online wiki, knowledge base, documentation, digital garden.
+
+43:46 - architect.hitsuyoaku.io
+All right, so just like how there's a really wild community around GitHub, there's a really wild community around Obsidian.
+
+43:55 - architect.hitsuyoaku.io
+Just like there's one around Notion, but again, Obsidian is just different because Notion isn't local.
+
+44:04 - Red Pillar
+Notion isn't private. Notion is like cloud-based.
+
+44:08 - architect.hitsuyoaku.io
+It's very cloud. This is your bare metal. This is on your machine. You can literally take the entire obsidian app and the vault and all of it, put it onto an external hard drive, and now you can just unplug your vault from your laptop. And now it's its own. You see what I'm saying? Like, family, and this is IP intellectual property. What did I just say? Cognitive offloading, brain dumping, intellectual property. Instinctual property, imaginative property.
+
+44:49 - architect.hitsuyoaku.io
+It lives here, and you create a space that helps you think better, that helps you want to think more.
+
+45:01 - Unidentified Speaker
+Again, it's not just a second brain. That's one layer of what obsidian is. Why is it called Obsidian?
+
+45:09 - architect.hitsuyoaku.io
+Obsidian is the black mirror of the Mesoamerican culture connected to Lord Tescot Lipoca, the Black Panther. Okay, why is it Obsidian? Why is it the Black Mirror?
+
+45:29 - Red Pillar
+Yeah, I want to add on to your own unconscious purpose. When I went to Mexico, everything was obsidian.
+
+45:42 - Unidentified Speaker
+All of the souvenirs was obsidian.
+
+45:44 - Red Pillar
+They go heavy on obsidian in Mexico, even to the point hit where he said that the pyramids were covered in obsidian. And that's why they were all of these things about gold and all of that. Because he said the sun was reflecting off of the obsidian so hard. That it literally they were damn, it literally looked like gold. Yeah, so they had like fool's gold, and not to say that it wasn't gold, but they were telling us the significance of the obsidian and the fact that a lot of the temples had obsidian capstones and they were aligned with obsidians until the conquistadors came and began to, take all the obsidian away. But um, yeah, that black mirror kind of connects to that Ben Ben stone, too.
+
+46:30 - architect.hitsuyoaku.io
+If you really think about it, if you really draw the connection, the Ben Ben stone, a primordial mound, that black earth energy, it really does come from that same lineage. So, again, family, fable, mythos, what are they telling obsidian? What are they telling us? You see what I'm saying? What is going on here? Why would a company choose to brand themselves under such iconography while delivering this specific functionality? Linking your thinking, creating a second brain knowledge base that also helps you surface your unconscious patterns.
+
+47:18 - architect.hitsuyoaku.io
+You stare into the void and you speak to it. And as you continue to speak to it, you begin to actually see how it's talking back to you about your own cognition. That's a real in order to really get to this one-person million-dollar, billion-dollar business, right? Especially as a sovereign identity, a personal brand, a creative entrepreneur, right? Maybe you're not technical, savvy one, but you're leveraging the tools of today in order to accelerate the manifestation of your passion, your dream lifestyle, right? Okay, cool. In order to get to that one person, $1 million space. You have to be able to put your own cognition into hyperdrive, even when you're not in the driver's seat. It has to be able to autopilot and on warp speed.
+
+48:23 - architect.hitsuyoaku.io
+If you've ever watched the movie Dune, the Spacing Guild Navigators, them boys ingest so much of that psychotropic, psychedelic. Metaphysical spice melange that they can see into the future and fold space in a particular way that allows them to not fucking die when they're doing faster than light travel across interstellar space.
+
+48:55 - architect.hitsuyoaku.io
+You gotta do something similar for yourself. That's what Obsidian is actually allowing you to do. To fold that space in between the idea and the execution as you begin to build out the thought more and more. You're going see how it all comes toward actionable steps of execution. That's what the agent is help you do. It's help you get agentic, it's help you get agency in terms of your own thinking.
+
+49:27 - architect.hitsuyoaku.io
+To turn it into income, to turn it into action, to turn it into, to turn it into, to turn it into. The Hitsuyoaku brand was built inside of an Insidian vault. I need you to understand that. My one-year anniversary is coming up. This brand started in August. It's only been one year for me.
+
+49:47 - architect.hitsuyoaku.io
+This is year one for me at this level. It's not my first rodeo, but again, this personal brand has been able to do leaps and bounds in a way that I wasn't able to before. Why? Because I sat down and really started linking my thinking, really started organizing my thoughts, and then I built an ontology around. The map that I was already circling the whole time. Once I finally traced it out, I saw something, and that something was Hitsoyoaku.
+
+50:19 - architect.hitsuyoaku.io
+And now I'm here, and I can do this with you. Isn't it fun? Oh, what a wonderful world. It's your time to shine in the dark. Go into that private cave. This is the bat cave. Obsidian is also connected to the bat. You see what I'm saying? Lords of the underworld. Again, get into that cave, that space where you can just be free to say and feel and do and imagine however you want.
+
+50:51 - architect.hitsuyoaku.io
+We can make it profitable later in terms of marketable in this economy, but it's already worth its weight in gold in terms of just pure creative essence. So, this is a pure creative space. A world of pure imagination, an imaginarium. Obsidian is actually the real tangible home of an imaginarium to where you can actually see and really feel and really manipulate thoughts, not just as notes. I said, there's a canvas. You can take sections from notes and put them into the canvas and make like a scrapbook. A family, how imaginative can you get with this?
+
+51:38 - architect.hitsuyoaku.io
+Mood boards, infinite mood boards, infinite mood boards.
+
+51:46 - Unidentified Speaker
+You can plan out this side of your business.
+
+51:48 - architect.hitsuyoaku.io
+You can visualize the workflow that you want to build out, screenshot it, and then have your agent build out that workflow. Based on the image out of your canvas from Obsidian. Family, I need you to understand I've done all of this. I've done it already. I'm not telling you something to hype you up. I'm telling you some of the most boring shit I've done, actually.
+
+52:16 - architect.hitsuyoaku.io
+I'm not even going to tell you about setting up a daemon inside of your vault that literally sits and waits for you to publish a new note. Inside of it so it can carry it off to an LLM to get processed. Did you hear what I just said? Automated processing of thoughts. You can literally just go into a particular inbox and say, Hey, I want to do this, this, and this. Brain dump the entire idea right there, drop it, walk away from the shit.
+
+52:53 - architect.hitsuyoaku.io
+Homie will wake up, call your favorite provider, run the request, and then deliver you back a new note inside of your vault with everything you need to.
+
+53:11 - Unidentified Speaker
+And then you just, you know, take that and push that to GitHub.
+
+53:14 - architect.hitsuyoaku.io
+And now you have an official record of the work because that's exactly what the Get Money AI office automates for you.
+
+53:25 - architect.hitsuyoaku.io
+Family, that's boring. It's not even interesting. You want to know what's interesting? Joining them on Discord.
+
+53:35 - Red Pillar
+Join them boys on Discord.
+
+53:37 - architect.hitsuyoaku.io
+Right.
+
+53:41 - Unidentified Speaker
+Let them tell you what they're doing. Let them show you some of the madness they're cooking up.
+
+53:48 - Red Pillar
+Discussion forum.
+
+53:50 - architect.hitsuyoaku.io
+If you got a question, I'm pretty sure someone else has already asked it. Them, right?
+
+53:55 - Red Pillar
+All right, developer docs.
+
+53:59 - architect.hitsuyoaku.io
+You don't think your agent would like to get a hold of these so that way it knows exactly how to manipulate your vault to match your thoughts? Because that's what you're going to be telling it. Hey, I think the vault to do this, and I want to create a note about this. And fuck, if I could just get some research on this and that. That time that I was five, and I just want to, I'm saying, like, my moon is in Mercury, you know what I'm saying? And I wonder what that means in regards to my financial decisions. And you can literally just goofy ass spoken word prompt like that. And because your agent knows exactly where the Obsidian developer docs are, it can build you whatever custom plugins. You an automated tracker. You can planner, Kanban boards. Family, family, family. You just saw me show you my custom one, and I didn't even show you much of shit. It already a lot just looking at it.
+
+55:10 - Unidentified Speaker
+To-do list, calendars. You can sync it. To whatever you want because, again, MCPs, APIs, CLIs.
+
+55:26 - architect.hitsuyoaku.io
+You can turn Obsidian into an API.
+
+55:32 - architect.hitsuyoaku.io
+You can turn your Obsidian into a database. Standard that's boring, that's not even advanced. Okay, that's what I'm saying. That's not even the advanced part of what Obsidian That's the basic shit. That's the ground level idea is, hey, you can turn this into an API if you want. Hey, you can turn, it's your second brain. You can manipulate the data in it however many ways you want. We have an amazing community of developers that sit down and build it. They build it.
+
+56:12 - architect.hitsuyoaku.io
+That's why you keep hearing about Obsidian. There's no coincidence, family. Of course, you were hear about Obsidian.
+
+56:22 - architect.hitsuyoaku.io
+Of course, you were going hear about GitHub. The tools, these AI tools, are just lowering the barrier to entry for the non-technical person to enter into highly technical spaces. That's it.
+
+56:41 - architect.hitsuyoaku.io
+So, of course, you going to hear about these things. We've been using them this whole time to do business. Welcome to the digital economy.
+
+56:53 - Unidentified Speaker
+Question.
+
+56:54 - Red Pillar
+What I'm showing you. Yeah, go ahead. If I were, let's say for a rapper or artist for that matter, let's say an RB singer, a rapper, anybody that's into the music business. How would they approach Obsidian to basically hone their craft and make them a better artist? Is there an angle that we're looking at?
+
+57:21 - architect.hitsuyoaku.io
+Oh, hell yeah. And the best angle would be to build out that knowledge base of all the music that inspires you, all the different clips of things that you like, label them properly. This is where you now become like Prince. You see what You're not just a musician, you're a curator of a whole kind of sewer of this shit. You really start eating. So you write your lyrics in there too. You see what I'm saying? And then you create a system. Here's what I'm saying. You could go to Notebook LM, right? You could do the YouTube to notebook LM extension, right? So go to YouTube, type in whatever your favorite artist name is. I do Prince, right? I type in Prince interviews. I would do the YouTube to Notebook LM. It would take all of those videos into a Notebook LM project, right? I use that Notebook LM project that's about Prince to create a Prince second brain.
+
+58:34 - architect.hitsuyoaku.io
+I would go to the custom report and I'll say, hey, I want to create a Prince second brain inside Obsidian vault. It's be one of the main critiques or critics of my artistic endeavors. As I write songs and lyrics and things, it's going to offer advice, help, you know what I'm saying? It's going to challenge my creative process, just like how Prince would have challenged. Because again, I just got all of his interviews with all of his thoughts in there. I just put all of his lyrics in there, all of the music, all of the thought and creativity that makes Prince Prince is in that notebook LM. All I have to do is extract the first principles, the core principles out of it. Bing.
+
+59:25 - architect.hitsuyoaku.io
+It creates the thing. I can take that to Claude or wherever, make a skill. Whatever. I plug that into whatever agent harness I want. The agent uses the skill inside of the vault.
+
+59:40 - architect.hitsuyoaku.io
+Matter of fact, when you get the skill from whatever platform you use to build that skill out for you, mainly clawed.
+
+59:49 - architect.hitsuyoaku.io
+Or if you're using Codex and you have the skill creator skill, whatever, anti-gravity with the skill creator skill, whatever you're doing to get the skill, YouTube, Prince, I need to create a second brain on that nigga so he can judge my art so I can create better art as an artist who's very deeply inspired by Prince. Okay, cool.
+
+1:00:11 - Red Pillar
+I may not be doing the exact type of music, but I want his critique, I want his critical, creative eye inside of my shit, or at least a simulation of it, right?
+
+1:00:19 - architect.hitsuyoaku.io
+So, his simulacra, a hyper-reality of it, a similar meme, a simulacra of it, a meme of it, right? Okay, cool. YouTube to Notebook LM extension. Boom, that goes to Notebook LM. I prompt Notebook LM to build that custom report. That helps me understand the core principles that really builds out the creative aesthetic and taste preferences of prints. Bing. I take that report. I go to Claude. Claude, build me out a scale based on this. All of that data becomes the core of the skill. It builds me out the skill. Boom. I take that skill file. It's usually going to be a zip file with a bunch of markdown in it. Okay, cool. I take that. What did I just say? Say? It's a a bunch of files in it. Oh, I can just throw that Obsidian. Now it's permanently locked in the vault. Any agent that I want to use the skill has a direct reference of it there, and I can also store it inside of the.agents file of whatever platform I'm using. Okay. Either which way, I have access to the skill. Now, as I'm building out, I'm working on my new album. All of my lyrics are in there. I'm starting to put the visuals that I'm starting to see. Like, ah, yeah, this one gotta have the like I'm lost in the desert kind of feel. I'm trying to find my way home on some prodigal son shit. Yeah, yeah, yeah. And I start building it out. You know what I'm saying? I start linking my thinking. All right, well, I start making the canvases. I'm really mood boarding the shit. I get to a point where ah, yo, I think I'm really ready to. To get this right. I think I'm really ready to start putting these into like, I'm start recording and really get my visuals. Like, it's time to make the album. To make the whole project, the whole rollout. I got all my raw material. And I call my Prince Skill. And I say, Prince Skill, help me organize this raw material inside of my obsidian vault to build up my new project. Sahara Sunrise. Here's my criteria of what I really want it to feel like, This is private. This obsidian vault. No one's looking. No one's judging me about what I really want my art to mean to the world. What I want my art to mean to me. So I spill it all out and I let it know: Prince, scale, this is what I really want this to be. Give me your critical eye. And guide me towards my vision. I've always been fond of just the way you create. So, if I could just have even a simulation of your essence to guide me in this most important of skills, in this most important of tasks, this most important of creative endeavors, binge run that shit through fable.
+
+1:03:19 - architect.hitsuyoaku.io
+Run it. You already just told the fable. You already built, you already simulating. One of your greatest it's like um one of them uh kids baseball movies where the old ghost of one of them baseball legends shows up to help you win nationals hit the grand slam hit the grand slam between the babe roof oh dear near near you're hitting the slow run around the bases near near You killing the game. That could be you inside of your vault. Because in your vault, no one can judge you for being as weird as you want to be about how you create this shit. We can make it marketable later. I need you to get the idea out now. I need you to get executing. I need you to get building now.
+
+1:04:16 - architect.hitsuyoaku.io
+I need you to organize the raw material. And then start seeing how you can manipulate that raw material to tell a story, fables, mythos. That's what a rollout is as an artist. So that's how you, as a musician, could leverage this. This is your freeform creative space. No one's judge you.
+
+1:04:40 - architect.hitsuyoaku.io
+But then you can also create the space where you can have that high-level overview. That maybe you can't afford an AR. So, why don't you just build up a fucking notebook LM full of videos about ARs from ARs?
+
+1:05:00 - architect.hitsuyoaku.io
+Maybe you need, maybe you just build up a fucking Dame Dash notebook LM, and now you build out the Dame Dash skill. And now every morning at 7 a.m., you got it automated where the dame dash skill your dumbass to go do something.
+
+1:05:20 - architect.hitsuyoaku.io
+Maybe you need, maybe you need a writing team. Maybe you get writers block a lot. You don't know how to write. You love finding the melodies and shit, but sometimes you just don't know how to get the words out. Sometimes maybe you need just a little primer. Not a ghostwriter but just someone that can help walk you through. Like, all right, structure the song like this, talk about this at this time. When you get to the hook, lean into something that feels like this, kind of feel it like that. Like, why don't you build that out?
+
+1:05:54 - Unidentified Speaker
+All things can be done in this agentic era.
+
+1:05:59 - architect.hitsuyoaku.io
+So, if you need a writing team, go to YouTube.
+
+1:06:07 - architect.hitsuyoaku.io
+Look up musical writing teams, music industry writing camps, whatever.
+
+1:06:15 - Unidentified Speaker
+Someone on YouTube is giving a full course on whatever the hell you're looking for. There's at least 10 of them doing a full course. So grab that whole page and take it to Notebook LM.
+
+1:06:28 - architect.hitsuyoaku.io
+Build out the custom report that then you use as the primary spec doc to build out the full skill. You take that skill, save it in your obsidian, just so you have that continuous record of it, you have that continuous safe storage of it, load it into your favorite agentic harness.
+
+1:06:50 - architect.hitsuyoaku.io
+You build, you build, you put in all your raw materials, you do what you need to boom. Now you got this song idea and you don't know where to take it, but you kind of got like the vague vision of how you want the song to feel. Like, yo, this feel like I, this one feels like Nixon 6, nigga. Yeah, nigga, this one feels like Nixon 6. You know what I'm saying? Yeah, we, nigga, fuck a chopped cheese, nigga. Straight beef patty cocoa bread, bro. Off top with. The pineapple, yeah, with the pineapple bev. They already know what we are, and you just describe the scene, you don't lyrics, you just describe the scene, and then your writing team skill comes back to you with a document inside of your vault and that that's like, oh, yeah, we we sat down, we thought about uh what you wanted to go for. Here's some ideas on. Where we could take this. Some potential lyrics, you what type of beat were you thinking? What's the BPM on it?
+
+1:07:56 - architect.hitsuyoaku.io
+Oh shit, I never thought about the BPM of the beat. What damn, do I want the song to be fast or slow? I didn't even think about that part. Fuck. Wait, does it wait? If it's a New York feel, I'm kind of going for it. Should boom bap or do I want to kind of do some like New York drill shit? Like, wait, hold on. I didn't think this all the way through. Through. My writing team actually kind of helped me up. Damn, I didn't even have to pay $50,000 for a writing boot camp. I built my own writing boot camp and I call on it whenever the hell I want. It's an agent.
+
+1:08:38 - architect.hitsuyoaku.io
+Hello? Are we digging it?
+
+1:08:42 - Unidentified Speaker
+Because that's as easy as it could be. Really, truly, and honestly, to build all of these things up.
+
+1:08:51 - Unidentified Speaker
+You don't understand distribution? Guess what? You can build up a second brain that does.
+
+1:08:59 - Unidentified Speaker
+Hello?
+
+1:09:01 - architect.hitsuyoaku.io
+You can build up a skill for DistroKid, build up a skill for SoundCloud, build up a skill for Apple, build up a skill for Spotify, build up and build, and it's not that hard. These things are easy to do.
+
+1:09:16 - Red Pillar
+Maybe AI help you.
+
+1:09:18 - architect.hitsuyoaku.io
+Just a couple hours of you being serious about what the fuck you say you care about. I mean, fuck.
+
+1:09:28 - architect.hitsuyoaku.io
+That's what I'd be saying. And I think that's why I'd be so rah-rah with it because it's just like you said you care about it.
+
+1:09:37 - architect.hitsuyoaku.io
+But the execution, so it's like I understand because, again, look, I got the ADHD. I got the neurodivergence. The execution gap be there sometimes. I get it.
+
+1:09:51 - Unidentified Speaker
+But when the tools are literally acting as exoskeletons to improve your output, there is no more excuse.
+
+1:10:01 - architect.hitsuyoaku.io
+If I can do it, shouldn't. None of you niggas have nothing to complain about, bro. I've been praying for technology like this for years.
+
+1:10:17 - architect.hitsuyoaku.io
+I've been praying for the day where I didn't have to rely on 50 other niggas to get my creativity off.
+
+1:10:25 - architect.hitsuyoaku.io
+Not to say I didn't want to create in community, but I ain't got time to pay 50 niggas to just try to get this one song recorded, actually. So, you know, Asuno is actually cool. I'm gonna load up these lyrics. I'm gonna give it a reference for what I actually wanted the original beat to be, and it's gonna find its way out. Matter of fact, I could actually use my real voice. I don't even need the whole studio. I just gotta record myself doing the flow. And it'll chop my shit up and kind of get it where I need it to go. Save me a couple thousand dollars. Now, all I got to do is export some stems and take it to maybe a real.
+
+1:11:01 - Unidentified Speaker
+Audio engineer that knows how to mix and master a shit, and I kind of got a clean song. Like, all right, cool. A little bit of AI.
+
+1:11:13 - Unidentified Speaker
+Again, family, whatever you want to do, whatever you want to do, whatever your lane is.
+
+1:11:18 - architect.hitsuyoaku.io
+Again, I've built an entire brand agency inside of my Obsidian.
+
+1:11:28 - architect.hitsuyoaku.io
+And you're seeing it now. This is the point of my brand agency: to bring you all into the digital economy in a way that makes sense, in a way that's future-proof, in a way that's sustainable. These are the tools that I know for a fact are going to survive. These are the tools that I know for are going to work.
+
+1:11:52 - Unidentified Speaker
+GitHub is gone, be here. Obsidian is gone, be here. That's why the course isn't really about GitHub or Obsidian for real.
+
+1:12:00 - architect.hitsuyoaku.io
+It's about teaching you a way to think about the development of your idea into a identifiable income infrastructure.
+
+1:12:12 - Unidentified Speaker
+That's what a brand is. An identifiable income infrastructure. That's the whole point.
+
+1:12:19 - architect.hitsuyoaku.io
+Going from idea to execution. To distribution and IED ideation to execution to distribution.
+
+1:12:38 - Unidentified Speaker
+So, Obsidian is going to help you do that.
+
+1:12:40 - architect.hitsuyoaku.io
+The developer docs are going to give you everything you need, teach you how to do plugins, teach you how to do themes. I made mine all colorful and pretty. It looked like a matrix. Yeah, themes.
+
+1:12:52 - Unidentified Speaker
+Right, CSS variables, you're going learn how to get into the styling of some of these things. Editors, boom.
+
+1:13:02 - architect.hitsuyoaku.io
+You can do state management. That means that you can do dynamic programming inside of your shit. That's what I'm saying. You can build a daemon, a program that literally just sits and waits for you to make a new note so it can go process that new information for you however you want. That's an automated workflow. You can build automated workflows into your obsidian. Just the same way you can then take that workflow because it's documented inside of your obsidian. You can take it, push it to GitHub, white label it and sell it to the next company, sell it to creator, sell it to the next person in your field who may not be as tech savvy as you are now. You probably looking at Hit Soyo Waku I'll never be as tech savvy as him. Oh, but guess who you are more tech savvy than the fucking 90% of the market that has yet to even touch these tools because it's still early.
+
+1:14:08 - Unidentified Speaker
+It's still early. It's still early.
+
+1:14:13 - Unidentified Speaker
+Super fact.
+
+1:14:14 - architect.hitsuyoaku.io
+You think you're late because all the big boys have joined on. Duh, they have all the money.
+
+1:14:22 - Unidentified Speaker
+84% of people haven't even touched AI. They haven't even really gotten into no chat GPT at the basic level.
+
+1:14:32 - Unidentified Speaker
+Let alone sitting over here figuring out how to wire up a fucking second brain to an agent harness to GitHub.
+
+1:14:41 - architect.hitsuyoaku.io
+so that way I can build a business infrastructure back office with this shit. Do you hear what we're talking about? Family, listen to this. Like, really sit down and take a moment and look around in the black mirror of your reality right now. What are you talking about? Oh, I'm using Obsidian to build a second brain for my brand. You sound alien as fuck. Oh, yeah, my second brain is connected to my agents. I actually have them daily doing a 25, 25 node swarm cron job. What, nigga?
+
+1:15:23 - Unidentified Speaker
+You're going saying weird things. Cron jobs, swarms of agents doing automated workflows across N8N.
+
+1:15:38 - architect.hitsuyoaku.io
+Oh, yeah, I had to vectorize my database so that way my agent had better knowledge graphs for its memory.
+
+1:15:52 - Unidentified Speaker
+You sound like a fucking technomancer. You sound real arcane.
+
+1:15:59 - architect.hitsuyoaku.io
+You sound real metaphysical talking like that. Ain't gonna lie Look at what you're engaging in on a Wednesday night.
+
+1:16:13 - architect.hitsuyoaku.io
+You're saying, How can I offload my cognition into a digital ecosystem in order to reflect on my own patterns of thought and the results that they've produced in my reality in order to begin to manipulate that pattern of thinking? To create a different reality, an altered destiny, manifest a new altered destiny.
+
+1:16:46 - architect.hitsuyoaku.io
+Isn't that the whole point of reflecting into a black mirror to see a different world? The event horizon, these things. Look, I just like making it a little mystical because sometimes I know that be getting y'all into the zone of this technical shit sometimes. It's what I do to make this shit a little more fun. So, why not? Again, when they're telling fables and mythos, and you got natural language processing, then why not get a little more mystical with how you build out this second, how you think about it, how you play around with it?
+
+1:17:24 - Unidentified Speaker
+Obsidian, it's very simple.
+
+1:17:27 - architect.hitsuyoaku.io
+Markdown files that you can create links between. Those links over time begin to show you the connections between different concepts and how you think about them.
+
+1:17:46 - architect.hitsuyoaku.io
+You can now hypercharge and augment that.
+
+1:17:51 - architect.hitsuyoaku.io
+Because these agent platforms, these agentic development platforms, clawed code, codex, anti-gravity, whatever the fuck, which one, whatever one you want to pick, work in such a way where if they are on your desktop, all they need to do is be pointed to a folder that has files in it. And that's how Obsidian works best. A folder with a bunch of files in it. The real organization doesn't come from subfolders, it comes from the way you link these notes together and how much connection any one given note has to any other set of notes. So, if there's only one connection, that node's going to be small. But if a node has 20 different connections across the vault, it's look a lot bigger. It's start taking up a little bit more of that space, that mythic gravity space that you're developing. That's how it works. So, you're going able to see how you think about thoughts. You're see the connections between ideas. And that's actually going create the blueprint that allows you to execute. On those ideas. That's what these agents help you do. They help raw material and execute over it, iterate over it, and make it something usable, something profitable, something tangible. So, if I'm an artist and I want to build up to my next album, I have a perfect workspace to do all of the brain dumps, all of the storyboarding, the ideas for songs. You see what I'm saying? I can get all of it in one place and I can point my agent to it and have my agent act as a whole writing cam, a whole executive producer, a whole video director, a whole, a whole, a whole. I can just make it act like these things through proper prompt hygiene, proper prompt architecture. I can make it do these things for me.
+
+1:20:05 - architect.hitsuyoaku.io
+And now, I, as this individual creator, this individual operator, can now do work and execute on my ideas in a way that far outpaces what should be logically feasible for one person because the systems bear the weight.
+
+1:20:30 - architect.hitsuyoaku.io
+The architecture bears the weight of my creative endeavor. I, as the biological entity, do not have to. Thus, I can just show up and be good at what I'm good at.
+
+1:20:44 - architect.hitsuyoaku.io
+And everything else gets automated and abstracted away from me into hyper-reality because the agent makes it gamified and fun. I just talk agent like a fucking genie in a bottle and it does shit for me. Me because I set up the system in such a way where, yes, I'm in my vault tinkering, just having random ideas, but then somehow that just turns into a new course. And somehow, that course just made me $50,000. And now I'm in Bali for some reason. I don't even know how I got here.
+
+1:21:19 - architect.hitsuyoaku.io
+Dog, I don't even know how I got here for real. You just kind of wake up on the beach, like, wait, hold on. What is? Wait?
+
+1:21:30 - architect.hitsuyoaku.io
+You know, it starts as you just kind of brain dumping into the obsidian, and then you just wake up in Atlanta of KTL after having been watching this platform for 10 years.
+
+1:21:42 - Unidentified Speaker
+And you just say, wait, how to huh? Well, ain't this about a bitch? How'd I do that?
+
+1:21:50 - architect.hitsuyoaku.io
+I must have walked through an event horizon or some shit.
+
+1:21:56 - architect.hitsuyoaku.io
+Family, do you get it? Because this is my life I'm talking to you about.
+
+1:22:04 - Unidentified Speaker
+Real deal. I'm an Obsidian developer. These are my documentations.
+
+1:22:13 - architect.hitsuyoaku.io
+All of 2025, up until August, I sat down and I fleshed out the entirety of my identity infrastructure. That led to the formalization of the primal ontological loop.
+
+1:22:38 - architect.hitsuyoaku.io
+I launched Hitsuyo Waku in August, reached out to Red in September, launched the cohort in like, what was that, late October, November?
+
+1:22:53 - Red Pillar
+I believe going into November. November-ish.
+
+1:22:55 - Unidentified Speaker
+Yeah.
+
+1:22:55 - architect.hitsuyoaku.io
+November-ish going into December. Boom.
+
+1:23:00 - Red Pillar
+No, that was October into November.
+
+1:23:03 - architect.hitsuyoaku.io
+October into November. There we go. So Obsidian helped me do that. And mind you, I was using the early versions of Chat GPT that were the earlier versions of Chat GPT that existed at that time. Using, again, Notebook LM, building out my. Already had Obsidian building out my second brain. I had Obsidian for years at this point, building out my second brain, full of ideas, full of different shit, full of notes, full of just me doing my musings as just a spiritual nigga that love research and wanting to just talk about some of the things that I get.
+
+1:23:43 - Unidentified Speaker
+And then I really started maxing it out this year. In terms of just the agentic development, really got back into the swing of like software development for real, for real, on some like everyday coding shit.
+
+1:24:00 - architect.hitsuyoaku.io
+And now I'm able to deliver this. And again, I just have to wake up and be like, yo, how the fuck did I get here actually?
+
+1:24:14 - Unidentified Speaker
+But I altered my destiny by linking my thinking.
+
+1:24:23 - Unidentified Speaker
+So you're going download Obsidian.
+
+1:24:28 - architect.hitsuyoaku.io
+You already have a bunch of files, a bunch of notes everywhere. You already got a bunch of stuff in your Google Drive.
+
+1:24:41 - architect.hitsuyoaku.io
+The mission I'm tasking you with is very simple.
+
+1:24:47 - architect.hitsuyoaku.io
+Grab and dash. That's it. Go get all of it and throw it in the vault.
+
+1:25:05 - Unidentified Speaker
+Get all of it and throw it into the vault.
+
+1:25:08 - architect.hitsuyoaku.io
+Don't worry about the organization yet because we got oh, we got repos for that one. The graphify repo, oh, yeah, that's the one.
+
+1:25:21 - Unidentified Speaker
+We'll talk about that soon. We'll talk about that on a vibe session. This one's just focused on obsidian. I just want to just want to have one conversation about one platform. We talked about GitHub, we got you rolling on GitHub and understanding. GitHub and getting familiar over there. Obsidian. Obsidian.
+
+1:25:46 - Mys Lekeisha
+Yes. I was talking Clawbot about Obsidian and it told me all of the stuff that I'm working on. It had made a tracker for me, but it had already put it in an MD file. So it's already ready to drop in Obsidian for me.
+
+1:26:03 - architect.hitsuyoaku.io
+There you go. Go. There you go. And then with the way you said it's a tracker?
+
+1:26:09 - Unidentified Speaker
+created.
+
+1:26:09 - Mys Lekeisha
+So I gave it all my projects and it created a tracker, but it put it in an MD file.
+
+1:26:15 - Unidentified Speaker
+So it says project.md.
+
+1:26:17 - Mys Lekeisha
+So it's ready to just drop over in Obsidian.
+
+1:26:20 - Unidentified Speaker
+Yep.
+
+1:26:21 - architect.hitsuyoaku.io
+And then once you have the Obsidian UI, well, the whole software in general, you'll be able to visualize that tracker a whole lot better. It'll give you more tools to help you see it and feel it.
+
+1:26:33 - architect.hitsuyoaku.io
+In that more dynamic kind of way, you see what I'm saying? It almost feels like living software, like your own website inside of your vault. You see what I'm saying? So you and your club are going to have a lot of fun just building out that custom space for your thinking. So that's actually a perfect point, a perfect use case. You've already been building a bunch of different assets using different agent platforms, using these different local and cloud models. A lot of them are already ready to just drop into a vault. The PDFs, the word documents, the audio files, the images, all you've seen it. I showed you the canvas. You can put images, screenshots, all types of shit in there. Whatever you want.
+
+1:27:21 - Unidentified Speaker
+Don't feel limited.
+
+1:27:22 - architect.hitsuyoaku.io
+I want you to feel unlimited. This shit should terrify you, actually.
+
+1:27:27 - architect.hitsuyoaku.io
+It should scare you how much creative freedom you really, really have in this era. They don't call it fables and mythos for no reason. You have the full might to tell stories that change cultures for generations to come. You have that power now. You have to understand when we're talking about mythos, those stories became institutions.
+
+1:27:57 - architect.hitsuyoaku.io
+The mythos was the mathematics that created the pyramids. Do you get that? The mythology and the mathematics are the same thing to our ancestors. They didn't hand you a textbook when they wanted to teach you these things, they handed you something more like a comic book.
+
+1:28:16 - architect.hitsuyoaku.io
+And to the West, mind, it's hard to think that something so entertaining could really be that informative. But yes, nigga, you could really get a fucking degree from our ancestors reading a comic book and just decoding the symbolic integrations at various levels.
+
+1:28:38 - architect.hitsuyoaku.io
+Symbolic literacy is the heart of digital literacy. I need you to understand that as well.
+
+1:28:48 - architect.hitsuyoaku.io
+All right, guys, we got all types of you can optimize the plugins, right?
+
+1:28:57 - Unidentified Speaker
+Hold on, y'all see this?
+
+1:29:11 - architect.hitsuyoaku.io
+I'm on MCP Market.com Agent Skill.
+
+1:29:16 - Mys Lekeisha
+It's still on Obsidian.
+
+1:29:19 - architect.hitsuyoaku.io
+Dang, that's crazy. Sure, this tap is that. Bing, there we go. Market right here, right? I typed in Obsidian. These are all the different skills you can go get to make your Obsidian the shit Vault Expert automate Obsidian Vault Management through a hybrid architecture of direct file operations, CLI-based graph intelligence, and URI control. This skill transforms Claude into a sophisticated Obsidian vault manager by integrating three distinct layers: direct file operations for rapid CRUD, create, read, update, destroy. CRUD. Functionality is the baseline of all web apps. When we say something is MVP, we usually mean at the base level, it can do all of the CRUD functionality necessary to make that app functional. It can create, read, and update, and destroy data. That's what it means to be. Functional as a web app. Okay. So, when you can do all of these inside of your vault, you got it. The Obsidian CLI. Again, MCPs, CLIs, APIs. It's how you connect different services to one another. So that way they can natively speak to one another and transfer data easily. This is all about data.
+
+1:31:02 - Unidentified Speaker
+data, data, data.
+
+1:31:07 - Unidentified Speaker
+Okay.
+
+1:31:08 - architect.hitsuyoaku.io
+Deep graph analysis, like finding orphan notes and broken links, that's going to be important when you want to organize your thoughts because there's come times where you're just making a bunch of notes, notes, notes, but you're missing out on the full value of a note because it's not connected to anything and creating that higher level order. That higher level synthesis of knowledge. Data creating, or when you use data to create connections, now you have information. When you use that information to now synthesize action, that's when we kind of get into the realm of knowledge and wisdom because knowledge is something you have to act on, something that you know through experience. That's the nature of epistemology. Oh man, y'all wasn't ready for this. I know it's all right. It's all right. But this is how you get money. This is the mindset. Them billionaire niggas think like this every day.
+
+1:32:12 - Unidentified Speaker
+This is how you get to it. You start seeing it. So, all right. I talked about it. The para-organizational system.
+
+1:32:19 - architect.hitsuyoaku.io
+Like I said, Obsidian has a very strong community. Strong communities have strong opinions. Para is one of those strong opinions. You do not have to follow that if it does not feel natural and native to how you want to organize your vault for what you need to do. It's best that you actually sit down and brain dump before you put anything in the vault. Actually, it's probably best that you download Obsidian, point your agent to the vault folder, and then say, Hey, I'm going brain dump about what I want this vault to be, what I want it to do, what I'm using it for as a part of this get money system, what I'm using it for as my private CEO notebook, my private imaginarium space based on the job to be done, the JTBD job to be done. Based on the job to be done that I've described in a very messy, unorganized way. What is the best vault structure that I can use so that way all of my private second brain operations function like a natural extension of my own mind?
+
+1:33:45 - architect.hitsuyoaku.io
+Again, you can be as customized as you want, or hey, if you know that, man, I'm not really trying to experiment, I want to go with systems that work. Here's a system that works. Nothing wrong with adopting a system that works, that's actually highly intelligent of you.
+
+1:34:06 - architect.hitsuyoaku.io
+Maybe if you adopt a system that works, you'll actually learn what makes. The system work. And then you'll feel comfortable experimenting and creating your own customized version of that system.
+
+1:34:24 - Unidentified Speaker
+Again, you don't know what's possible.
+
+1:34:26 - architect.hitsuyoaku.io
+So, why don't you just use a well-defined system of, hey, this is what we can do with this. And this is how other people have used this to do amazing things. Now, what can you do with this system? How can you freak it? How can you funk it? How can you twist it? But okay, there we go. A million and one skills you can use. Component. You want your shit to feel like you got a whole website in your shit, even when you're not on the internet with it? Components.
+
+1:35:03 - Unidentified Speaker
+All types of custom ways to view information, modals, pop-outs, like.
