@@ -73,3 +73,4 @@ The full three-day run of show is in `assets/activation-3day-schedule.jpg`: Satu
 | `assets/activation-3day-schedule.jpg` | The full April 18–20 run of show: Saturday / Sunday / Monday schedules. The Royal Estate of K.L.A.W. — Knowledge • Legacy • Autonomy • Wealth — **By Crown • By Blood • By Right.** |
 | `assets/royal-estate-sunday-schedule.jpg` | Sunday April 19th detailed schedule poster. |
 | `assets/miami-bootcamp-flyer.jpg` | Miami Bootcamp promo flyer (May 29–31). |
+| `assets/sovereign-noble-figure.jpg` | Sovereign noble artwork — royal figure in white and green regalia with gold crest staffs. |
