@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMAGINARIUM — POD OPERATIONS MANUAL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&amp;family=Rajdhani:wght@300;400;500;600;700&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-color: #0a0e27;
+        --bg-gradient: linear-gradient(180deg, #0a0e27 0%, #050814 100%);
+        --text-color: #e0e0e0;
+        --gold: #ffd700;
+        --neon-purple: #9d4edd;
+        --cyan: #00d9ff;
+        --green: #2ecc71;
+        --red: #e74c3c;
+        --yellow: #f1c40f;
+        --gray: #7f8c8d;
+        --border-color: rgba(0, 217, 255, 0.2);
+      }
+
+      body {
+        font-family: 'Rajdhani', sans-serif;
+        background: var(--bg-gradient);
+        color: var(--text-color);
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: 'Cinzel', serif;
+        text-transform: uppercase;
+        margin-top: 2em;
+        margin-bottom: 0.8em;
+        letter-spacing: 0.05em;
+      }
+
+      h1 {
+        color: var(--gold);
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+        font-size: 2.8em;
+        text-align: center;
+        border-bottom: 2px solid var(--gold);
+        padding-bottom: 20px;
+        margin-top: 0;
+      }
+
+      h2 {
+        color: var(--cyan);
+        border-left: 4px solid var(--neon-purple);
+        padding-left: 15px;
+        font-size: 1.8em;
+        margin-top: 60px;
+      }
+
+      h3 {
+        color: var(--gold);
+        font-size: 1.4em;
+        margin-top: 40px;
+      }
+
+      p,
+      li {
+        font-size: 1.1em;
+        color: #d1d5db;
+      }
+
+      strong {
+        color: white;
+        font-weight: 700;
+      }
+
+      a {
+        color: var(--cyan);
+        text-decoration: none;
+        transition: all 0.2s;
+        border-bottom: 1px dotted var(--cyan);
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 0.8em;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-family: 'Share Tech Mono', monospace;
+        vertical-align: middle;
+        margin-left: 8px;
+      }
+
+      .badge-lock {
+        background: rgba(127, 140, 141, 0.2);
+        color: #bdc3c7;
+        border: 1px solid #7f8c8d;
+      }
+      .badge-green {
+        background: rgba(46, 204, 113, 0.2);
+        color: var(--green);
+        border: 1px solid var(--green);
+      }
+      .badge-yellow {
+        background: rgba(241, 196, 15, 0.2);
+        color: var(--yellow);
+        border: 1px solid var(--yellow);
+      }
+      .badge-red {
+        background: rgba(231, 76, 60, 0.2);
+        color: var(--red);
+        border: 1px solid var(--red);
+      }
+
+      .callout {
+        border-left: 4px solid;
+        padding: 15px 20px;
+        margin: 25px 0;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .callout-info {
+        border-color: var(--cyan);
+      }
+      .callout-critical {
+        border-color: var(--red);
+        background: rgba(231, 76, 60, 0.05);
+      }
+      .callout-success {
+        border-color: var(--green);
+      }
+      .callout-warning {
+        border-color: var(--yellow);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 30px 0;
+        border: 1px solid var(--border-color);
+        font-size: 0.95em;
+      }
+
+      th {
+        background: rgba(0, 217, 255, 0.1);
+        color: var(--cyan);
+        text-align: left;
+        padding: 12px 15px;
+        font-family: 'Cinzel', serif;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      td {
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      tr:nth-child(even) {
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .code-block {
+        background: #000;
+        border: 1px solid var(--border-color);
+        padding: 20px;
+        font-family: 'Share Tech Mono', monospace;
+        color: var(--cyan);
+        font-size: 0.9em;
+        overflow-x: auto;
+        margin: 20px 0;
+        position: relative;
+      }
+
+      .code-block::before {
+        content: 'TERMINAL_ACCESS';
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: var(--border-color);
+        color: #000;
+        font-size: 0.7em;
+        padding: 2px 6px;
+      }
+
+      .toc {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 30px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 60px;
+      }
+
+      .toc a {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      .toc a:hover {
+        background: rgba(0, 217, 255, 0.1);
+        color: var(--cyan);
+        padding-left: 12px;
+      }
+
+      .toc-number {
+        font-family: 'Share Tech Mono', monospace;
+        color: var(--cyan);
+        margin-right: 10px;
+        min-width: 25px;
+      }
+
+      .role-card {
+        border: 1px solid var(--border-color);
+        padding: 25px;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 100%);
+      }
+
+      .role-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+      }
+
+      .role-title {
+        color: var(--gold);
+        font-family: 'Cinzel', serif;
+        font-size: 1.4em;
+        font-weight: bold;
+      }
+
+      .glossary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+      }
+
+      .glossary-item {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 15px;
+        border-left: 2px solid var(--cyan);
+      }
+
+      .footer {
+        margin-top: 100px;
+        padding-top: 40px;
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+        font-size: 0.9em;
+        color: var(--gray);
+      }
+
+      .nav-footer {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+        font-family: 'Share Tech Mono', monospace;
+      }
+
+      blockquote {
+        border-left: 4px solid var(--gold);
+        margin: 40px 0;
+        padding: 20px 30px;
+        background: rgba(255, 215, 0, 0.05);
+        font-family: 'Cinzel', serif;
+        font-size: 1.2em;
+        color: var(--gold);
+        line-height: 1.6;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .classification-banner {
+        text-align: center;
+        background: rgba(231, 76, 60, 0.1);
+        border: 1px solid var(--red);
+        color: var(--red);
+        padding: 10px;
+        font-family: 'Share Tech Mono', monospace;
+        letter-spacing: 2px;
+        margin-bottom: 40px;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body style="">
+    <div class="classification-banner">🔒 CONFIDENTIAL — INTERNAL USE ONLY</div>
+
+    <header style="text-align: center; margin-bottom: 60px">
+      <h1>IMAGINARIUM — POD OPERATIONS MANUAL</h1>
+      <p style="color: var(--cyan); font-family: 'Share Tech Mono', monospace; letter-spacing: 3px; margin-top: -10px">
+        INTERNAL OS v1.0 // FOR FACILITATORS &amp; POD LEADS ONLY
+      </p>
+      <div style="margin-top: 20px; color: var(--gray); font-size: 0.9em">
+        <span>VERSION: v1.0</span> | <span>DATE: MARCH 2026</span> | <span>AUTHORITY: RED PILLAR</span>
+      </div>
+    </header>
+
+    <!-- 01. TABLE OF CONTENTS -->
+    <section>
+      <div class="toc">
+        <a href="#mission-brief"><span class="toc-number">02</span> MISSION BRIEF</a>
+        <a href="#facilitator-protocols"><span class="toc-number">10</span> COMMAND PROTOCOLS</a>
+        <a href="#god-framework"><span class="toc-number">03</span> G.O.D. FRAMEWORK</a>
+        <a href="#pod-registry"><span class="toc-number">11</span> POD REGISTRY</a>
+        <a href="#pod-structure"><span class="toc-number">04</span> POD STRUCTURE</a>
+        <a href="#quick-ref"><span class="toc-number">12</span> QUICK REF CARDS</a>
+        <a href="#gold-model"><span class="toc-number">05</span> G.O.L.D. MODEL</a>
+        <a href="#escalation"><span class="toc-number">13</span> ESCALATION</a>
+        <a href="#coordinape"><span class="toc-number">06</span> COORDINAPE PROTOCOL</a>
+        <a href="#pattern-contrib"><span class="toc-number">14</span> PATTERN CONTRIBUTION</a>
+        <a href="#kill-switch"><span class="toc-number">07</span> KILL SWITCH PROTOCOL</a>
+        <a href="#glossary"><span class="toc-number">15</span> GLOSSARY</a>
+        <a href="#ip-clause"><span class="toc-number">08</span> IP CLAUSE (80/20)</a>
+        <a href="#doctrine"><span class="toc-number">16</span> DOCTRINE SUMMARY</a>
+        <a href="#cadence"><span class="toc-number">09</span> DAILY/WEEKLY CADENCE</a>
+        <a href="#footer"><span class="toc-number">17</span> VERSION CONTROL</a>
+      </div>
+    </section>
+
+    <!-- 02. MISSION BRIEF -->
+    <section id="mission-brief">
+      <h2>02 // MISSION BRIEF</h2>
+      <div class="callout callout-info">
+        <p>
+          <strong>PRIME DIRECTIVE:</strong> "Build fundable teams. Ship real products. Distribute ownership fairly."
+        </p>
+      </div>
+      <p>
+        This document is the <strong>Internal Operating System (OS)</strong> for running PODs inside the Imaginarium
+        90-Day Accelerator. It governs the machinery that transforms loose groups of students into disciplined,
+        revenue-generating startup units.
+      </p>
+
+      <div class="grid-2">
+        <div>
+          <h3>WHO THIS IS FOR</h3>
+          <ul>
+            <li><strong>Facilitators</strong> (Core Staff)</li>
+            <li><strong>POD Leads</strong> (Captains)</li>
+            <li><strong>Core Team</strong> (Ops/Admin)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>WHAT THIS GOVERNS</h3>
+          <ul>
+            <li>G.O.D. Role Assignments</li>
+            <li>Daily Operational Rhythm</li>
+            <li>IP Enforcement (80/20)</li>
+            <li>Kill Switch Execution</li>
+            <li>Coordinape Distribution</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. G.O.D. FRAMEWORK -->
+    <section id="god-framework">
+      <h2>03 // THE G.O.D. FRAMEWORK</h2>
+      <p>
+        We do not form teams randomly. We engineer them based on psychometric archetypes using the G.O.D. Framework
+        (Generator / Operator / Destroyer).
+      </p>
+
+      <!-- GENERATOR -->
+      <div class="role-card">
+        <div class="role-header">
+          <span class="role-title">GENERATOR (The Visionary)</span>
+          <span class="badge badge-yellow">1 PER POD</span>
+        </div>
+        <p><strong>Core Function:</strong> Creates from nothing, sets North Star vision.</p>
+        <div class="grid-2">
+          <div>
+            <strong>Responsibilities:</strong>
+            <ul>
+              <li>Idea generation &amp; strategy</li>
+              <li>Creative direction</li>
+              <li>Problem framing</li>
+            </ul>
+            <strong>Strengths:</strong>
+            <ul>
+              <li>High-level thinking</li>
+              <li>Pattern recognition</li>
+              <li>Vision casting</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Red Flags:</strong>
+            <ul>
+              <li>Over-promising</li>
+              <li>Scope creep</li>
+              <li>Refusing feedback</li>
+            </ul>
+            <strong>Success Metrics:</strong>
+            <ul>
+              <li>Vision clarity</li>
+              <li>Team alignment</li>
+              <li>Iteration speed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPERATOR -->
+      <div class="role-card">
+        <div class="role-header">
+          <span class="role-title">OPERATOR (The Builder)</span>
+          <span class="badge badge-green">2 PER POD</span>
+        </div>
+        <p><strong>Core Function:</strong> Executes and ships, translates vision to reality.</p>
+        <div class="grid-2">
+          <div>
+            <strong>Responsibilities:</strong>
+            <ul>
+              <li>Implementation</li>
+              <li>Task management</li>
+              <li>Shipping code/content</li>
+            </ul>
+            <strong>Strengths:</strong>
+            <ul>
+              <li>Execution discipline</li>
+              <li>Systems thinking</li>
+              <li>Deadline management</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Red Flags:</strong>
+            <ul>
+              <li>Burnout risk</li>
+              <li>Over-commitment</li>
+              <li>Quality compromise</li>
+            </ul>
+            <strong>Success Metrics:</strong>
+            <ul>
+              <li>Velocity</li>
+              <li>Output consistency</li>
+              <li>Team satisfaction</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- DESTROYER -->
+      <div class="role-card">
+        <div class="role-header">
+          <span class="role-title">DESTROYER (The Validator)</span>
+          <span class="badge badge-red">1 PER POD</span>
+        </div>
+        <p><strong>Core Function:</strong> Tests, pivots, ensures market fit.</p>
+        <div class="grid-2">
+          <div>
+            <strong>Responsibilities:</strong>
+            <ul>
+              <li>Critical analysis</li>
+              <li>User testing</li>
+              <li>Quality control</li>
+            </ul>
+            <strong>Strengths:</strong>
+            <ul>
+              <li>Objective evaluation</li>
+              <li>User empathy</li>
+              <li>Pattern spotting</li>
+            </ul>
+          </div>
+          <div>
+            <strong>Red Flags:</strong>
+            <ul>
+              <li>Negativity spiral</li>
+              <li>Blocking progress</li>
+              <li>Perfectionism</li>
+            </ul>
+            <strong>Success Metrics:</strong>
+            <ul>
+              <li>Quality improvements</li>
+              <li>User satisfaction</li>
+              <li>Iteration effectiveness</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-critical">
+        <strong>THE 1:2:1 RATIO IS NON-NEGOTIABLE.</strong><br>
+        1 Generator + 2 Operators + 1 Destroyer = The Minimum Viable Startup.<br>
+        This structure prevents "Fractured Polymath" syndrome and ensures balance between vision, execution, and
+        validation.
+      </div>
+    </section>
+
+    <!-- 04. POD STRUCTURE & LIFECYCLE -->
+    <section id="pod-structure">
+      <h2>04 // POD STRUCTURE &amp; LIFECYCLE</h2>
+
+      <h3>POD FORMATION PROTOCOL</h3>
+      <ul>
+        <li><strong>Day 1:</strong> 363 Diagnostic administered.</li>
+        <li><strong>Algorithm:</strong> Roles assigned based on diagnostic results.</li>
+        <li><strong>Naming:</strong> [Cohort]-[Number] (e.g., "ALPHA-01", "BETA-07").</li>
+        <li><strong>Captain:</strong> Rotates weekly among Operators.</li>
+      </ul>
+
+      <h3>POD LIFECYCLE STAGES</h3>
+      <ol>
+        <li><strong>Formation (Days 1-7):</strong> Role assignment, kickoff, first standup.</li>
+        <li><strong>Build (Days 8-30):</strong> Daily execution, pattern implementation.</li>
+        <li><strong>Validation (Day 30):</strong> Kill Switch checkpoint, portfolio review.</li>
+        <li><strong>Scale (Days 31-75):</strong> Iteration, user testing, revenue pursuit.</li>
+        <li><strong>Ascension (Days 76-90):</strong> Equity finalization, POD autonomy decision.</li>
+      </ol>
+    </section>
+
+    <!-- 05. G.O.L.D. ECONOMIC MODEL -->
+    <section id="gold-model">
+      <h2>05 // G.O.L.D. ECONOMIC MODEL</h2>
+      <p style="
+          text-align: center;
+          font-size: 1.2em;
+          color: var(--gold);
+          border: 1px solid var(--gold);
+          padding: 10px;
+          display: inline-block;
+        ">
+        G.O.L.D. = Growth / Ownership / Leverage / Dividends
+      </p>
+
+      <h3>REVENUE STREAMS</h3>
+      <ul>
+        <li><strong>Agency Track (Cash):</strong> B2B contracts, client services, reverse RFPs.</li>
+        <li><strong>Venture Track (Equity):</strong> SaaS MVPs, IP assets, owned platforms.</li>
+        <li><strong>Target:</strong> $15M gross revenue across all PODs.</li>
+      </ul>
+
+      <h3>DISTRIBUTION MECHANICS</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Stream</th>
+            <th>POD Share</th>
+            <th>Imaginarium Share</th>
+            <th>Sou-Sou Trigger</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Agency Revenue</td>
+            <td>70%</td>
+            <td>20%</td>
+            <td>10% (Next Cohort)</td>
+          </tr>
+          <tr>
+            <td>Venture Equity</td>
+            <td>80%</td>
+            <td>20%</td>
+            <td>N/A</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 06. COORDINAPE PROTOCOL -->
+    <section id="coordinape">
+      <h2>06 // COORDINAPE PROTOCOL</h2>
+      <p><strong>Proof of Contribution.</strong> We do not split equity equally. We split it based on value created.</p>
+
+      <h3>HOW IT WORKS</h3>
+      <ul>
+        <li><strong>Activation:</strong> Day 30 (after first Kill Switch checkpoint).</li>
+        <li><strong>Tokens:</strong> Each member gets 100 GIVE tokens weekly.</li>
+        <li><strong>Allocation:</strong> Give to teammates based on contribution. Cannot give to self.</li>
+        <li><strong>Reset:</strong> Tokens expire weekly. Use it or lose it.</li>
+      </ul>
+
+      <h3>CONTRIBUTION CATEGORIES</h3>
+      <div class="grid-2">
+        <ul>
+          <li><strong>Execution:</strong> Shipped features, completed tasks.</li>
+          <li><strong>Support:</strong> Unblocking teammates, problem-solving.</li>
+          <li><strong>Quality:</strong> Bug fixes, UX, polish.</li>
+        </ul>
+        <ul>
+          <li><strong>Leadership:</strong> Coordination, morale, comms.</li>
+          <li><strong>Innovation:</strong> New ideas, creative solutions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 07. KILL SWITCH PROTOCOL -->
+    <section id="kill-switch">
+      <h2>07 // KILL SWITCH PROTOCOL</h2>
+      <div class="callout callout-critical">
+        <strong>PURPOSE:</strong> Dissolve underperforming PODs with grace. We do not let teams die slowly.
+      </div>
+
+      <h3>CHECKPOINTS: Day 30 | Day 60 | Day 75</h3>
+
+      <h3>EVALUATION CRITERIA</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>Green (Continue)</th>
+            <th>Yellow (Warning)</th>
+            <th>Red (TRIGGER KILL)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Velocity</td>
+            <td>3+ outputs/week</td>
+            <td>1-2 outputs/week</td>
+            <td>0 outputs / stalled</td>
+          </tr>
+          <tr>
+            <td>Team Health</td>
+            <td>High morale</td>
+            <td>Tension but functional</td>
+            <td>Toxic / Ghosting</td>
+          </tr>
+          <tr>
+            <td>User Feedback</td>
+            <td>Positive signals</td>
+            <td>Mixed / Slow</td>
+            <td>None / Negative</td>
+          </tr>
+          <tr>
+            <td>Revenue</td>
+            <td>$1K+ or strong pipeline</td>
+            <td>$100-$999</td>
+            <td>$0 / No path</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>DISSOLUTION EXECUTION</h3>
+      <ol>
+        <li><strong>Trigger:</strong> Facilitator flags Red status.</li>
+        <li><strong>Review:</strong> Full POD presents status/blockers.</li>
+        <li><strong>Decision:</strong> Continue / Warning / Dissolve.</li>
+        <li>
+          <strong>Dissolution (If Red):</strong>
+          <ul>
+            <li><strong>Talent:</strong> Operators/Destroyers redistributed to active PODs.</li>
+            <li><strong>Generators:</strong> 1-on-1 coaching, solo track, or exit.</li>
+            <li><strong>IP:</strong> Archived to Pattern Library (100% Imaginarium).</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+
+    <!-- 08. IP CLAUSE (80/20) -->
+    <section id="ip-clause">
+      <h2>08 // IP CLAUSE ENFORCEMENT</h2>
+
+      <div class="callout callout-warning">
+        <strong>THE 80/20 RULE:</strong> 80% to POD Members (via Coordinape) / 20% to Imaginarium Liquidity Pool.
+      </div>
+
+      <h3>SCOPE</h3>
+      <p>
+        <strong>COVERS:</strong> Code, prompts, workflows, SaaS MVPs, agents, marketing assets created during the 90
+        days.
+      </p>
+      <p><strong>EXCLUDES:</strong> Pre-existing IP, post-graduation IP, personal brand content.</p>
+
+      <h3>ENFORCEMENT CHECKLIST</h3>
+      <ul>
+        <li>✅ Day 1: Signed by all members.</li>
+        <li>✅ Day 30: Inventory audit.</li>
+        <li>✅ Day 60: Valuation discussion.</li>
+        <li>✅ Day 90: Final distribution.</li>
+      </ul>
+    </section>
+
+    <!-- 09. CADENCE -->
+    <section id="cadence">
+      <h2>09 // DAILY &amp; WEEKLY CADENCE</h2>
+
+      <h3>DAILY RHYTHM (Mon-Fri)</h3>
+      <div class="code-block">
+        09:00 AM :: DAILY STANDUP (Async via Kimi Claw/Discord) - Shipped yesterday / Shipping today / Blockers 12:00 PM
+        :: DEEP WORK BLOCK (3 Hours Protected) - No meetings. Pure execution. 05:00 PM :: LIVELOG UPDATE - Post snapshot
+        to #livelog. Verify velocity.
+      </div>
+
+      <h3>WEEKLY RHYTHM</h3>
+      <div class="code-block">
+        MON 08:00 PM :: WEEK KICKOFF (Set OKRs + Assignments) WED 12:00 PM :: MID-WEEK SYNC (Unblock stalls) FRI 05:00
+        PM :: WEEK RETRO + COORDINAPE (Review + Allocate)
+      </div>
+    </section>
+
+    <!-- 10. FACILITATOR PROTOCOLS -->
+    <section id="facilitator-protocols">
+      <h2>10 // FACILITATOR COMMAND PROTOCOLS</h2>
+
+      <h3>TOOL STACK</h3>
+      <ul>
+        <li><strong>Claude:</strong> Coaching prompts, session planning.</li>
+        <li><strong>Manus AI:</strong> Portfolio reviews, report generation.</li>
+        <li><strong>Kimi Claw:</strong> Daily digest automation, monitoring alerts.</li>
+        <li><strong>Coordinape:</strong> Contribution tracking.</li>
+      </ul>
+
+      <h3>MANUS AI PROMPT LIBRARY</h3>
+      <div class="code-block">
+        PROMPT 1: POD HEALTH CHECK "Analyze this POD's last 7 days of LiveLog entries, standup notes, and Discord
+        activity. Identify: (1) Velocity trends, (2) Team morale signals, (3) Potential blockers, (4) Recommended
+        interventions. Format as: Status (Green/Yellow/Red) + 3 action items." PROMPT 2: KILL SWITCH EVALUATION "Review
+        this POD's portfolio: [link]. Evaluate against: Velocity, Team Health, Feedback, Revenue, Attendance. Score each
+        Green/Yellow/Red. Provide verdict and evidence."
+      </div>
+
+      <h3>KIMI CLAW AUTOMATIONS</h3>
+      <div class="code-block">
+        AUTO 1: DAILY POD DIGEST (6:00 PM) Task: Compile all LiveLog posts -&gt; Send to #facilitators AUTO 2: WEEKLY
+        HEALTH ALERT (SUN 8:00 PM) Task: Flag PODs with 0 LiveLog posts or &lt;80% attendance
+      </div>
+    </section>
+
+    <!-- 11. POD REGISTRY -->
+    <section id="pod-registry">
+      <h2>11 // POD REGISTRY &amp; TRACKING</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>POD ID</th>
+            <th>Gen</th>
+            <th>Op 1</th>
+            <th>Op 2</th>
+            <th>Des</th>
+            <th>Status</th>
+            <th>Velocity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ALPHA-01</td>
+            <td>JD</td>
+            <td>MK</td>
+            <td>SL</td>
+            <td>RT</td>
+            <td><span class="badge badge-green">ACTIVE</span></td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>ALPHA-02</td>
+            <td>AB</td>
+            <td>CD</td>
+            <td>EF</td>
+            <td>GH</td>
+            <td><span class="badge badge-yellow">WARNING</span></td>
+            <td>Low</td>
+          </tr>
+          <tr>
+            <td>ALPHA-03</td>
+            <td>XY</td>
+            <td>WZ</td>
+            <td>PQ</td>
+            <td>LM</td>
+            <td><span class="badge badge-red">DISSOLVED</span></td>
+            <td>Stalled</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 12. QUICK REF CARDS -->
+    <section id="quick-ref">
+      <h2>12 // QUICK REFERENCE CARDS</h2>
+
+      <div class="grid-2">
+        <div class="role-card">
+          <div class="role-header"><span class="role-title">KILL SWITCH DECISION</span></div>
+          <ul>
+            <li><strong>GREEN:</strong> 3+ Green, 0 Red.</li>
+            <li><strong>YELLOW:</strong> 2+ Yellow, 0-1 Red. (Plan required)</li>
+            <li><strong>RED:</strong> 2+ Red. (Dissolve immediately)</li>
+          </ul>
+        </div>
+        <div class="role-card">
+          <div class="role-header"><span class="role-title">COORDINAPE RED FLAGS</span></div>
+          <ul>
+            <li><strong>Collusion:</strong> Reciprocal equal giving.</li>
+            <li><strong>Imbalance:</strong> One person gets &gt;80%.</li>
+            <li><strong>Zero:</strong> Member gets 0 tokens.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. ESCALATION -->
+    <section id="escalation">
+      <h2>13 // ESCALATION PROTOCOLS</h2>
+      <p><strong>WHEN TO ESCALATE TO RED PILLAR:</strong></p>
+      <ul>
+        <li>Kill Switch decision contested.</li>
+        <li>IP dispute unresolved.</li>
+        <li>Facilitator burnout.</li>
+        <li>Safety/Ethics violations.</li>
+      </ul>
+      <p><strong>PROCESS:</strong> Document detail -&gt; DM Red Pillar -&gt; Decision in 48h -&gt; Decision Final.</p>
+    </section>
+
+    <!-- 14. PATTERN CONTRIBUTION -->
+    <section id="pattern-contrib">
+      <h2>14 // PATTERN LIBRARY CONTRIBUTION</h2>
+      <p>Facilitators must curate 1-2 new patterns per cohort. Submit in this format:</p>
+      <div class="code-block">
+        # Pattern Name: [Name] **Category:** [Automation/Content/Ops] **Best for:** [Role] **Tools:**
+        [Claude/Manus/Kimi] ## Use Case [Description] ## Prompt/Workflow [Instructions] ## Success Metrics [KPIs]
+      </div>
+    </section>
+
+    <!-- 15. GLOSSARY -->
+    <section id="glossary">
+      <h2>15 // GLOSSARY</h2>
+      <div class="glossary-grid">
+        <div class="glossary-item"><strong>363 Diagnostic:</strong> Psychometric test for role assignment.</div>
+        <div class="glossary-item"><strong>Ascension:</strong> Graduation (Day 90+).</div>
+        <div class="glossary-item"><strong>Coordinape:</strong> Token-based contribution tracking.</div>
+        <div class="glossary-item"><strong>G.O.D. Framework:</strong> Generator / Operator / Destroyer.</div>
+        <div class="glossary-item"><strong>Kill Switch:</strong> Protocol to dissolve failing PODs.</div>
+        <div class="glossary-item"><strong>LiveLog:</strong> Daily public progress tracking.</div>
+        <div class="glossary-item"><strong>Sou-Sou Trigger:</strong> 10% reinvestment into next cohort.</div>
+        <div class="glossary-item"><strong>Pattern Library:</strong> Shared repository of workflows.</div>
+      </div>
+    </section>
+
+    <!-- 16. DOCTRINE SUMMARY -->
+    <section id="doctrine">
+      <h2>16 // THE FACILITATOR'S OATH</h2>
+      <blockquote>
+        "You are not a teacher. You are an architect of realities.<br>
+        You do not manage students. You activate Founders.<br>
+        You enforce structure so they can create freely.<br>
+        You cut clean when necessary. You celebrate loudly when earned.<br>
+        You hold the line on IP. You distribute ownership fairly.<br>
+        You are the bridge between vision and velocity.<br><br>
+        The Imaginarium does not graduate consumers.<br>
+        It ascends Builders into Launchers into Owners.<br><br>
+        This manual is your command system.<br>
+        Use it with precision. Execute with compassion.<br><br>
+        <strong>BUILD. SHIP. OWN.</strong>"
+      </blockquote>
+      <p style="text-align: right; margin-top: 20px; font-family: 'Cinzel', serif; color: var(--gold)">
+        — RED PILLAR<br><span style="font-size: 0.8em; color: var(--gray)">CEO, KTL UNIVERSITY</span>
+      </p>
+    </section>
+
+    <!-- 17. FOOTER -->
+    <section id="footer" class="footer">
+      <p>IMAGINARIUM × KTL UNIVERSITY © 2026</p>
+      <p>VERSION v1.0 | MAINTAINED BY CORE OPS</p>
+
+      <div class="nav-footer">
+        <a href="#">CLASS 2 DOC</a>
+        <a href="#">CLASS 3 DOC</a>
+        <a href="#">STUDENT ONBOARDING</a>
+      </div>
+    </section>
+  
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>

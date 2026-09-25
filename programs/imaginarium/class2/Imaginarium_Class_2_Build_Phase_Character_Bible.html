@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" style=""><head>
+    <meta charset="UTF-8">
+    <title>CHARACTER BIBLE TEMPLATE v1.0 — Fantasy Complex Pattern Library</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&amp;family=Rajdhani:wght@300;400;600;700&amp;family=Share+Tech+Mono&amp;display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-color: #0a0e27;
+        --card-bg: #13172e;
+        --text-primary: #e0e6ed;
+        --text-secondary: #a0aec0;
+        --gold: #ffd700;
+        --purple: #9d4edd;
+        --cyan: #00d9ff;
+        --green: #00ff9d;
+        --red: #ff4757;
+        --border-color: #2d3748;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        font-family: 'Rajdhani', sans-serif;
+        line-height: 1.6;
+        padding: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow-x: hidden;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: 'Cinzel', serif;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+      }
+
+      h1 {
+        font-size: 3rem;
+        text-align: center;
+        border-bottom: 2px solid var(--gold);
+        padding-bottom: 1rem;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+      }
+
+      .subtitle {
+        text-align: center;
+        font-family: 'Share Tech Mono', monospace;
+        color: var(--cyan);
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+        letter-spacing: 2px;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        color: var(--purple);
+        border-left: 4px solid var(--purple);
+        padding-left: 1rem;
+        margin-top: 4rem;
+        display: flex;
+        align-items: center;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        color: var(--cyan);
+        margin-top: 1.5rem;
+      }
+
+      /* Layout Components */
+      .box {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        padding: 25px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        border-color: var(--cyan);
+      }
+
+      .box-gold {
+        border-color: var(--gold);
+        background: rgba(255, 215, 0, 0.05);
+      }
+
+      .box-purple {
+        border-color: var(--purple);
+        background: rgba(157, 78, 221, 0.05);
+      }
+
+      .box-cyan {
+        border-color: var(--cyan);
+        background: rgba(0, 217, 255, 0.05);
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      /* Visual Reference Grid */
+      .ref-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        aspect-ratio: 3/4;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .ref-card:hover {
+        border-color: var(--gold);
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+      }
+
+      .ref-label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        color: var(--cyan);
+        text-align: center;
+        padding: 5px;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.8rem;
+        border-top: 1px solid var(--cyan);
+      }
+
+      .placeholder-img {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text-secondary);
+        font-family: 'Share Tech Mono', monospace;
+        text-align: center;
+        padding: 20px;
+        border: 2px dashed var(--border-color);
+      }
+
+      /* Color Swatches */
+      .color-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .swatch-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 6px;
+        overflow: hidden;
+        transition: transform 0.2s;
+      }
+
+      .swatch-card:hover {
+        transform: scale(1.05);
+        border-color: var(--gold);
+      }
+
+      .swatch-color {
+        height: 100px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-secondary);
+        font-family: 'Share Tech Mono', monospace;
+      }
+
+      .swatch-info {
+        padding: 10px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .hex-code {
+        display: block;
+        font-family: 'Share Tech Mono', monospace;
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        margin-top: 5px;
+      }
+
+      /* Tables */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+
+      th {
+        background: rgba(255, 215, 0, 0.1);
+        color: var(--gold);
+        font-family: 'Cinzel', serif;
+        text-align: left;
+        padding: 12px;
+        border-bottom: 2px solid var(--gold);
+      }
+
+      td {
+        padding: 12px;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      tr:hover td {
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      /* Instructions */
+      .instruction-box {
+        background: rgba(0, 217, 255, 0.1);
+        border-left: 4px solid var(--cyan);
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .instruction-title {
+        color: var(--cyan);
+        font-family: 'Share Tech Mono', monospace;
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      .instruction-text {
+        color: var(--text-primary);
+        font-size: 0.9rem;
+      }
+
+      /* Animation Classes */
+      .fade-in {
+        animation: fadeIn 1s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 60px;
+        text-align: center;
+        padding: 40px 0;
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      .tag {
+        display: inline-block;
+        background: rgba(157, 78, 221, 0.2);
+        color: var(--purple);
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        font-family: 'Share Tech Mono', monospace;
+      }
+    </style>
+  </head>
+  <body style="">
+    <!-- HOW TO USE THIS TEMPLATE -->
+    <section class="fade-in">
+      <div class="instruction-box" style="border-color: var(--gold); background: rgba(255, 215, 0, 0.1)">
+        <span class="instruction-title" style="color: var(--gold)">HOW TO USE THIS TEMPLATE</span>
+        <div class="instruction-text">
+          <ol style="margin-bottom: 0">
+            <li>Save this file as <code>[your-character-name]-character-bible.html</code></li>
+            <li>Replace all text in <strong>[BRACKETS]</strong> with your character's details</li>
+            <li>Replace placeholder image sources with your own image URLs</li>
+            <li>Delete these instruction boxes before publishing</li>
+            <li>
+              Ensure all spelling follows the Fantasy Complex standard (e.g., <strong>Skooly Red</strong>,
+              <strong>SKOOLY HIGH</strong>)
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. HERO SECTION -->
+    <header class="fade-in">
+      <h1>[CHARACTER NAME] — CHARACTER BIBLE</h1>
+      <div class="subtitle">Official Design Reference &amp; Pattern Library Entry<br>v1.0 | Created: [MONTH YEAR]</div>
+      <div style="text-align: center; margin-bottom: 2rem; color: var(--gold)">
+        KTL UNIVERSITY × NETERVERSE × FANTASY COMPLEX INDUSTRY
+      </div>
+    </header>
+
+    <!-- 2. CHARACTER IDENTITY CARD -->
+    <section class="fade-in">
+      <div class="box box-gold">
+        <div class="instruction-box">
+          <span class="instruction-title">INSTRUCTIONS</span>
+          <span class="instruction-text">Fill in the core identity details. The "Universe" field should typically be <strong>SKOOLY HIGH</strong> or
+            <strong>KTLiens</strong>.</span>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h3 style="margin-top: 0">IDENTITY DATA</h3>
+            <table>
+              <tbody><tr>
+                <td><strong>Official Name:</strong></td>
+                <td>[FULL CHARACTER NAME]</td>
+              </tr>
+              <tr>
+                <td><strong>Alias/Title:</strong></td>
+                <td>"[NICKNAME OR TITLE]"</td>
+              </tr>
+              <tr>
+                <td><strong>Universe:</strong></td>
+                <td>[UNIVERSE NAME] (e.g., SKOOLY HIGH / KTLiens)</td>
+              </tr>
+              <tr>
+                <td><strong>Role:</strong></td>
+                <td>[PRIMARY ROLE] (e.g., Student, Mentor, Antagonist)</td>
+              </tr>
+              <tr>
+                <td><strong>Archetype:</strong></td>
+                <td>[ARCHETYPE DESCRIPTION]</td>
+              </tr>
+            </tbody></table>
+          </div>
+          <div>
+            <h3 style="margin-top: 0">CREATION INFO</h3>
+            <table>
+              <tbody><tr>
+                <td><strong>First Appearance:</strong></td>
+                <td>[PROJECT/SERIES NAME]</td>
+              </tr>
+              <tr>
+                <td><strong>Creator:</strong></td>
+                <td>[YOUR NAME] / KTL University</td>
+              </tr>
+              <tr>
+                <td><strong>Design Style:</strong></td>
+                <td>[STYLE DESCRIPTION] (e.g., Afrofuturism, Cyberpunk)</td>
+              </tr>
+              <tr>
+                <td><strong>Status:</strong></td>
+                <td>[Active / In Development / Archived]</td>
+              </tr>
+              <tr>
+                <td><strong>Classification:</strong></td>
+                <td>[ASSET TYPE] (e.g., Supporting Character, Villain)</td>
+              </tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. VISUAL REFERENCE GRID -->
+    <section class="fade-in">
+      <h2>3. VISUAL REFERENCE GRID</h2>
+      <div class="instruction-box">
+        <span class="instruction-title">INSTRUCTIONS</span>
+        <span class="instruction-text">Replace the placeholder <code>div</code>s below with your character's turnaround images. Maintain the 7-panel
+          layout for consistency with the <strong>Skooly Red</strong> standard.</span>
+      </div>
+
+      <!-- Top Row -->
+      <div class="grid-4">
+        <div class="ref-card">
+          <div class="placeholder-img">[FRONT VIEW IMAGE]</div>
+          <div class="ref-label">FRONT VIEW</div>
+        </div>
+        <div class="ref-card">
+          <div class="placeholder-img">[LEFT PROFILE IMAGE]</div>
+          <div class="ref-label">LEFT PROFILE</div>
+        </div>
+        <div class="ref-card">
+          <div class="placeholder-img">[RIGHT PROFILE IMAGE]</div>
+          <div class="ref-label">RIGHT PROFILE</div>
+        </div>
+        <div class="ref-card">
+          <div class="placeholder-img">[BACK VIEW IMAGE]</div>
+          <div class="ref-label">BACK VIEW</div>
+        </div>
+      </div>
+
+      <!-- Bottom Row -->
+      <div class="grid-3">
+        <div class="ref-card">
+          <div class="placeholder-img">[CLOSE-UP PORTRAIT]</div>
+          <div class="ref-label">CLOSE-UP PORTRAIT</div>
+        </div>
+        <div class="ref-card">
+          <div class="placeholder-img">[ENVIRONMENTAL CONTEXT]</div>
+          <div class="ref-label">ENVIRONMENTAL CONTEXT</div>
+        </div>
+        <div class="ref-card">
+          <div class="placeholder-img">[ALTERNATE POSE]</div>
+          <div class="ref-label">ALTERNATE POSE</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PHYSICAL CHARACTERISTICS -->
+    <section class="fade-in">
+      <h2>4. PHYSICAL CHARACTERISTICS</h2>
+      <div class="grid-2">
+        <div class="box box-purple">
+          <h3>4A. FACIAL FEATURES</h3>
+          <table>
+            <tbody><tr>
+              <td>Skin Tone</td>
+              <td>[DESCRIPTION + HEX CODE]</td>
+            </tr>
+            <tr>
+              <td>Face Shape</td>
+              <td>[SHAPE DESCRIPTION]</td>
+            </tr>
+            <tr>
+              <td>Jawline</td>
+              <td>[DESCRIPTION]</td>
+            </tr>
+            <tr>
+              <td>Nose</td>
+              <td>[DESCRIPTION]</td>
+            </tr>
+            <tr>
+              <td>Lips</td>
+              <td>[DESCRIPTION]</td>
+            </tr>
+            <tr>
+              <td>Facial Hair</td>
+              <td>[STYLE / N/A]</td>
+            </tr>
+          </tbody></table>
+        </div>
+        <div>
+          <div class="box box-cyan">
+            <h3>4B. HAIRSTYLE</h3>
+            <ul>
+              <li><strong>Style:</strong> [HAIRSTYLE NAME]</li>
+              <li><strong>Color:</strong> [COLOR DESCRIPTION]</li>
+              <li><strong>Texture:</strong> [TEXTURE TYPE]</li>
+              <li><strong>Volume:</strong> [VOLUME DESCRIPTION]</li>
+              <li><strong>Significance:</strong> [CULTURAL/CHARACTER MEANING]</li>
+            </ul>
+          </div>
+          <div class="box box-purple">
+            <h3>4C. BODY TYPE</h3>
+            <ul>
+              <li><strong>Build:</strong> [BUILD TYPE] (e.g., Athletic, Slender)</li>
+              <li><strong>Height:</strong> [HEIGHT]</li>
+              <li><strong>Posture:</strong> [POSTURE DESCRIPTION]</li>
+              <li><strong>Distinguishing Marks:</strong> [SCARS, TATTOOS, ETC.]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SIGNATURE ACCESSORIES -->
+    <section class="fade-in">
+      <h2>5. SIGNATURE ACCESSORIES</h2>
+      <div class="grid-3">
+        <!-- Item 1 -->
+        <div class="box box-cyan">
+          <h3 style="text-align: center">[ACCESSORY 1] 🕶️</h3>
+          <ul>
+            <li><strong>Style:</strong> [STYLE NAME]</li>
+            <li><strong>Material:</strong> [MATERIAL]</li>
+            <li><strong>Color:</strong> [COLOR]</li>
+            <li><strong>Significance:</strong> [MEANING]</li>
+          </ul>
+        </div>
+        <!-- Item 2 -->
+        <div class="box box-gold">
+          <h3 style="text-align: center">[ACCESSORY 2] 🎩</h3>
+          <ul>
+            <li><strong>Style:</strong> [STYLE NAME]</li>
+            <li><strong>Material:</strong> [MATERIAL]</li>
+            <li><strong>Color:</strong> [COLOR]</li>
+            <li><strong>Significance:</strong> [MEANING]</li>
+          </ul>
+        </div>
+        <!-- Item 3 -->
+        <div class="box box-purple">
+          <h3 style="text-align: center">[ACCESSORY 3] 🎒</h3>
+          <ul>
+            <li><strong>Style:</strong> [STYLE NAME]</li>
+            <li><strong>Material:</strong> [MATERIAL]</li>
+            <li><strong>Color:</strong> [COLOR]</li>
+            <li><strong>Significance:</strong> [MEANING]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. WARDROBE BREAKDOWN -->
+    <section class="fade-in">
+      <h2>6. WARDROBE BREAKDOWN</h2>
+
+      <div class="box">
+        <h3>6A. PRIMARY OUTFIT ([NAME])</h3>
+        <p><em>Style Code: [STYLE DESCRIPTION] (e.g., Academic Streetwear)</em></p>
+        <table>
+          <tbody><tr>
+            <th>Garment</th>
+            <th>Color</th>
+            <th>Material</th>
+            <th>Style Notes</th>
+          </tr>
+          <tr>
+            <td>[TOP LAYER]</td>
+            <td>[COLOR]</td>
+            <td>[MATERIAL]</td>
+            <td>[NOTES]</td>
+          </tr>
+          <tr>
+            <td>[BOTTOM LAYER]</td>
+            <td>[COLOR]</td>
+            <td>[MATERIAL]</td>
+            <td>[NOTES]</td>
+          </tr>
+          <tr>
+            <td>[SHOES]</td>
+            <td>[COLOR]</td>
+            <td>[MATERIAL]</td>
+            <td>[NOTES]</td>
+          </tr>
+          <tr>
+            <td>[ACCESSORY]</td>
+            <td>[COLOR]</td>
+            <td>[MATERIAL]</td>
+            <td>[NOTES]</td>
+          </tr>
+        </tbody></table>
+      </div>
+
+      <div class="box">
+        <h3>6B. ALTERNATE OUTFIT ([NAME])</h3>
+        <p><em>Style Code: [STYLE DESCRIPTION]</em></p>
+        <table>
+          <tbody><tr>
+            <th>Garment</th>
+            <th>Color</th>
+            <th>Material</th>
+            <th>Style Notes</th>
+          </tr>
+          <tr>
+            <td>[TOP LAYER]</td>
+            <td>[COLOR]</td>
+            <td>[MATERIAL]</td>
+            <td>[NOTES]</td>
+          </tr>
+          <tr>
+            <td>[BOTTOM LAYER]</td>
+            <td>[COLOR]</td>
+            <td>[MATERIAL]</td>
+            <td>[NOTES]</td>
+          </tr>
+          <tr>
+            <td>[SHOES]</td>
+            <td>[COLOR]</td>
+            <td>[MATERIAL]</td>
+            <td>[NOTES]</td>
+          </tr>
+        </tbody></table>
+      </div>
+    </section>
+
+    <!-- 7. COLOR PALETTE -->
+    <section class="fade-in">
+      <h2>7. COLOR PALETTE</h2>
+      <div class="box">
+        <div class="instruction-box">
+          <span class="instruction-title">INSTRUCTIONS</span>
+          <span class="instruction-text">Define your character's HEX codes. Use the style attribute
+            <code>style="background-color: #HEXCODE"</code> to set the swatch color.</span>
+        </div>
+
+        <h4 style="margin-top: 0">PRIMARY PALETTE</h4>
+        <div class="color-grid">
+          <!-- Swatches -->
+          <div class="swatch-card">
+            <div class="swatch-color">[COLOR]</div>
+            <div class="swatch-info">[NAME]<span class="hex-code">[#HEX]</span></div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color">[COLOR]</div>
+            <div class="swatch-info">[NAME]<span class="hex-code">[#HEX]</span></div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color">[COLOR]</div>
+            <div class="swatch-info">[NAME]<span class="hex-code">[#HEX]</span></div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color">[COLOR]</div>
+            <div class="swatch-info">[NAME]<span class="hex-code">[#HEX]</span></div>
+          </div>
+        </div>
+
+        <h4 style="margin-top: 30px">ACCENT &amp; SKIN TONE</h4>
+        <div class="color-grid">
+          <div class="swatch-card">
+            <div class="swatch-color">[COLOR]</div>
+            <div class="swatch-info">Accent<span class="hex-code">[#HEX]</span></div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color">[COLOR]</div>
+            <div class="swatch-info">Skin Base<span class="hex-code">[#HEX]</span></div>
+          </div>
+          <div class="swatch-card">
+            <div class="swatch-color">[COLOR]</div>
+            <div class="swatch-info">Highlight<span class="hex-code">[#HEX]</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. CHARACTER PERSONALITY PROFILE -->
+    <section class="fade-in">
+      <h2>8. PERSONALITY PROFILE</h2>
+      <div class="grid-2">
+        <div class="box box-gold">
+          <h3>CORE TRAITS</h3>
+          <ul>
+            <li>[TRAIT 1]</li>
+            <li>[TRAIT 2]</li>
+            <li>[TRAIT 3]</li>
+            <li>[TRAIT 4]</li>
+            <li>[TRAIT 5]</li>
+          </ul>
+        </div>
+        <div class="box box-purple">
+          <h3>VOICE &amp; DIALOGUE</h3>
+          <ul>
+            <li><strong>Tone:</strong> [TONE DESCRIPTION]</li>
+            <li><strong>Pace:</strong> [PACE DESCRIPTION]</li>
+            <li><strong>Vocabulary:</strong> [VOCABULARY LEVEL/STYLE]</li>
+            <li><strong>Accent:</strong> [ACCENT DESCRIPTION]</li>
+            <li><strong>Vibe:</strong> [COMPARISON] (e.g., Character X meets Character Y)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="box box-cyan">
+        <h3>MOTIVATIONS &amp; VALUES</h3>
+        <p>[VALUE 1] • [VALUE 2] • [VALUE 3] • [VALUE 4] • [VALUE 5]</p>
+      </div>
+    </section>
+
+    <!-- 9. EXPRESSION SHEET -->
+    <section class="fade-in">
+      <h2>9. EXPRESSION REFERENCE SHEET</h2>
+      <div class="box">
+        <p style="font-family: 'Share Tech Mono'; margin-bottom: 20px">[NUMBER]-EXPRESSION ANIMATION GUIDE</p>
+        <div class="placeholder-img" style="height: 300px; margin-bottom: 20px">[EXPRESSION SHEET IMAGE]</div>
+        <div class="grid-4" style="margin-top: 20px">
+          <div class="box box-cyan" style="text-align: center"><strong>1. NEUTRAL</strong><br>[DESCRIPTION]</div>
+          <div class="box box-cyan" style="text-align: center"><strong>2. HAPPY</strong><br>[DESCRIPTION]</div>
+          <div class="box box-cyan" style="text-align: center"><strong>3. SERIOUS</strong><br>[DESCRIPTION]</div>
+          <div class="box box-cyan" style="text-align: center"><strong>4. SURPRISED</strong><br>[DESCRIPTION]</div>
+        </div>
+        <div class="box box-gold" style="margin-top: 20px">
+          <h4>ANIMATION NOTES:</h4>
+          <ul>
+            <li><strong>Eyes/Brows:</strong> [NOTES ON EXPRESSIVITY]</li>
+            <li><strong>Mouth:</strong> [NOTES ON LIP SYNC]</li>
+            <li><strong>Body Language:</strong> [NOTES ON POSTURE]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. ROLE & FUNCTION -->
+    <section class="fade-in">
+      <h2>10. ROLE &amp; FUNCTION</h2>
+      <div class="grid-2">
+        <div class="box">
+          <h3>IN-UNIVERSE ROLE</h3>
+          <ul>
+            <li>[ROLE DESCRIPTION 1]</li>
+            <li>[ROLE DESCRIPTION 2]</li>
+            <li>[ROLE DESCRIPTION 3]</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>META ROLE (IRL)</h3>
+          <ul>
+            <li>[MERCHANDISING POTENTIAL]</li>
+            <li>[Brand Ambassador ROLE]</li>
+            <li>[TARGET AUDIENCE APPEAL]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. BACKSTORY -->
+    <section class="fade-in">
+      <h2>11. BACKSTORY</h2>
+      <div class="box box-purple">
+        <p>
+          <strong>ORIGIN:</strong> [WRITE CHARACTER ORIGIN STORY HERE. Explain where they came from, their defining
+          moment, and their current mission.]
+        </p>
+        <p><strong>AFFILIATIONS:</strong> [GROUP 1] • [GROUP 2] • [GROUP 3]</p>
+        <p><strong>POWERS/SKILLS:</strong> [SKILL 1] • [SKILL 2] • [SKILL 3] • [SKILL 4]</p>
+      </div>
+    </section>
+
+    <!-- 12. RELATIONSHIPS -->
+    <section class="fade-in">
+      <h2>12. RELATIONSHIPS &amp; DYNAMICS</h2>
+      <div class="box">
+        <div class="instruction-box">
+          <span class="instruction-title">INSTRUCTIONS</span>
+          <span class="instruction-text">List key relationships. If this character interacts with <strong>Skooly Red</strong>, be sure to define
+            that dynamic.</span>
+        </div>
+        <table>
+          <tbody><tr>
+            <th>Character/Entity</th>
+            <th>Relationship</th>
+            <th>Dynamic</th>
+          </tr>
+          <tr>
+            <td>[CHARACTER NAME]</td>
+            <td>[RELATIONSHIP TYPE]</td>
+            <td>[DESCRIPTION OF DYNAMIC]</td>
+          </tr>
+          <tr>
+            <td>[CHARACTER NAME]</td>
+            <td>[RELATIONSHIP TYPE]</td>
+            <td>[DESCRIPTION OF DYNAMIC]</td>
+          </tr>
+          <tr>
+            <td>[INSTITUTION]</td>
+            <td>[CONNECTION]</td>
+            <td>[DESCRIPTION]</td>
+          </tr>
+        </tbody></table>
+      </div>
+    </section>
+
+    <!-- 13. ANIMATION NOTES -->
+    <section class="fade-in">
+      <h2>13. ANIMATION &amp; RIGGING NOTES</h2>
+      <div class="box">
+        <div class="grid-2">
+          <div>
+            <h4>FOR MODELERS &amp; ANIMATORS</h4>
+            <ul>
+              <li>[NOTE 1]</li>
+              <li>[NOTE 2]</li>
+              <li>[NOTE 3]</li>
+              <li>[NOTE 4]</li>
+            </ul>
+          </div>
+          <div>
+            <h4>KEY POSES</h4>
+            <ol>
+              <li>[POSE 1]</li>
+              <li>[POSE 2]</li>
+              <li>[POSE 3]</li>
+              <li>[POSE 4]</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. STYLE GUIDE -->
+    <section class="fade-in">
+      <h2>14. DESIGN VARIATIONS</h2>
+      <div class="box box-cyan">
+        <h4>APPROVED STYLES</h4>
+        <p>[STYLE 1] • [STYLE 2] • [STYLE 3]</p>
+        <h4>CONSISTENT ELEMENTS</h4>
+        <p>[ELEMENT 1] • [ELEMENT 2] • [ELEMENT 3]</p>
+      </div>
+    </section>
+
+    <!-- 15. USAGE GUIDELINES -->
+    <section class="fade-in">
+      <h2>15. USAGE GUIDELINES</h2>
+      <div class="grid-2">
+        <div class="box box-green" style="border-color: var(--green); background: rgba(0, 255, 157, 0.05)">
+          <h3 style="color: var(--green); margin-top: 0">DO ✅</h3>
+          <ul>
+            <li>[GUIDELINE 1]</li>
+            <li>[GUIDELINE 2]</li>
+            <li>[GUIDELINE 3]</li>
+            <li>[GUIDELINE 4]</li>
+          </ul>
+        </div>
+        <div class="box box-red" style="border-color: var(--red); background: rgba(255, 71, 87, 0.05)">
+          <h3 style="color: var(--red); margin-top: 0">DON'T ❌</h3>
+          <ul>
+            <li>[RESTRICTION 1]</li>
+            <li>[RESTRICTION 2]</li>
+            <li>[RESTRICTION 3]</li>
+            <li>[RESTRICTION 4]</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. MERCHANDISING -->
+    <section class="fade-in">
+      <h2>16. MERCHANDISING &amp; IP</h2>
+      <div class="box box-gold">
+        <h4>APPROVED CATEGORIES</h4>
+        <p>[CATEGORY 1] • [CATEGORY 2] • [CATEGORY 3] • [CATEGORY 4]</p>
+        <h4>IP OWNERSHIP</h4>
+        <p>
+          Character created by [CREATOR NAME] / KTL University • Part of Fantasy Complex Industry portfolio • Licensed
+          under Imaginarium IP framework • 80% creator ownership, 20% Imaginarium Liquidity Pool
+        </p>
+      </div>
+    </section>
+
+    <!-- 17. TECH SPECS -->
+    <section class="fade-in">
+      <h2>17. TECHNICAL SPECIFICATIONS</h2>
+      <div class="box">
+        <p style="font-family: 'Share Tech Mono'">
+          <strong>3D Model:</strong> [POLY COUNT SPECS]<br>
+          <strong>Textures:</strong> [TEXTURE MAP LIST]<br>
+          <strong>Rigging:</strong> [RIGGING REQUIREMENTS]<br>
+          <strong>Formats:</strong> FBX, OBJ, USD (3D); PSD, AI, SVG (2D)<br>
+          <strong>Resolution:</strong> Min 2K textures for print, 4K for hero shots
+        </p>
+      </div>
+    </section>
+
+    <!-- 18. REFERENCE GALLERY -->
+    <section class="fade-in">
+      <h2>18. REFERENCE IMAGES</h2>
+      <div class="grid-3">
+        <div class="box">
+          <div class="placeholder-img" style="height: 200px; margin-bottom: 10px">[IMAGE 1]</div>
+          <p class="hex-code"><strong>[IMAGE TITLE]</strong><br>[DESCRIPTION]</p>
+        </div>
+        <div class="box">
+          <div class="placeholder-img" style="height: 200px; margin-bottom: 10px">[IMAGE 2]</div>
+          <p class="hex-code"><strong>[IMAGE TITLE]</strong><br>[DESCRIPTION]</p>
+        </div>
+        <div class="box">
+          <div class="placeholder-img" style="height: 200px; margin-bottom: 10px">[IMAGE 3]</div>
+          <p class="hex-code"><strong>[IMAGE TITLE]</strong><br>[DESCRIPTION]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 19. EVOLUTION -->
+    <section class="fade-in">
+      <h2>19. EVOLUTION ROADMAP</h2>
+      <div class="box">
+        <ul>
+          <li>Phase 1: Character design locked [STATUS]</li>
+          <li>Phase 2: Full turnaround views [STATUS]</li>
+          <li>Phase 3: Expression sheet [STATUS]</li>
+          <li>Phase 4: Outfit variations [STATUS]</li>
+          <li>Phase 5: Supporting cast development [STATUS]</li>
+          <li>Phase 6: Environment design [STATUS]</li>
+          <li>Phase 7: Animation tests and motion studies [STATUS]</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 20. CREDITS -->
+    <section class="fade-in">
+      <h2>20. CREDITS &amp; ATTRIBUTION</h2>
+      <div class="box">
+        <p>
+          <strong>Character Design:</strong> [DESIGNER NAME]<br>
+          <strong>Universe:</strong> KTLiens / SKOOLY HIGH<br>
+          <strong>Institution:</strong> KTL University × Neterverse<br>
+          <strong>Part of:</strong> Fantasy Complex Industry<br>
+          <strong>Document Created:</strong> [DATE]<br>
+          <strong>Version:</strong> 1.0<br>
+          <strong>Status:</strong> [STATUS]
+        </p>
+      </div>
+    </section>
+
+    <!-- 21. PATTERN LIBRARY -->
+    <section class="fade-in">
+      <h2>21. PATTERN LIBRARY INTEGRATION</h2>
+      <div class="box box-purple">
+        <p>
+          <strong>Category:</strong> Character Asset • <strong>Subcategory:</strong> [SUBCATEGORY]<br>
+          <strong>Tags:</strong> #[CHARACTER] #SkoolyRed #KTLiens #SkoolyHigh #CharacterDesign<br>
+          <strong>File Naming:</strong> CHARACTER_[Name]_[ViewType]_[Style]_[Version]
+        </p>
+      </div>
+    </section>
+
+    <!-- 22. FINAL NOTES -->
+    <section class="fade-in">
+      <h2>22. FINAL DOCTRINE</h2>
+      <div class="box box-gold" style="text-align: center">
+        <p style="font-size: 1.2rem; font-style: italic; margin-bottom: 20px">
+          "[INSERT CHARACTER PHILOSOPHY OR QUOTE HERE]"
+        </p>
+        <h3 style="margin-bottom: 10px">[INSERT MOTTO OR TAGLINE]</h3>
+      </div>
+    </section>
+
+    <footer>
+      <p>Part of the Fantasy Complex Industry. Built at The Imaginarium. Owned by the culture.</p>
+      <p>KTL UNIVERSITY × NETERVERSE × RED PILLAR<br>© 2026 ALL RIGHTS RESERVED.</p>
+    </footer>
+  
+
+</body></html>

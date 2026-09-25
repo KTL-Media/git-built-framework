@@ -24,6 +24,28 @@ The creative-technology community: a school, community, incubator, and launchpad
 | File | Contents |
 |---|---|
 | `class2/Imaginarium_Class_2_Build_Phase_Mission_Plan.docx` | **Official Design Reference & Pattern Library Entry v1.0** — character identity creation template for the build phase (KTL University × Neterverse × Fantasy Complex Industry): identity data, visual reference grid, physical characteristics, signature accessories, wardrobe breakdown, and color palette. |
+| `class2/Imaginarium_Class_2_Build_Phase_Mission_Plan.pdf` (11 pp) | **Class 2 — Build Phase Mission Plan V2.0** (session Feb 13, 2026): "Stop just learning. Start making. Tonight we build your first AI helper together." Mission brief, pre-entry checklist, and the activation sequence from knowledge into execution. |
+| `class2/Imaginarium_Class_2_Mission_Plan_Document.pdf` (15 pp) | **Class 2 — Build Phase // Dual Agent Edition** (KTL University × Neterverse): the dual-agent mission document — every builder leaves with a working AI tool. Done is better than perfect; small build, big momentum. |
+| `class2/Imaginarium_Class_2_Build_Phase_Character_Bible.html` | **Character Bible Template v1.0** — interactive HTML edition of the Fantasy Complex pattern library / design reference entry. |
+
+## Class 3 — Launch Phase
+
+| File | Contents |
+|---|---|
+| `class3/Imaginarium_Class_3_Launch_Phase_Mission_Plan.pdf` (12 pp) | **Class 3 — Launch Phase Mission Plan V1.0** (Days 51–75): "Stop building in private. Start shipping in public. Tonight you show your creation to the world — and the world shows you what's next." Pre-entry checklist from Class 2 carry-over. |
+
+## Class 5 — Scale Phase
+
+| File | Contents |
+|---|---|
+| `class5/IMAGINARIUM_CLASS_5.pdf` (13 pp) | **Your First Sale Was Proof. Now Build the Machine.** The 3 Scale Laws — Volume over Vanity (MRR is the only metric), System over Hustle (build the pipeline that sells for you), Proof over Promise (case studies, screenshots, receipts). The revenue multiplication phase: from "$1 earned" to "$500–10K/month MRR." |
+
+## Program operations
+
+| File | Contents |
+|---|---|
+| `Imaginarium_PPT_2.pdf` (24 pp) | **Imaginarium: The 90-Day AI Builder Accelerator** — "Transforming Learners Into Founders." Empowering innovation through rapid AI entrepreneurship training (Feb 2026 deck). |
+| `Imaginarium_POD_Operations_Manual_Internal_OS_v1.0.html` | **Pod Operations Manual — Internal OS v1.0.** |
 
 ## Assets
 
