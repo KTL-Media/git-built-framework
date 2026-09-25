@@ -18,3 +18,6 @@ A KTL University series.
 | `assets/foabmm-critical-race-theory-to-fact.jpg` | **"The Critical Race From Theory To Fact"** — episode promo art (9 PM Thurs, July 29th): Othal Wallace, the Rise of the Moors nine-hour standoff with Massachusetts police. |
 | `assets/foabmm-red-pill-essential-history.jpg` | **"Fear Of A BlackaMoor Messiah — Red Pill."** The Essential History: Red Pill Edition — Kemetic iconography. |
 | `assets/foabmm-2020-year-of-fear.jpg` | **2020 #YEARofFEAR** title card. |
+| `assets/foabmm-bundle-cover-white.jpg` | **FOABMM BUNDLE cover art** — the superhero showdown: Trump/Champion vs. masked rival vs. Harris/Captain America, over the US map; BlackRock and Vanguard sidebars. White BUNDLE stamp. |
+| `assets/foabmm-bundle-cover-red.jpg` | **FOABMM BUNDLE cover art** — same showdown. Red BUNDLE stamp. |
+| `assets/foabmm-32225-zoom-promo.jpg` | **FOABMM cartoon promo** — @ALKEBULAN_44 × @BLUEPILLAR44, 3.22.25, Zoom 8 PM EST, under the solar eclipse. |
