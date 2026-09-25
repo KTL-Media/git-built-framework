@@ -28,6 +28,7 @@ The creative-technology community: a school, community, incubator, and launchpad
 | `class2/Imaginarium_Class_2_Build_Phase_Mission_Plan.pdf` (11 pp) | **Class 2 — Build Phase Mission Plan V2.0** (session Feb 13, 2026): "Stop just learning. Start making. Tonight we build your first AI helper together." Mission brief, pre-entry checklist, and the activation sequence from knowledge into execution. |
 | `class2/Imaginarium_Class_2_Mission_Plan_Document.pdf` (15 pp) | **Class 2 — Build Phase // Dual Agent Edition** (KTL University × Neterverse): the dual-agent mission document — every builder leaves with a working AI tool. Done is better than perfect; small build, big momentum. |
 | `class2/Imaginarium_Class_2_Build_Phase_Character_Bible.html` | **Character Bible Template v1.0** — interactive HTML edition of the Fantasy Complex pattern library / design reference entry. |
+| `class2/imaginarium_class_2_build_phase_20260214.pptx` | **Class 2 Build Phase slide deck** (Feb 14, 2026). |
 
 ## Class 3 — Launch Phase
 
@@ -51,6 +52,7 @@ The creative-technology community: a school, community, incubator, and launchpad
 | `Imaginarium_Strategy_Consolidated.pdf` (2 pp) | **Imaginarium Strategy Consolidation** — the dual vision: productized creative OS (packaged prompt pipelines, plug-and-play storytelling systems) + live creative lab (real-time problem solving, cross-consultation). Layered growth model. |
 | `KTL-Developer-Spec.docx` | **KTL+ Website Redesign — Developer Specification** (May 2025, Red Pillar Productions, Harlem NY). Handoff doc for rebuilding ktluniversity.com: the KTL+ ecosystem spans KTL TV, KTL Radio, Know The Ledger 444, 72KLAWS, Imaginarium, F.A.C.T.S., and the Open Claw Protocol. |
 | `Imaginarium_90_Day_Power_Play.pages` | **90 Day Power Play — Imaginarium** (Apple Pages, editable source). Same Accelerator 363 content as `IMAGINARIUM_-_PLANS.pdf`: core offer, value stack, tier benefits, lead magnets, and funnel workflow. |
+| `The_Imaginarium_AI_Builder_Accelerator_Webflow_Handoff.docx` | **Webflow landing page handoff brief** — "The Imaginarium 90-Day AI Builder Accelerator" for Red Pillar / KTL University: complete landing page build scope, responsive design + CMS, design system (primary gold #D4AF37), <2s load / 90+ Lighthouse targets. |
 
 ## Eventbrite listings
 
@@ -63,7 +65,15 @@ The creative-technology community: a school, community, incubator, and launchpad
 
 | File | Contents |
 |---|---|
-| `workbooks/imaginarium_workbook_curriculum_2.pdf` (13 pp) | **The Imaginarium Workbook: A Curriculum Blueprint** — advanced AI content creation, video generation, prompt engineering, and workflow building. Cultivating a new generation of AI-literate creators. |
+| `workbooks/imaginarium_workbook_curriculum.pdf` (15 pp) | **The Imaginarium Workbook: A Curriculum Blueprint** — the fuller edition: chapter-by-chapter outline, brand integration, daily practice routines, homework and community elements, delivery format. |
+| `workbooks/imaginarium_workbook_curriculum_2.pdf` (13 pp) | **The Imaginarium Workbook: A Curriculum Blueprint** — revised edition: AI content creation, video generation, prompt engineering, and workflow building. Cultivating a new generation of AI-literate creators. |
+
+## Media
+
+| File | Contents |
+|---|---|
+| `media/imaginarium-skool-promo.mp4` (63s) | **Imaginarium Skool promo video** — cosmic cinematic: LEARN (puzzle pieces, satellite dishes) → BUILD (hands assembling worlds) → LAUNCH (blue ringed planet) → OWN (the collective, hands raised). Closes on the IMAGINARIUM SKOOL logo and the 90-day hands-on program pillars. |
+| `media/Imaginarium_blueprints_in_a_planetarium.mp3` (95s) | Audio track: "Imaginarium — blueprints in a planetarium." |
 
 ## Assets
 
@@ -78,3 +88,4 @@ The creative-technology community: a school, community, incubator, and launchpad
 | `assets/imaginarium-unlock-new-realities-poster.jpg` | **Imaginarium: Unlock New Realities** recruitment poster — "The Creator's Playground. The Builder's Home." Exclusive community, builder resources, collaboration, level-up. Scan-to-join QR. |
 | `assets/imaginarium-ktl-superbowl.jpg` | **Imaginarium KTL Superbowl** promo — gladiator-armor football players, KTL shield, 7PM EST on youtube/knowtheledger444. |
 | `assets/imaginarium-halftime-show-logo.jpg` | **Imaginarium Halftime Show** logo — gold trophy on blue, three stars. |
+| `assets/god-protocol-assessment-generator.jpg` | **The G.O.D. Protocol Assessment** result — "20 questions. No right answers. Only honest ones." Role reveal: **GENERATOR** (85%, the Visionary) — Operator 10%, Destroyer 5%. |
