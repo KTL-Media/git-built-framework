@@ -14,6 +14,7 @@ The creative-technology community: a school, community, incubator, and launchpad
 
 | File | Contents |
 |---|---|
+| `class1/Imaginarium_Class1_Curriculum_v2.docx` | **Class 1 Curriculum — The Kernel: Install Your G.O.D. Framework.** Week 1 of 4, Phase 1 LEARN — Sunday, Feb 1, 2026, 12–3 PM EST, live virtual (Fantasy Complex Industry × Triple AI Agency × Neterverse). Built on the Triple A Framework: Automation • Agentic AI • APIs. |
 | `class1/Imaginarium_Class_1_Student_Initiation_Kit.html` + `.pdf` | **Student Onboarding Welcome Kit** — the complete resource pack for the 90-day AI builder journey. Class 1 / Ignition Phase / Feb 2026, Welcome Kit v1.0. Interactive HTML (gold/purple neon, print-ready) plus the 9-page PDF edition. |
 | `class1/Imaginarium_Class_1_AI_Power_Stack_Ignition.html` + `.pdf` | **Week 1 Missions: Your First Operational Cycle** — 7 days to master the AI Power Stack. 7 missions, 7 days, each unlocking new capabilities; complete all 7 to be ready for Build Phase. |
 | `class1/Imaginarium_Class_1_AI_Power_Stack_Troubleshooting.pdf` (9 pp) | **Troubleshooting Cheat Sheet** — Week 1 mission support: quick fixes for common issues across MemuBot, Claude, integrations, and access. |
@@ -46,6 +47,23 @@ The creative-technology community: a school, community, incubator, and launchpad
 |---|---|
 | `Imaginarium_PPT_2.pdf` (24 pp) | **Imaginarium: The 90-Day AI Builder Accelerator** — "Transforming Learners Into Founders." Empowering innovation through rapid AI entrepreneurship training (Feb 2026 deck). |
 | `Imaginarium_POD_Operations_Manual_Internal_OS_v1.0.html` | **Pod Operations Manual — Internal OS v1.0.** |
+| `IMAGINARIUM_OS_LAUNCH_PLAN.md` | **Imaginarium OS — 90-Day Launch Plan** (built July 8, 2026, owner Mart). The execution playbook: launch the Accelerator 363 bundled offer ($121/mo or $444 one-time), target 75 paying members by Day 90 (~$30K), squeeze proof from existing buyers, sell a Founding 25 tier, run a daily content engine. Includes strategy, task acceptance criteria, and brand voice rules (Afrofuturist, visionary, warm). |
+| `Imaginarium_Strategy_Consolidated.pdf` (2 pp) | **Imaginarium Strategy Consolidation** — the dual vision: productized creative OS (packaged prompt pipelines, plug-and-play storytelling systems) + live creative lab (real-time problem solving, cross-consultation). Layered growth model. |
+| `KTL-Developer-Spec.docx` | **KTL+ Website Redesign — Developer Specification** (May 2025, Red Pillar Productions, Harlem NY). Handoff doc for rebuilding ktluniversity.com: the KTL+ ecosystem spans KTL TV, KTL Radio, Know The Ledger 444, 72KLAWS, Imaginarium, F.A.C.T.S., and the Open Claw Protocol. |
+| `Imaginarium_90_Day_Power_Play.pages` | **90 Day Power Play — Imaginarium** (Apple Pages, editable source). Same Accelerator 363 content as `IMAGINARIUM_-_PLANS.pdf`: core offer, value stack, tier benefits, lead magnets, and funnel workflow. |
+
+## Eventbrite listings
+
+| File | Contents |
+|---|---|
+| `eventbrite/Imaginarium_Eventbrite_RED_PILL.docx` | **The Imaginarium: Build Your AI Operating System** — 4-week workshop event listing (Feb 2026). "The robot that replaces you should belong to you. 4 weeks. 100 agents. Your money-printing machine." Full title, short, and long descriptions ready to paste into Eventbrite. |
+| `eventbrite/IMAGINARIUM_Eventbrite_Description.md` | **The Imaginarium — 90-Day AI Accelerator & Founder's Workshop** listing: "FROM IMAGINATION TO MANIFESTATION. This is not a course..." Full title, subtitle, and long description for the 90-day accelerator Eventbrite page. |
+
+## Workbooks
+
+| File | Contents |
+|---|---|
+| `workbooks/imaginarium_workbook_curriculum_2.pdf` (13 pp) | **The Imaginarium Workbook: A Curriculum Blueprint** — advanced AI content creation, video generation, prompt engineering, and workflow building. Cultivating a new generation of AI-literate creators. |
 
 ## Assets
 
