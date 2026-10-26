@@ -40,3 +40,7 @@ concept → carousel (10 slides) → clips (per slide) → reel → lead magnet 
 - [`programs/`](programs/) — program curriculum: the GIT INVEST Tesseract client-workflow addendum (productized AI video-editing service track), the GIT MONEY "5 Angles on the Proof Machine" marketing playbook, the **72 KLAWS Sovereign Builder Operating System** (five pillars, 72 tools, Royal Decree, workbook), the Imaginarium creative-technology community curriculum, the KTL AI Accelerator program, and the **F.A.C.T.S. Initiative** (Family • Action • Community • Transformation • Success) — home of the Common Unity Initiative.
 - [`brand/assets/`](brand/assets/) — promo flyers and logos: GIT MONEY Vibe Sessions (4:44 PM), Vibe Session #2 (June 13th), the 30-Day GitHub Workshop artwork, and the GIT BUILT Workbook Bundle (4 classes).
 - [`media/`](media/) — the GIT BUILT Summer Skool promo video.
+
+## GIT INVEST portfolio readiness
+
+See the [portfolio readiness register](docs/PORTFOLIO-READINESS.md) for buyer fit, verified project locations, proof requirements, and next delivery milestones. Curriculum assets, production services, and software prototypes follow different commercial paths.
